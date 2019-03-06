@@ -128,7 +128,7 @@ section:last-child {
 
 .sectionContent {
 	float: right;
-	width: 72.5%;
+	width: 75.5%;
 }
 
 .sectionTitle h1 {
@@ -158,6 +158,10 @@ section:last-child {
 	margin-bottom: 20px;
 	font-size: 1em;
 	color: #444;
+}
+
+.publication_meta{
+    float: right;
 }
 
 .keySkills ul li {
