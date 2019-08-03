@@ -1,0 +1,117 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{exscale}
+\usepackage{graphicx}
+\usepackage{enumerate}
+
+\setlength{\parindent}{0pt}
+\setlength\topmargin{0in}
+\setlength\headheight{0in}
+\setlength\headsep{0.3in}
+\setlength\textheight{8.5in}
+\setlength\textwidth{6.3in}
+\setlength\oddsidemargin{0in}
+\setlength\evensidemargin{0in}
+\setlength{\tabcolsep}{3pt}
+\setlength\parskip{1ex plus 0.5ex minus 0.2ex}
+\title{MAS 433 Assignment 2}
+\author{Wang Xueou (087199E16)}
+\begin{document}
+\maketitle
+
+\textbf{Question 1 } Solution: \\
+SSL stands for Secure Sockets Layer. Netscape originally developed this protocol to transmit information privately, ensure message integrity, and guarantee the server identity. SSL works mainly through using public/private key encryption on data. It is commonly used on web browsers, but SSL may also be used with email servers or any kind of client-server transaction. For example, some instant messaging servers use SSL to protect conversations.\\
+
+TLS stands for Transport Layer Security. The Internet Engineering Task Force (IETF) created TLS as the successor to SSL. It is most often used as a setting in email programs, but, like SSL, TLS can have a role in any client-server transaction.\\
+
+The differences between the two protocols are very minor and technical, but they are different standards. TLS uses stronger encryption algorithms and has the ability to work on different ports. Additionally, TLS version 1.0 does not interoperate with SSL version 3.0.\\
+
+\textbf{Question 2 } Solution: \\
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Contents & Description \\ \hline
+Version & v1, v2, or v3 \\ \hline
+Serial number & Used to uniquely identify the certificate. \\ \hline
+Signature algorithm ID & The algorithm used to create the signature \\ \hline
+Issuer & (CA) The entity that verified the information and issued the certificate \\ \hline
+Valid-from & The date the certificate is first valid from \\ \hline
+Valid-to & The expiration date \\ \hline
+Subject & The person, or entity identified \\ \hline
+Subject public key info & The public key of the subject \\ \hline
+Certificate signature & authenticate all the above contents, signed by the issuer (CA) \\ \hline
+Optional information &  \\ \hline
+\end{tabular}
+\end{center}
+
+\textbf{Question 3 } Solution: \\
+\textbf{Simple TLS handshake}\\
+A simple connection example follows, illustrating a handshake where the server (but not the client) is authenticated by its certificate: \\
+\begin{enumerate}
+ \item Negotiation phase:
+ \begin{itemize}
+          \item A client sends a ClientHello message specifying the highest TLS protocol version it supports, a random number, a list of suggested CipherSuites and suggested compression methods. If the client is attempting to perform a resumed handshake, it may send a session ID.
+          \item The server responds with a ServerHello message, containing the chosen protocol version, a random number, CipherSuite and compression method from the choices offered by the client. To confirm or allow resumed handshakes the server may send a session ID. The chosen protocol version should be the highest that both the client and server support. For example, if the client supports TLS1.1 and the server supports TLS1.2, TLS1.1 should be selected; SSL 3.0 should not be selected.
+          \item The server sends its Certificate message (depending on the selected cipher suite, this may be omitted by the server).
+          \item The server sends a ServerHelloDone message, indicating it is done with handshake negotiation.
+          \item The client responds with a ClientKeyExchange message, which may contain a PreMasterSecret, public key, or nothing. (Again, this depends on the selected cipher.) This PreMasterSecret is encrypted using the public key of the server certificate.
+          \item The client and server then use the random numbers and PreMasterSecret to compute a common secret, called the "master secret". All other key data for this connection is derived from this master secret (and the client- and server-generated random values), which is passed through a carefully designed pseudorandom function.
+ \end{itemize}
+ \item The client now sends a ChangeCipherSpec record, essentially telling the server, "Everything I tell you from now on will be authenticated (and encrypted if encryption parameters were present in the server certificate)." The ChangeCipherSpec is itself a record-level protocol with content type of 20.
+ \begin{itemize}
+          \item Finally, the client sends an authenticated and encrypted Finished message, containing a hash and MAC over the previous handshake messages.
+          \item The server will attempt to decrypt the client's Finished message and verify the hash and MAC. If the decryption or verification fails, the handshake is considered to have failed and the connection should be torn down.
+ \end{itemize}
+ \item Finally, the server sends a ChangeCipherSpec, telling the client, "Everything I tell you from now on will be authenticated (and encrypted, if encryption was negotiated)."
+ \begin{itemize}
+          \item The server sends its authenticated and encrypted Finished message.
+          \item The client performs the same decryption and verification.
+ \end{itemize}
+ \item Application phase: at this point, the "handshake" is complete and the application protocol is enabled, with content type of 23. Application messages exchanged between client and server will also be authenticated and optionally encrypted exactly like in their Finished message. Otherwise, the content type will return 25 and the client will not authenticate.
+\end{enumerate}
+
+
+\textbf{Question 4 } Solution: \\
+
+\textbf{4.1} \\
+
+\textbf{4.1.1 } Mozilla Firefox 7.0.1 \\
+
+\textbf{4.1.2 } TLS 1.0 \\
+
+\textbf{4.1.3 } CipherSuite supported by the browser:\\
+
+\includegraphics[width=0.7\textwidth,origin=c]{ciphersuite.png}
+
+
+\textbf{4.2} \\
+\textbf{4.2.1 } TLS 1.0 \\
+
+\textbf{4.2.2 } TLS\_RSA\_WITH\_RC4\_128\_SHA (0x0005) \\
+
+\textbf{4.3 } \\
+\textbf{4.3.1 } RSA public key crtptosystem, RC4 stream cipher, secure hash algorithm (SHA1) \\
+
+\textbf{4.3.2 } DigiCert High Assurance CA-3 \\
+
+\textbf{4.3.3 } Valid from 9/28/2011; Valid until 10/1/2012 \\
+
+\textbf{4.3.4 } \\
+\includegraphics[width=0.7\textwidth,origin=c]{publickey.png}\\
+It is strong. \\
+
+\textbf{4.4 } \\
+If there is no PKC , the attacker man can launch the man-in-the-middle attack. Suppose that Alice is sending her public key to Bob
+\begin{enumerate}
+ \item The attacker Eve can change the public key of Alice to Eve's public key. 
+ \item Bob wants to use Alice's public key to establish secret key with Alice. But if Alice's public key has been changed to Eve's public key, Bob would use Eve's public key to establish a secrete key with Eve.
+ \item Eve establishes a secret key with Alice using the public key of Alice.
+ \item Eve receives the encrypted and authenticated data from Bob, then decrypts it, and transmits it securely to Alice; Eve receives the encrypted and authenticated data from Alice, decrypts it, and transmits it securely to Alice.
+\end{enumerate}
+In this way, Eve can decrypt all the communication between Alice and Bob, but Alice and Bob do not notice the existence of Eve.\\
+
+\textbf{4.5 } RSA is used to generate the session keys used for the secure connection and also to establish identification during the handshake. \\
+
+\textbf{4.6 } Normally the \textbf{ Certification authority } (CA) and \textbf{ public key certificate } are involved. Everyone knows the public key (for signature) of CA. The webmail server registers its public key with CA. CA signs (the server's information + the server's public key), and give the signature (certificate) to the server. A public key is sent together with the certificate for verification (using CA's public key). Thus my computer can verify the certificate to check whether the server is correct and whether the certificate is within the valid period. My computer also can verify the signature. \\
+
+\end{document} 

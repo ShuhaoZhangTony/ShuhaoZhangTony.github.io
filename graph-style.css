@@ -1,0 +1,134 @@
+body {
+    background-color:White;
+    font: normal 100% Comic sans, sans-serif;
+    font-size:15px;
+    margin-bottom:30px;
+}
+
+h1 {
+    color:#086A87;
+    text-align:center;
+}
+
+h2 {
+    color:#0B615E;
+    
+}
+
+h3 {
+    color:#0B615E;    
+}
+
+ol {
+    padding-left: 1.5em;
+}
+
+.center {
+    margin-left:20%;
+    padding:1px 16px;
+    width:80%;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: scroll;
+}
+
+.nav ul li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.nav ul li ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 10%;
+    overflow: hidden;
+}
+
+.nav ul li ul li a {
+    display: inline-block;
+    color: #000;
+    padding: 8px 32px;
+    text-decoration: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+#navcontainer ul {
+    padding: .2em 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: #086A87;
+    color: #FFF;
+    width: 100%;
+    font: normal 90% helvetica, sans-serif;
+    text-align: center;
+}
+
+#navlist li {
+    display: inline;
+}
+
+#navlist li a {
+    text-decoration: none;
+    background-color: #086A87;
+    color: #FFF;
+    padding: .2em 01em;
+    border-right: 1px solid #fff;
+}
+
+#navlist li a:hover {
+    /* background-color: #088A08; */
+    color: #fff;
+}
+
+.lastmod{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    color: #000000;
+    font-size: 80%;
+}
+
+.endorsement{
+    width: 100%;
+    text-align: center;
+    color: #747474;
+    font-size: 80%;
+}
+
+.news {
+    width: 90%;
+    background-color:#F2F2F2;
+    color:black;
+    padding:20px;
+    vertical-align:top;
+} 
+
+.application {
+    width: 90%;
+    background-color: #E6E6E6;
+    color:black;
+    padding:20px;
+    vertical-align:top;
+} 

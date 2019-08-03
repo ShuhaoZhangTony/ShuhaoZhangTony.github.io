@@ -1,0 +1,208 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{exscale}
+\usepackage{graphicx}
+
+\setlength{\parindent}{0pt}
+\setlength\topmargin{0in}
+\setlength\headheight{0in}
+\setlength\headsep{0.3in}
+\setlength\textheight{8.5in}
+\setlength\textwidth{6.3in}
+\setlength\oddsidemargin{0in}
+\setlength\evensidemargin{0in}
+\setlength{\tabcolsep}{3pt}
+\setlength\parskip{1ex plus 0.5ex minus 0.2ex}
+
+\title{MAS 433 Tutorial 3}
+\author{Wang Xueou (087199E16)}
+\begin{document}
+\maketitle
+\textbf{Question 1 } Solution:\\
+\textbf{1.1. }
+\begin{center}
+\includegraphics[height=.7\textheight]{1.pdf}
+\end{center}
+\textbf{1.2. } For Feistel network, if we have known $L_i \& R_i$, we can always get $L_{i-1} \& R_{i-1}$ using the following way:\\
+$$
+\begin{array}{lll}
+R_{i-1}& = & L_{i} \\
+L_{i-1}& = & F\left( K_i, R_{i-1} \right) \oplus R_{i} =  F\left( K_i, L_{i} \right) \oplus R_{i}
+\end{array}
+$$
+Thus, the Feistel network is always invertible. \\
+\textbf{1.3. } We need 3 extra operations if we re-use the encryption algorithm:\\
+(1). Reverse the order of input.\\
+(2). Reverse the order of round key.\\
+(3). Reverse the order of output\\
+\begin{center}
+\includegraphics[height=.7\textheight]{2.pdf}
+\end{center}
+
+\textbf{Question 2. } Solution:\\
+\textbf{2.1. } The relation between $K_i$ and $K_i^\prime$ is 
+$$
+K_i = \overline{K_i^\prime}
+$$
+The reason is $K = \overline{K^\prime}$, while DES doesn't modify the key bits of those $K_i$ \rq s $\left( K_i^\prime \textnormal{\rq s} \right)$ generated from $K \left( K^\prime \right)$ \\
+\textbf{2.2. } \\
+Let $C = E_K\left( P\right), C^\prime = E_{K^\prime}\left( P^\prime \right)$, where $K=\overline{K^\prime}, P=\overline{P^\prime}$\\
+$\bullet$ The initial permutation doesn't change the bits of $P$. Let $\left( L_0, R_0 \right)$ \& $\left( L_0^\prime, R_0^\prime \right)$ denote the initial permutation. Since $P=\overline{P^\prime}$, we have $L_0 = \overline{L_0^\prime}, R_0 = \overline{R_0^\prime}$\\
+$\bullet$ If $L_{i}=\overline{L_i^\prime}, R_{i}=\overline{R_i^\prime}$ 
+
+\begin{eqnarray}
+L_{i+1} &=& R_i \label{1}\\
+R_{i+1} &=& L_i \oplus F\left( K_{i+1}, R_i\right) \label{2}\\
+L_{i+1}^\prime &=& R_i^\prime \label{3} \\
+R_{i+1}^\prime &=& L_i^\prime \oplus F\left( K_{i+1}^\prime, R_i^\prime \right) \nonumber \\
+ &=& L_i^\prime \oplus \textnormal{Permutation}\left( \textnormal{Substitution}\left( \textnormal{Expansion}\left( R_i^\prime \right) \oplus K_{i+1}^\prime \right)\right) \nonumber \\
+ &=& L_i^\prime \oplus \textnormal{Permutation}\left( \textnormal{Substitution}\left( \textnormal{Expansion}\left( R_i \right) \oplus K_{i+1} \right)\right) \nonumber \\
+ &=& L_i^\prime \oplus F\left( K_{i+1}, R_i\right) \label{4}
+\end{eqnarray}
+
+\begin{equation*}\left.\begin{aligned}
+(\ref{1})\\
+(\ref{3})
+\end{aligned} \right\} \quad \Rightarrow \quad L_{i+1}=\overline{L_{i+1}^\prime}
+\end{equation*}
+From (\ref{2}) \& (\ref{4}), we have $R_{i+1}^\prime = \overline{R_{i+1}^\prime}$. Thus we have $L_{16}=\overline{L_{16}^\prime}$ \&  $ R_{16}=\overline{R_{16}^\prime}$\\
+$\bullet$ In the last permutation, we have $C=(R_{16}, L_{16}) $, and $C^\prime =(R_{16}^\prime, L_{16}^\prime)$. However, this permutation doestn't change the bits, then we have $C=\overline{C^\prime}$.\\
+\textbf{2.3. } Suppose the attacker knows $C$ and $C^\prime$, where $C=E_K(P)$ \& $C^\prime=E_K(\overline{P})$. Then he can attack as follows:\\
+\textbf{Step1. } Guess $K_\textnormal{x}$.\\
+\textbf{Step2. } Compute $E_{K_\textnormal{x}}(P)$\\
+\textbf{Step3. } Compare $E_{K_\textnormal{x}}(P)$ with $E_K(P)$. If they are equal, then likely $K_\textnormal{x}=K$. \\
+\textbf{Step4.} Compare $\overline{E_{K_\textnormal{x}}(P)}$ with $E_K(\overline{P})$. If they are equal, then likely $K=\overline{K_\textnormal{x}}$ because $\overline{E_{K_\textnormal{x}}(P)}=E_{\overline{K_\textnormal{x}}}(\overline{P})$. \\
+\textbf{Step5. } If $K_\textnormal{x}$ is incorrect, go back to step 1 to try another key.\\
+\textbf{2.4. } We can apply some non-linear operations to the round keys. For example, applying $4\times4$ -bit Sbox to the round keys.\\
+
+
+\textbf{Question 3 } Solution: 
+If there is an even number of 1\rq s in $K_b$, the final cipher is just as the one without using $K_b$. If there is an odd number of 1\rq s in $K_b$, the final cipher is then equivalent to the cipher without the second permutation after the last round. This can be risky.
+\\
+
+
+\textbf{Question 4 } Solution:\\ 
+\textbf{4.1. } In the first round, the MixColumn function makes each byte affect 4 outputs as a column. In the second round, ShiftRow function proceeds the MixColumn function and spreads the elements in one column over 4 columns. Then the  again  makes each byte affect 4 outputs in a column. So 2 rounds can make each byte affect all the  16 outputs. \\
+\textbf{4.2. } Since the MixColumns and ShiftRows operations in AES are linear, they have the following properties:\\
+$$
+\begin{array}{lll}
+\textnormal{MixColumns}(a \oplus b) &=& \textnormal{MixColumns} (a) \oplus \textnormal{MixColumns} (b) \\
+\textnormal{ShiftRows} (a \oplus b) &=& \textnormal{ShiftRows} (a) \oplus \textnormal{ShiftRows} (b)
+\end{array}
+$$
+where $a$ and $b$ are 128-bit AES states.\\
+Now, if SubByte operations are not implemented, initially we apply AddRoundKey and get
+$$
+C_0 = P \oplus K_0
+$$
+Then the first round is \\
+$$
+\begin{array}{ll}
+ &\textnormal{AddRoundKey}((\textnormal{MixColumns}(\textnormal{ShiftRows}(C_0)))) \\
+=&K_1 \oplus \textnormal{(MixColumns}(\textnormal{ShiftRows}( P \oplus K_0)))\\
+=&K_1 \oplus \textnormal{MixColumns}(\textnormal{ShiftRows}(P)) \oplus \textnormal{MixColumns}(\textnormal{ShiftRows}(K_0)) \\
+=&\textnormal{MixColumns}(\textnormal{ShiftRows}(P)) \oplus \left( K_1 \oplus \textnormal{MixColumns}(\textnormal{ShiftRows}(K_0)) \right) \\
+=&f(p) + f^\prime(K_0,K_1)
+\end{array}
+$$
+After we perform all the rounds, we will get the ciphertext as
+$$
+C = g(P) \oplus h(K_0, K_1,\cdots)
+$$
+i.e.,
+$$
+C = g(P) \oplus K^\prime, \textnormal{ where } K^\prime = h(K_0, K_1,\cdots) 
+$$
+Since $h$ is the composite of linear functions, $h$ is also a linear function. It is similar to the one-time pad, but the key is repeatedly used for different plaintext block. Thus, with one plaintext-ciphertext pair, $K^\prime$ can be determined, and the rest of the plaintext can be recovered.\\
+\textbf{4.3. } If ShiftRows is not implemented, then the 4 elements in one column are not relocated to 4 different columns and encrypted independently during the subsequent enctryption. So we can obtain 4 block ciphers each of which is 32-bit size. Since the block size is too small, it is subject to dictionary attack. The attacker may collect many plaintext-ciphertext pair and build a dictionary between them and get the full plaintext.\\ 
+\textbf{4.4. } If MixColumns is not implemented, the input byte will not affect all four outputs. This means each byte is encrypted independently so we get 16 block of 8-bit size cipher. This is vulnerable to dictionary attack.\\
+
+\textbf{Question 5 } Solution:\\
+\textbf{5.1. } $\{ 09 \} = 00001001 = x^3 + 1, \{ 82 \} = 10000010 = x^7 + x $, then
+$$
+\begin{array}{lll}
+( x^3 + 1 ) \bullet ( x^7 + x ) &=& x^{10} + x^7 + x^4 + x\\
+x^{10} + x^7 + x^4 + x &\textnormal{ mod }& x^8 + x^4 + x^3 + x + 1 \\
+&=& x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x \\
+&=& 11111110
+\end{array} 
+$$
+$$
+\textnormal{So} \qquad \{ 09 \} \bullet \{ 82 \}=\{ fe \}
+$$
+\textbf{5.2. } $\{ 09 \} = 00001001 = x^3 + 1$. Use Extended Euclidean Algorithm, we have the following:\\
+$$
+\begin{array}{lllll}
+\textnormal{Step1. }& (x^8+x^4+x^3+x+1) \div (x^3+1):& x^2 &=& (x^8+x^4+x^3+x+1) + (x^3+1)(x^5+x^2+x+1)\\
+\textnormal{Step2. }& x^3 \div x^2:& 1 &=& (x^3+1)+(x^2)(x)
+\end{array} 
+$$
+Thus we have:
+$$
+\begin{array}{lll}
+1&=&(x^3+1)+x[(x^8+x^4+x^3+x+1)+(x^3+1)(x^5+x^2+x+1)] \\
+&=&(x^3+1)(x^6+x^3+x^2+x+1)+(x^8+x^4+x^3+x+1)x
+\end{array}
+$$
+Thus, $\{ 09 \}^{-1}=01001111=\{4f\}$\\
+\textbf{5.3. } 
+$$
+\begin{array}{lll}
+a(x)\otimes b(x) &=& a(x) \bullet b(x) \textnormal{ mod } x^4+1\\
+&=&(\{03\}x^3+\{01\}x^2+\{01\}x+\{02\}) \bullet \{A3\}x \textnormal{ mod } x^4+1\\
+&=&\{01\} \bullet \{A3\}x^3 + \{01\} \bullet \{A3\}x^2 + \{02\} \bullet \{A3\}x + \{03\} \bullet \{A3\} \\
+\end{array}
+$$
+Further, we have \\
+$$
+\begin{array}{lll}
+\{01\} \bullet \{A3\} &=& \{A3\} \\
+\{02\} \bullet \{A3\} &=& x(x^7+x^5+x+1) \textnormal{ mod } (x^8+x^4+x^3+x+1) \\
+&=& x^6+x^4+x^3+x^2+1 \\
+&=& 01011101 \\
+&=& \{5d\} \\
+\{03\} \bullet \{A3\} &=& \{01\} \bullet \{A3\} \oplus \{02\} \bullet \{A3\}\\
+&=& 10100011 \oplus 01011101 \\
+&=& 11111110 \\
+&=& \{fe\}
+\end{array}
+$$
+So $a(x) \otimes b(x) = \{A3\}x^3 + \{A3\}x^2 + \{5d\}x + \{fe\}$\\
+\textbf{5.4. } Let 
+$$
+a(x)=a_3x^3+a_2x^2+a_1x+a_0=\{03\}x^3+\{01\}x^2+\{01\}x+\{02\}
+$$
+$$b(x)=b_3x^3+b_2x^2+b_1x+b_0=\{0b\}x^3+\{0d\}x^2+\{09\}x+\{0e\}
+$$
+To prove $b(x)=a^{-1}(x)$, we need to show $a(x)b(x)+(x^4+1)c(x)=1$ mod $x^4+1$. Now let 
+$$
+\begin{array}{lll}
+d(x)&=&a(x)b(x)$ mod $x^4+1  \\
+&=&d_3x^3+d_2x^2+d_1x^1+d_0 
+\end{array}
+$$
+We have
+$$
+\begin{array}{lll}
+d_0&=&(a_0 \bullet b_0) \oplus (a_3 \bullet b_1) \oplus (a_2 \bullet b_2) \oplus (a_1 \bullet b_3) \\
+&=&\{02\} \bullet \{0e\} \oplus \{03\} \bullet \{09\} \oplus \{01\} \bullet \{0d\} \oplus \{01\} \bullet \{0b\} \\
+&=&\{1c\} \oplus \{1b\} \oplus \{0d\} \oplus \{0b\} \\
+&=& \{00011100\} \oplus \{00011011\} \oplus \{00001101\} \oplus \{00001011\} \\
+&=& 1 \\
+d_1&=&(a_1 \bullet b_0) \oplus (a_0 \bullet b_1) \oplus (a_3 \bullet b_2) \oplus (a_2 \bullet b_3) \\
+&=&\{01\} \bullet \{0e\} \oplus \{02\} \bullet \{09\} \oplus \{03\} \bullet \{0d\} \oplus \{01\} \bullet \{0b\} \\
+&=&\{0e\} \oplus \{12\} \oplus \{17\} \oplus \{0b\} \\
+&=& \{00001110\} \oplus \{00010010\} \oplus \{00010111\} \oplus \{00001011\} \\
+&=& 0 \\
+d_2&=&(a_2 \bullet b_0) \oplus (a_1 \bullet b_1) \oplus (a_0 \bullet b_2) \oplus (a_3 \bullet b_3) \\
+&=&\{0e\} \oplus \{09\} \oplus \{1a\} \oplus \{1d\} \\
+&=& \{00001110\} \oplus \{00001001\} \oplus \{00011010\} \oplus \{00011101\} \\
+&=& 0 \\
+d_3&=&(a_3 \bullet b_0) \oplus (a_2 \bullet b_1) \oplus (a_1 \bullet b_2) \oplus (a_0 \bullet b_3) \\
+&=&\{03\} \bullet \{0e\} \oplus \{01\} \bullet \{09\} \oplus \{01\} \bullet \{0d\} \oplus \{02\} \bullet \{0b\} \\
+&=&\{12\} \oplus \{09\} \oplus \{0d\} \oplus \{16\} \\
+&=&\{00010010\} \oplus \{00001001\} \oplus \{00001101\} \oplus \{00010110\} \\
+&=& 0
+\end{array}
+$$
+\end{document}

@@ -1,0 +1,24 @@
+4.3.4
+
+
+
+Modulus (2048 bits):
+b3 de 8f c6 b8 46 81 d5 72 c2 87 4c 45 f8 2a a2 
+e0 89 b2 6c 0b 6c de b0 94 b2 7a 28 49 40 34 13 
+ee 6d 7e d4 f7 13 43 81 a4 57 b4 a1 24 9b a9 fa 
+af 39 1d 85 61 b2 48 cd d8 e7 11 9c c0 f8 42 85 
+c1 75 d3 19 b9 9f 58 0c 11 61 33 0c b8 bc 59 20 
+18 b2 93 d2 0c e9 c4 20 b9 ed a7 e0 85 e9 f4 52 
+f0 91 e4 2c 7c d7 d5 0e c2 e1 43 b5 3e 6c a1 b9 
+da 39 d5 e2 dd 52 b7 bf 51 07 d8 aa 80 dc ef 45 
+1a b8 7a 59 67 69 68 52 07 39 fd 1f b6 8c d9 ac 
+bb 8e c8 cb f8 98 40 68 ff f2 b3 22 b7 a7 24 e8 
+7d ab 47 2d 38 c6 18 0c 7f 97 8a 62 c1 1a 60 87 
+ce 95 83 d5 46 ff 1a ed 07 60 a2 86 96 d5 d9 bf 
+32 76 7b ef 88 dc f0 7b 4f 15 51 6b 59 4c 0e 4d 
+7d fb 7c 2b 4a 2d a0 d6 47 48 6f fa 83 c0 36 bb 
+c7 a4 6b 29 78 da ba a9 23 fd e6 d6 d6 66 89 27 
+d9 11 68 f9 92 5d 6c 1b 61 44 e9 5f 04 da 8d d3 
+
+Exponent (24 bits):
+65537
