@@ -22,8 +22,7 @@
 </blockquote>   
 
 <li><a href="#dp">Differential Privacy</a></li>    
-    
-<li><a href="#textbooks">Textbooks</a></li>    
+<li><a href="#survey">Surveys</a></li>    
 <li><a href="#courses">Courses</a></li>
     
 </ul>
@@ -38,7 +37,7 @@ The papers are loosely categorized and the list is not comprehensive.
     
 <hr/>    
 <a name="analytics"></a>
-<h2>Secure Data Analytics</h2>
+<h2>Encrypted Data Analytics</h2>
 <a name="olap"></a>
 <b><u>OLAP</u></b><br><br>
 <ul>   
@@ -67,7 +66,10 @@ The papers are loosely categorized and the list is not comprehensive.
         <a href="readings/secure_stream/docs/p348-stephen.pdf" target="_blank"> [Paper]</a>
         <ul>
             <li>
-                Problem statement: 
+                Summary: first stream processing system with PHE.
+            </li>            
+            <li>
+                Problem statement:  
             </li>
             <li>
                 Solution: 
@@ -76,7 +78,10 @@ The papers are loosely categorized and the list is not comprehensive.
                 Novelty: 
             </li>  
             <li>
-                Limitation/Potential Improvements: 
+                Limitation/Potential Improvements: the size of the ciphertexts
+                grows with each homomorphic operation and hence the maximum number of allowed
+                homomorphic operations is limited. These issues put a limit on the use of PHE and
+                SWHE schemes in real-life applications.
             </li>             
         </ul>     
     </li>          
@@ -108,7 +113,27 @@ The papers are loosely categorized and the list is not comprehensive.
                 Limitation/Potential Improvements: 
             </li>              
         </ul>          
-    </li>          
+    </li>  
+    <li>SecureStreams: A Reactive Middleware Framework for Secure Data Stream Processing, DEBS'17. 
+       <a href="readings/secure_stream/docs/1805.01752.pdf" target="_blank"> [Paper]</a>
+        <ul>
+            <li>
+                Summary: this paper described a stream processing engine utilizing Intel SGX enclave. To resolve the limitation of enclave size, the system is built based on LuaVM (few KB).
+            </li>
+            <li>
+                Problem statement: 
+            </li>
+            <li>
+                Solution: 
+            </li>
+            <li>
+                Novelty: 
+            </li>   
+            <li>
+                Limitation/Potential Improvements: 
+            </li>              
+        </ul>          
+    </li>        
 </ul>    
 
 <hr/>    
@@ -134,6 +159,19 @@ The papers are loosely categorized and the list is not comprehensive.
     </li>          
 </ul>       
     
+<hr/>    
+<a name="survey"></a>
+<h2>Surveys</h2>
+<ul>   
+    <li>A Survey on Homomorphic Encryption Schemes: Theory and Implementation. CSUR'18. 
+       <a href="readings/secure_stream/docs/a79-acar.pdf" target="_blank"> [Paper]</a>
+        <ul>
+            <li>
+                Summary: 
+            </li>          
+        </ul>          
+    </li>          
+</ul>  
     
 <hr/>    
 <div class="disclaimer">
