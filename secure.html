@@ -45,19 +45,20 @@ The papers are loosely categorized and the list is not comprehensive.
         <a href="readings/secure_stream/docs/popa_etal_sosp_2011.pdf" target="_blank"> [Paper]</a>
         <ul>
             <li>
-                Problem statement: 
-            </li>
-            <li>
-                Solution: 
-            </li>
-            <li>
-                Novelty: 
-            </li>  
-            <li>
-                Limitation/Potential Improvements: 
-            </li>             
+                Summary:
+            </li>            
         </ul>     
-    </li>          
+    </li>    
+    <li>Secure Skyline Queries on Encrypted Data. ICDE'17, TKDE'18. 
+        <a href="readings/secure_stream/docs/07930013.pdf" target="_blank"> [Paper_ICDE]</a>        
+        <a href="readings/secure_stream/docs/1806.01168.pdf" target="_blank"> [Paper_TKDE]</a>
+        <a href="readings/secure_stream/docs/14_outsourcing_skyline.pdf" target="_blank"> [Slides]</a>
+        <ul>
+            <li>
+                Summary:
+            </li>            
+        </ul>     
+    </li>    
 </ul>    
 <a name="stream"></a>
 <b><u>Stream Processing</u></b><br><br>
@@ -68,15 +69,6 @@ The papers are loosely categorized and the list is not comprehensive.
             <li>
                 Summary: first stream processing system with PHE.
             </li>            
-            <li>
-                Problem statement:  
-            </li>
-            <li>
-                Solution: 
-            </li>
-            <li>
-                Novelty: 
-            </li>  
             <li>
                 Limitation/Potential Improvements: the size of the ciphertexts
                 grows with each homomorphic operation and hence the maximum number of allowed
@@ -90,25 +82,27 @@ The papers are loosely categorized and the list is not comprehensive.
         <ul>
             <li>
                 Summary:  
-            </li>            
-            <li>
-                Problem statement:  
-            </li>
-            <li>
-                Solution: 
-            </li>
-            <li>
-                Novelty: 
-            </li>  
-            <li>
-                Limitation/Potential Improvements:
-            </li>             
+            </li>                       
         </ul>     
     </li>     
 </ul> 
 <hr/>    
 <a name="tee"></a>
 <h2>Trusted Execution Environment</h2>
+<a name="application"></a>
+<b><u>TEE application</u></b><br><br>    
+   
+<ul>   
+    <li>SCONE: Secure Linux Containers with Intel SGX. OSDI'16. 
+       <a href="readings/secure_stream/docs/osdi16-arnautov.pdf " target="_blank"> [Paper]</a>
+        <ul>
+            <li>
+                Summary:
+            </li>             
+        </ul>          
+    </li> 
+</ul>    
+    
 <a name="minimization"></a>
 <b><u>TCB minimization</u></b><br><br>
 <ul>   
@@ -119,19 +113,7 @@ The papers are loosely categorized and the list is not comprehensive.
             <li>
                 Summary: this paper described a stream processing engine aimed at running on edge with ARM trustZone. 
                 Input and output data are always stated in trustzone.
-            </li>
-            <li>
-                Problem statement: 
-            </li>
-            <li>
-                Solution: 
-            </li>
-            <li>
-                Novelty: 
-            </li>   
-            <li>
-                Limitation/Potential Improvements: 
-            </li>              
+            </li>            
         </ul>          
     </li>  
     <li>SecureStreams: A Reactive Middleware Framework for Secure Data Stream Processing, DEBS'17. 
@@ -139,45 +121,45 @@ The papers are loosely categorized and the list is not comprehensive.
         <ul>
             <li>
                 Summary: this paper described a stream processing engine utilizing Intel SGX enclave. To resolve the limitation of enclave size, the system is built based on LuaVM (few KB).
-            </li>
-            <li>
-                Problem statement: 
-            </li>
-            <li>
-                Solution: 
-            </li>
-            <li>
-                Novelty: 
-            </li>   
-            <li>
-                Limitation/Potential Improvements: 
-            </li>              
+            </li>            
         </ul>          
-    </li>        
+    </li>
+    <li>Mitigating Network Side Channel Leakage for Stream Processing Systems in Trusted Execution Environments, DEBS'18. 
+       <a href="readings/secure_stream/docs/p16-Bilal.pdf" target="_blank"> [Paper]</a>
+        <ul>
+            <li>
+                Summary: 
+            </li>            
+        </ul>          
+    </li>    
+    
+    
 </ul>    
 
 <hr/>    
 <a name="dp"></a>
-<h2>Differential Privacy</h2>
+<h2>Differential Privacy/Federated Stream Processing</h2>
 <ul>   
     <li>PeGaSus: Data-Adaptive Differentially Private Stream Processing. CCS'17. 
        <a href="readings/secure_stream/docs/Chen-PeGaSus-CCS2017-final.pdf" target="_blank"> [Paper]</a>
         <ul>
             <li>
-                Problem statement: 
-            </li>
-            <li>
-                Solution: 
-            </li>
-            <li>
-                Novelty: 
-            </li>   
-            <li>
-                Limitation/Potential Improvements: 
-            </li>             
+                Summary: 
+            </li>          
         </ul>          
     </li>          
 </ul>       
+<ul>   
+    <li>THEMIS: Fairness in Federated Stream Processing under Overload. SIGMOD'16. 
+       <a href="readings/secure_stream/docs/p541-kalyvianaki.pdf" target="_blank"> [Paper]</a>
+        <ul>
+            <li>
+                Summary: 
+            </li>          
+        </ul>          
+    </li>          
+</ul>
+    
     
 <hr/>    
 <a name="survey"></a>
@@ -190,14 +172,20 @@ The papers are loosely categorized and the list is not comprehensive.
                 Summary: 
             </li>          
         </ul>          
-    </li>          
+    </li> 
+    <li>Homomorphic Encryption for Secure Elastic Data Stream Processing. Online 2019. 
+       <a href="https://www.infosecurity-magazine.com/opinions/homomorphic-encryption-elastic-1-1-1/" target="_blank"> [Paper]</a>
+        <ul>
+            <li>
+                Summary: 
+            </li>          
+        </ul>          
+    </li>       
 </ul>  
+    
     
 <hr/>    
 <div class="disclaimer">
-    <P align="center">  
-        <img src="readings/image/How%20to%20find%20idea.png" alt="Italian Trulli" width="400"  draggable="auto" style="float: left"> 
-    </P>
     <p>
     <b>Disclaimer</b>: This reading list is presented to ensure timely dissemination of scholarly and technical work. Copyright and all rights therein are retained by authors or by other copyright holders (e.g., ACM and IEEE).
     </p>
