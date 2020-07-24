@@ -1,17 +1,45 @@
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video 
-{
-border:10;
-font:inherit;
-font-size:100%;
-margin-left: 30px;
-margin-right: 30px;
-margin-bottom: 0px;
-padding:0;
-vertical-align:baseline;
-} 
-
- 
 sup {font-size:small; vertical-align:super;}
+
+html, body {
+    background: #f3f3f3; 
+    font-family: 'Lato', helvetica, arial, sans-serif; font-size: 1em; color: #222;
+}
+
+tbody {
+	font-size: 1em; 
+}
+body {
+	margin-left: 150px;
+	margin-right: 150px;
+	width: 75%;
+}
+h1 {
+	font-size: 1.5em;
+	font-weight: 700;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	margin-bottom: -16px;
+}
+
+h2 {
+	font-size: 1.4em;
+	margin-left: 2px;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	margin-bottom: -16px;
+}
+
+h3 {
+	font-size: 1.3em;
+	margin-left: 2px;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	margin-bottom: -1px;
+}
+
+p {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	margin-bottom: 0px;
+	color: #444;
+}
 
 strong{
  font-weight:bold;   
@@ -21,10 +49,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 display:block;
 }
 
-html, body {
-    background: #f3f3f3; 
-    font-family: 'Lato', helvetica, arial, sans-serif; font-size: 20px; color: #222;
-}
 
 .clear {clear: both;}
 
@@ -32,12 +56,7 @@ html, body {
   color: red;
 }
 
-p {
-	font-size: 1em;
-	line-height: 1.2em;
-	margin-bottom: 0px;
-	color: #444;
-}
+
 
 #cv {
 	width: 90%;
@@ -52,19 +71,6 @@ p {
 	background: #ededed;
 }
 
-#name h1 {
-	font-size: 2.5em;
-	font-weight: 700;
-	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
-	margin-bottom: -26px;
-}
-
-#name h2 {
-	font-size: 2em;
-	margin-left: 2px;
-	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
-	margin-bottom: -26px;
-}
 
 #mainArea {
 	padding: 0 40px;
@@ -98,7 +104,7 @@ p {
 }
 
 #contactDetails ul li {
-	margin-bottom: 3px;
+	margin-bottom: 2px;
 	color: #444;
 }
 
