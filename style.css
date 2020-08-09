@@ -15,6 +15,8 @@ pre {
     line-height: 1.5;
 }
  
+.invisiable {display: none;}
+ 
 body {
 	margin-left: 150px;
 	margin-right: 150px;
