@@ -10,7 +10,7 @@ profile:
   address: >
     <p>EN7 Room 721</p>
     <p>Einsteinufer 17</p>
-    <p>Technische Universität Berlin, 10587 Berlin Germany</p>
+    <p>TU Berlin</p>
 
 news: true
 social: true
