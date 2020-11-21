@@ -9,7 +9,8 @@
 	doi          = {10.1109/ICDE48307.2020.00136},
 	pdf          = {papers/profile.pdf},
 	abstract     = {Recent data stream processing systems (DSPSs) can achieve excellent performance when processing large volumes of data under tight latency constraints. However, they sacrifice support for concurrent state access that eases the burden of developing stateful stream applications. Recently, some have proposed managing concurrent state access during stream processing by modeling state accesses as transactions. However, these are realized with locks involving serious contention overhead. The coarse-grained processing paradigm adopted in these proposals magnify contention issues and does not exploit modern multicore architectures to their full potential. This paper introduces TStream, a novel DSPS supporting efficient concurrent state access on multicore processors. Transactional semantics is employed like previous work, but scalability is greatly improved due to two novel designs: 1) dual-mode scheduling, which exposes more parallelism opportunities, 2) dynamic restructuring execution, which aggressively exploits the parallelism opportunities from dual-mode scheduling without centralized lock contentions. To validate our proposal, we evaluate TStream with a benchmark of four applications on a modern multicore machine. Experimental results show that 1) TStream achieves up to 4.8 times higher throughput with similar processing latency compared to the state-of-the-art and 2) unlike prior solutions, TStream is highly tolerant of varying application workloads such as key skewness and multi-partition state accesses.},
-	slides       = {talks/tstream_icde.pdf}
+	slides       = {talks/tstream_icde.pdf},
+    code ={https://github.com/Xtra-Computing/briskstream/tree/TStream}
 }
 @article{OJIOT_2020v6i1n07_Zeuch,
 	title        = {NebulaStream: Complex Analytics Beyond the Cloud},
