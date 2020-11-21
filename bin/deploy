@@ -7,6 +7,11 @@ set -e
 
 echo "Started deploying"
 
+# Update master branch.
+git add .
+git commit -m "update"
+git push
+
 # Checkout gh-pages branch.
 if [ `git branch | grep gh-pages` ]
 then
