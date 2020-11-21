@@ -10,7 +10,7 @@
 	pdf          = {papers/tstream.pdf},
 	abstract     = {Recent data stream processing systems (DSPSs) can achieve excellent performance when processing large volumes of data under tight latency constraints. However, they sacrifice support for concurrent state access that eases the burden of developing stateful stream applications. Recently, some have proposed managing concurrent state access during stream processing by modeling state accesses as transactions. However, these are realized with locks involving serious contention overhead. The coarse-grained processing paradigm adopted in these proposals magnify contention issues and does not exploit modern multicore architectures to their full potential. This paper introduces TStream, a novel DSPS supporting efficient concurrent state access on multicore processors. Transactional semantics is employed like previous work, but scalability is greatly improved due to two novel designs: 1) dual-mode scheduling, which exposes more parallelism opportunities, 2) dynamic restructuring execution, which aggressively exploits the parallelism opportunities from dual-mode scheduling without centralized lock contentions. To validate our proposal, we evaluate TStream with a benchmark of four applications on a modern multicore machine. Experimental results show that 1) TStream achieves up to 4.8 times higher throughput with similar processing latency compared to the state-of-the-art and 2) unlike prior solutions, TStream is highly tolerant of varying application workloads such as key skewness and multi-partition state accesses.},
 	slides       = {talks/tstream_icde.pdf},
-    code ={https://github.com/Xtra-Computing/briskstream/tree/TStream}
+	code         = {https://github.com/Xtra-Computing/briskstream/tree/TStream}
 }
 @article{OJIOT_2020v6i1n07_Zeuch,
 	title        = {NebulaStream: Complex Analytics Beyond the Cloud},
@@ -28,9 +28,9 @@
 }
 @inproceedings{Zhang2020PewLSTM,
 	title        = {PewLSTM: Periodic LSTM with Weather-Aware Gating Mechanism for Parking Behavior Prediction},
-	author       = {Feng Zhang, Ningxuan Feng, Yani Liu, Cheng Yang, Jidong Zhai, Shuhao Zhang, Bingsheng He, Jiazao Lin, Xiaoyong Du},
+	author       = {Feng Zhang and Ningxuan Feng and Yani Liu and Cheng Yang and Jidong Zhai and Shuhao Zhang and Bingsheng He and Jiazao Lin and Xiaoyong Du},
 	year         = 2020,
-	booktitle   = {International Joint Conference on Artificial Intelligence(IJCAI)},
+	booktitle    = {International Joint Conference on Artificial Intelligence(IJCAI)},
 	abstract     = {In big cities, there are plenty of parking spaces, but we often find nowhere to park. For example, New York has 1.4 million cars and 4.4 million on-street parking spaces, but it is still not easy to find a parking place near our destination, especially during peak hours. The reason is the lack of prediction of parking behavior. If we could provide parking behavior in advance, we can ease this parking problem that affects human well-being. We observe that parking lots have periodic parking patterns, which is an important factor for parking behavior prediction. Unfortunately, existing work ignores such periodic parking patterns in parking behavior prediction, and thus incurs low accuracy. To solve this problem, we propose PewLSTM, a novel periodic weather-aware LSTM model that successfully predicts the parking behavior based on historical records, weather, environments, and weekdays. PewLSTM has been successfully integrated into a real parking space reservation system, ThsParking, which is one of the top smart parking platforms in China. Based on 452,480real parking records in 683 days from 10 parking lots, PewLSTM yields 85.3% parking prediction accuracy, which is about 20% higher than the state-of-the-art parking behavior prediction method. The code and data can be obtained fromhttps://github.com/NingxuanFeng/PewLSTM.}
 }
 @inproceedings{254469,
@@ -89,8 +89,8 @@
 	abstract     = {We introduce BriskStream, an in-memory data stream processing system (DSPSs) specifically designed for modern shared-memory multicore architectures. BriskStream's key contribution is an execution plan optimization paradigm, namely RLAS, which takes relative-location (i.e., NUMA distance) of each pair of producer-consumer operators into consideration. We propose a branch and bound based approach with three heuristics to resolve the resulting nontrivial optimization problem. The experimental evaluations demonstrate that BriskStream yields much higher throughput and better scalability than existing DSPSs on multi-core architectures when processing different types of workloads.},
 	numpages     = 18,
 	keywords     = {numa-awareness, operator replication and placement},
-    pdf          = {papers/briskstream.pdf},
-    code         = {https://github.com/Xtra-Computing/briskstream}
+	pdf          = {papers/briskstream.pdf},
+	code         = {https://github.com/Xtra-Computing/briskstream}
 }
 @inproceedings{7930061,
 	title        = {Multi-Query Optimization for Complex Event Processing in SAP ESP},
@@ -101,7 +101,7 @@
 	number       = {},
 	pages        = {1213--1224},
 	doi          = {10.1109/ICDE.2017.166},
-    pdf          = {papers/MOTTO.pdf},
+	pdf          = {papers/MOTTO.pdf}
 }
 @inproceedings{7930015,
 	title        = {Revisiting the Design of Data Stream Processing Systems on Multi-Core Processors},
@@ -112,7 +112,7 @@
 	number       = {},
 	pages        = {659--670},
 	doi          = {10.1109/ICDE.2017.119},
-    pdf          = {papers/profile.pdf},
+	pdf          = {papers/profile.pdf}
 }
 @inproceedings{7877153,
 	title        = {Elastic Multi-resource Fairness: Balancing Fairness and Efficiency in Coupled CPU-GPU Architectures},
