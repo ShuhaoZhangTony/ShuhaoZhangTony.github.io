@@ -1,0 +1,10 @@
+\begin{thebibliography}{1}
+
+\bibitem{profile}
+\textbf{Shuhao Zhang}, B.~He, D.~Dahlmeier, A.~C. Zhou, and T.~Heinze.
+\newblock Revisiting the design of data stream processing systems on multi-core
+  processors.
+\newblock In {\em Data Engineering (ICDE), 2017 IEEE 33rd International
+  Conference on}, pages 659--670. IEEE, 2017.
+
+\end{thebibliography}

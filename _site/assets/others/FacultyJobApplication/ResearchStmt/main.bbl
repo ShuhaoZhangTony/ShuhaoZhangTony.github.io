@@ -1,0 +1,40 @@
+\begin{thebibliography}{1}
+
+\bibitem{profile}
+\textbf{Shuhao Zhang}, B.~He, D.~Dahlmeier, A.~C. Zhou, and T.~Heinze.
+\newblock Revisiting the design of data stream processing systems on multi-core
+  processors.
+\newblock In {\em Data Engineering (ICDE), 2017 IEEE 33rd International
+  Conference on}, pages 659--670. IEEE, 2017.
+
+\bibitem{zhang2018efficient}
+\textbf{Shuhao Zhang}, B.~He, and D.~H.~R. Dahlmeier.
+\newblock Efficient execution of data stream processing systems on multi-core
+  processors, May~10 2018.
+\newblock US Patent App. 15/348,932.
+
+\bibitem{briskstream}
+\textbf{Shuhao Zhang}, J.~He, A.~C. Zhou, and B.~He.
+\newblock {Briskstream: Scaling Data Stream Processing on Multicore
+  Architectures}.
+\newblock In {\em Proceedings of the 2019 International Conference on
+  Management of Data}, SIGMOD '19, Amsterdam, Netherlands, 2019. ACM.
+
+\bibitem{motto}
+\textbf{Shuhao Zhang}, H.~T. Vo, D.~Dahlmeier, and B.~He.
+\newblock Multi-query optimization for complex event processing in sap esp.
+\newblock In {\em 2017 IEEE 33rd International Conference on Data Engineering
+  (ICDE)}, pages 1213--1224. IEEE, 2017.
+
+\bibitem{zhang2018multi}
+\textbf{Shuhao Zhang}, H.~T. Vo, D.~H.~R. Dahlmeier, and B.~He.
+\newblock Multi-query optimizer for complex event processing, Apr.~24 2018.
+\newblock US Patent 9,953,056.
+
+\bibitem{tstream}
+\textbf{Shuhao Zhang}, Y.~Wu, F.~Zhang, and B.~He.
+\newblock Scaling consistent stateful stream processing on shared-memory
+  multicore architectures.
+\newblock (Under review) 2019.
+
+\end{thebibliography}

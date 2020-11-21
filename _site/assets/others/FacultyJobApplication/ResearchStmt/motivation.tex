@@ -1,0 +1,31 @@
+%%Introduce history of DSPSs.
+%Most existing DSPSs are designed and optimized for \emph{scaling out} using a cluster of low-end machines. 
+%In particular, substantial research efforts have been devoted on providing mechanisms to handle the inherent challenges from the distributed environment settings, such as dueling with network communication overhead~\cite{T-storm,Adaptive,pietzuch2006network}, fault-tolerance~\cite{DBLP:conf/icde/WuT15, SparkStreaming,seep,flinkstate} and elastic scaling~\cite{Elastic,Heinze2014}.
+Despite the successes achieved during the last several decades, 
+DSPSs are now facing great challenges when supporting a wide range of emerging applications, 
+which generally require the underlying DSPSs to achieve low end-to-end latency when processing huge volumes of data with complex computation and intensive state access. 
+Witnessing the emergence of modern commodity machines with massively parallel processors, researchers and practitioners find shared-memory multicore architectures an attractive platform for DSPSs. 
+However, fully exploiting the computation power delivered by multicore architectures are still challenging.
+
+%One potential weakness of today's DSPS
+
+
+
+%For example, any unpredictable latency spikes (e.g., in traditional tcp/ip network) can cause serious issues in applications such as hospital infection-control monitoring and online credit fault detection. 
+%%Introduce and Motivate in-Memory DSPSs.
+%Witnessing the emergence of modern commodity machines with massively parallel processors, researchers and practitioners find shared-memory multicore architectures an attractive alternative platform~\cite{profile,ingestion17}, and several in-memory single-node DSPSs are recently proposed~\cite{SABER,StreamBox,brisk}. 
+%One of the key benefits of single-node DSPSs is the completely avoidance of network communication latency among multi-node inside the DSPSs. 
+%In addition to that, several heavyweight components, such as (de)serialization can be completely avoided, which both simplify the system development and improve execution efficiency.
+%Furthermore, optimizing the performance of stream processing on a single-node is critical even in a distributed configuration for an obvious reason -- it reduces the number of machines required to achieve the same performance objective.
+%Challenges of using modern hardware in DSPSs.
+%Thanks to the great achievements made in the hardware community, modern commodity machines nowadays are equipped with massively parallel processors and larger memory capacity and demonstrated superior performance for real-world applications.
+%~\cite{appuswamy2013scale}. 
+%For example, recent \emph{scale-up} servers can accommodate even hundreds of CPU cores and multi-terabytes of memory
+%%~\cite{sgi} 
+%providing abundant computing resources and emerging technologies such as Remote Direct Memory Access (RDMA) and 10Gb Ethernet significantly improve system ingress rate making I/O no longer a bottleneck in many practical scenarios.
+%%~\cite{StreamBox,ingestion17}. 
+
+%On one hand, the on-chip cache hierarchies that support large core counts are getting larger, deeper, and more complex to utilize.
+%Furthermore, as modern machines scale to multiple sockets, non-uniform memory access (NUMA) becomes an important performance factor for data management systems.
+%%(e.g.,~\cite{Leis:2014:MPN:2588555.2610507,LiPMRL13}). 
+%On the other hand, little work has been done on studying common design aspects of modern DSPSs on shared-memory multicore architectures. 

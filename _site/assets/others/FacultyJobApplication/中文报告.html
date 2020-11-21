@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43623054-2"></script>
+  <meta name="description" content="Homepage of Shuhao Zhang" />
+  <meta name="keywords" content="Shuhao Zhang, Homepage" />
+  <meta name="google-site-verification" content="EQ3LSYzYnDPhYksfjtB7Xowm76SWWCh6HdbmKGaUwSw"/>
+  
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Shuhao Zhang</title>
+  <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+  <link rel="shortcut icon" href="http://localhost:4000/assets/img/logo.png">
+
+  <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/assets/others/FacultyJobApplication/%E4%B8%AD%E6%96%87%E6%8A%A5%E5%91%8A.html">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    
+    <span class="site-title">
+        
+        <strong>Shuhao</strong> Zhang
+    </span>
+    
+
+    <nav class="site-nav">
+
+      <div class="trigger">
+        <!-- Home -->
+        <a class="page-link" href="http://localhost:4000/">Home</a>
+
+        <!-- News -->
+        <a class="page-link" href="http://localhost:4000/news/">News</a>
+
+        <!-- Pages -->
+        
+          
+        
+          
+            <a class="page-link" href="http://localhost:4000/Jobs/">Jobs</a>
+          
+        
+          
+            <a class="page-link" href="http://localhost:4000/Projects/">Projects</a>
+          
+        
+          
+            <a class="page-link" href="http://localhost:4000/publications/">publications</a>
+          
+        
+          
+            <a class="page-link" href="http://localhost:4000/Service/">Service</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+        <!-- CV link -->
+        <!-- <a class="page-link" href="http://localhost:4000/assets/pdf/CV.pdf">vitae</a> -->
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+    <h5 class="post-description"></h5>
+  </header>
+
+  <article class="post-content  clearfix">
+    <p>在多核架构上的数据流处理优化</p>
+
+<p>数据流处理系统（DSPS）使用户能够轻易表达和运行流应用程序以连续处理数据流。近期，大量研究人员和从业人员见证了带有大规模多核处理器的现代商品机器的兴起，然而当前主流的数据流处理系统如Apache Storm，Apache Flink并不能有效利用这些多核处理器，进而造成大量计算资源浪费，因此多核架构上优化数据流处理是一项迫在眉睫的任务。
+然而，充分利用多核体系结构提供的计算能力是一项公认的难题，于现代多核体系结构上有效运行DSPS将会是一个严峻的挑战，这是因为不同DSPS组件可能会遭遇不同的复杂的性能瓶颈。</p>
+
+<p>于过去几年里，我们提出了针对多核架构上的高性能流处理的DSPS的全新的实验评测，设计和实现方法。在这次报告中，我将主要讲解其中两个工作，分别发表于ICDE 2017 和 SIGMOD 2019。
+首先，由于现代DSPS主要是针对使用低端服务器集群进行横向扩展而设计和优化，我们因此对主流的DSPS（例如Apache Storm，Flink）在多核架构上进行了全面的性能评测，并尝试确定当前的系统设计与实现是否能与现代硬件相匹配（例如非均匀内存访问–即NUMA的影响）。
+随后，我们的详细性能分析研究表明，导致现有的DSPS不能充分利用多核架构的主要原因有两个。一是其不适当的资源管理，二是其系统设计对非均匀内存访问架构的忽视。
+因此，我们设计并实现了下一代流处理平台（即BriskStream），该平台专门针对共享内存多核体系结构进行了大量优化。我们提出了一种新颖的NUMA感知执行计划优化方案，即相对位置感知调度（RLAS），以解决NUMA对流计算的影响。实验结果表明，在相同的硬件资源下，我们的新型流处理平台充分利用硬件资源，并使其性能超过当前主流的数据流计算平台一个数量级。</p>
+
+  </article>
+
+  
+
+  
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+
+  <div class="wrapper">
+    &copy; Copyright 2020 Shuhao Zhang.
+    
+    
+  </div>
+
+</footer>
+
+
+    <!-- Load jQuery -->
+<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<!-- Load Common JS -->
+<script src="http://localhost:4000/assets/js/common.js"></script>
+
+
+<!-- Load KaTeX -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
+<script src="http://localhost:4000/assets/js/katex.js"></script>
+
+
+
+
+<!-- Include custom icon fonts -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/academicons.min.css">
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-XXXXXXXX-X', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+  </body>
+
+</html>

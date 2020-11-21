@@ -1,0 +1,84 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: researchStmt.aux
+The style file: abbrv.bst
+Database file #1: sigproc.bib
+You're missing a field name---line 11 of file sigproc.bib
+ :  
+ :  % pages={77--86},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 27 of file sigproc.bib
+ :  
+ :  % volume={5},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 50 of file sigproc.bib
+ : 
+ : %  year={2014},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 56 of file sigproc.bib
+ :  
+ :  %author = {Transactions, Serializable Acid and Data, Streaming},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 62 of file sigproc.bib
+ : 
+ : %URL = {http://storm.apache.org/},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 69 of file sigproc.bib
+ :  
+ :  %url= {https://flink.apache.org/},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 137 of file sigproc.bib
+ : 
+ : %  keywords = {concurrency control, in-memory database, multicore, transaction processing},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty booktitle in tstream
+Warning--empty booktitle in nebulastream
+You've used 9 entries,
+            2118 wiz_defined-function locations,
+            550 strings with 5846 characters,
+and the built_in function-call counts, 4033 in all, are:
+= -- 381
+> -- 247
+< -- 4
++ -- 98
+- -- 88
+* -- 275
+:= -- 636
+add.period$ -- 31
+call.type$ -- 9
+change.case$ -- 71
+chr.to.int$ -- 0
+cite$ -- 11
+duplicate$ -- 158
+empty$ -- 285
+format.name$ -- 88
+if$ -- 873
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 7
+newline$ -- 48
+num.names$ -- 18
+pop$ -- 102
+preamble$ -- 1
+purify$ -- 62
+quote$ -- 0
+skip$ -- 126
+stack$ -- 0
+substring$ -- 164
+swap$ -- 60
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 36
+warning$ -- 2
+while$ -- 27
+width$ -- 10
+write$ -- 102
+(There were 7 error messages)
