@@ -1,0 +1,60 @@
+
+\paragraph{Research Agenda\\}
+The trend of more radical performance demand, complex analytics, and intensive state access have accelerated the development of next-generation data stream processing systems (DSPSs)~\cite{profile,briskstream,tstream}. 
+Beyond what I have previously described, there are a number of emerging issues in data stream processing that we shall pay more attention to.
+
+The Internet of Things (IoT) presents a novel computing architecture for data management. 
+In such context, the ability to scale both out and up is crucial to effectively improve performance by orders of magnitude. 
+How to use the more and more heterogeneous devices in the present of millions distributed entities remains unclear today.
+My short term plan (2$\sim$3 years)  is hence to collaborate with my current postdoc advisor, Prof. Markl Volker (TU Berlin) to investigate the future stream processing system~\cite{nebulastream} designed for the IoT environment. 
+Specifically, I plan to explore questions such as:
+
+\begin{myenumerate}
+\item \textbf{Privacy and security.}
+In an IoT environment, data processing at the edge is highly exposed to security threats, e.g., a sensor may be hacked. 
+Intel SGX is one of the popular Trusted Execution Environment (TEE) implementations, which may help to provide security guarantees to edge processing. 
+The first step is to investigate the designing of important stream operations (e.g., filter, projection, windowing) running based on Intel SGX. 
+
+\emph{The potential long term goal of this direction is a redesign towards more secure data processing platforms in the context of IoT environment~\cite{streamboxtz}.}
+%To this end, we will implement and evaluate few stream operations (e.g., filter, projection, windowing) running based on Intel SGX.
+
+\item \textbf{Transactional state management.}
+Recent DSPSs can achieve excellent performance when processing large volumes of data under tight latency constraints. However, they sacrifice support for concurrent state access that eases the burden of developing stateful stream applications. One of the promising ways of managing concurrent state access during stream processing is to model state accesses as transactions. 
+My current result~\cite{tstream} successfully achieves orders of magnitude improvement over the state of the art on shared-memory multicore processors. However, many questions are still remain unsolved, such as how to achieve the same performance improvement in the context of distributed environment. 
+Another potential weakness is its persistency from crash failures. 
+In contrast to traditional database, stream processing often needs to preserve event process ordering. 
+How to efficiently provide high concurrency and fast durability to DSPSs while preserve event process ordering remains a non-trivial question.
+
+\emph{The potential long term goal of this direction is a redesign towards a more reliable and deterministic transactional data stream processing system.}
+
+\item \textbf{Machine learning and Data Mining.}
+%Needs and opportunities for machine learning over fast data
+%streams are stimulated by a rapidly growing
+%number of industrial, transactional, sensor and
+%other applications. 
+%Beyond online interference,
+The principal task of online machine learning is to learn a concept incrementally by processing labeled training examples one at a time. 
+%After
+%each data instance, we can update the model,
+%after which the instance is discarded. 
+Although the massively parallel processors of modern hardware provides the opportunities in providing very fast training process, there is little work on exploring how to accelerate future DSPSs in supporting real-time machine learning activities. 
+Fast data exploration has also received many attentions recently~\cite{8919445}. 
+It aims to present users preliminary results as fast as possible in order to improve user interactivity. 
+However, little works or systems are able to achieve pleasant results, there are still huge potential to explore. For example, how to answer applications with user-defined functions quick remains an open question.
+
+\emph{The potential long term goal of this direction is a redesign towards a more functional and convenient data stream processing system that supports online machine learning and fast data exploration.}
+
+%We hence foresee its potential in
+%accelerating future DSPSs in supporting continuous
+%machine learning.
+
+%\item 
+%Scaling stream processing on modern hardware has received many attentions recently.
+%A potential weakness, however, is its persistency from crash failures. 
+%In contrast to traditional database, stream processing often needs to preserve event process ordering. 
+%How to efficiently provide high concurrency and fast durability to DSPS while preserve event process ordering seems a non-trivial question. 
+%\item 
+%There is increasing interest in using multicore processors to accelerate stream processing.
+%In particular, there are many past works on using multicore, GPGPU, FPGA to accelerate streaming window joins. 
+%Streaming window aggregation is also computationally expensive, but receives insufficient attention in accelerating its performance by utilizing modern hardware. 
+\end{myenumerate}

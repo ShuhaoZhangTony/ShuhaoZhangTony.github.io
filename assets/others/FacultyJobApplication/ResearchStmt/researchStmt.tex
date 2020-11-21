@@ -1,0 +1,162 @@
+\documentclass[11pt]{article}
+\let\proof\relax
+\let\endproof\relax
+\let\example\relax
+\let\endexample\relax
+\usepackage[final]{pdfpages}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+
+\usepackage{multirow}
+\usepackage{color}
+%\usepackage{epstopdf}
+\usepackage{graphicx}
+%\usepackage[export]{adjustbox}
+\graphicspath{{./figure/}}
+\usepackage{balance}
+\usepackage{subfig}
+%\usepackage{subcaption}
+%\usepackage{subfigure}
+\usepackage{hyperref} %so that we can use \url{URL}
+%\newdef{definition}{Definition}
+%\usepackage[linesnumbered,ruled,vlined,noend]{algorithm2e}% http://ctan.org/pkg/algorithm2e
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage[]{algpseudocode}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{{#1}}}
+\SetCommentSty{mycommfont}
+\usepackage{etoolbox}
+\usepackage{adjustbox}
+%\usepackage{subcaption}
+%\setcopyright{rightsretained}
+%\acmConference[SIGMOD '19] {2019 International Conference on Management of Data}{June 30--July 5, 2019}{Amsterdam, Netherlands}
+%\acmBooktitle{2019 International Conference on Management of Data (SIGMOD '19), June 30--July 5, 2019, Amsterdam, Netherlands}
+%\acmYear{2019}
+%\copyrightyear{2019}
+
+\newcommand{\var}[1]{\text{\texttt{#1}}}
+\newcommand{\func}[1]{\text{\textsl{#1}}}
+ 
+\newcommand\Algphase[1]{%
+	\vspace*{-.8\baselineskip}\Statex\hspace*{\dimexpr-\algorithmicindent-2pt\relax}\rule{0.5\textwidth}{0.4pt}%
+	\Statex\hspace*{-\algorithmicindent}\textbf{#1}%
+	\vspace*{-.8\baselineskip}\Statex\hspace*{\dimexpr-\algorithmicindent-2pt\relax}\rule{0.5\textwidth}{0.4pt}%
+}
+
+%\algnewcommand\algorithmicforeach{\textbf{for each}}
+%\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
+
+\makeatletter
+% start with some helper code
+% This is the vertical rule that is inserted
+\newcommand*{\algrule}[1][\algorithmicindent]{%
+	\makebox[#1][l]{%
+		\hspace*{.2em}% <------------- This is where the rule starts from
+		\vrule height .75\baselineskip depth .25\baselineskip
+	}
+}
+\newenvironment{myenumerate}
+{ \begin{enumerate}
+ 	 
+		\setlength{\itemsep}{0pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}    }
+	{ 	  \end{enumerate}                 }
+
+\newenvironment{myitemize}
+{ \begin{itemize}
+	
+		\setlength{\itemsep}{0pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}    }
+	{ 	 \end{itemize}                    }
+
+
+\newcount\ALG@printindent@tempcnta
+\def\ALG@printindent{%
+	\ifnum \theALG@nested>0% is there anything to print
+	\ifx\ALG@text\ALG@x@notext% is this an end group without any text?
+	% do nothing
+	\else
+	\unskip
+	% draw a rule for each indent level
+	\ALG@printindent@tempcnta=1
+	\loop
+	\algrule[\csname ALG@ind@\the\ALG@printindent@tempcnta\endcsname]%
+	\advance \ALG@printindent@tempcnta 1
+	\ifnum \ALG@printindent@tempcnta<\numexpr\theALG@nested+1\relax
+	\repeat
+	\fi
+	\fi
+}
+ 
+\newlength{\phaserulewidth}
+\newcommand{\setphaserulewidth}{\setlength{\phaserulewidth}}
+\newcommand{\phase}[1]{%
+	%\vspace{-2ex}
+	% Top phase rule
+	\Statex\leavevmode\llap{\rule{\dimexpr\labelwidth+\labelsep}{\phaserulewidth}}\rule{\linewidth}{\phaserulewidth}
+	\Statex\strut\refstepcounter{phase}{\textbf{Function}~--~#1}% Phase text
+	% Bottom phase rule
+	%\vspace{-2ex}
+	\Statex\leavevmode\llap{\rule{\dimexpr\labelwidth+\labelsep}{\phaserulewidth}}\rule{\linewidth}{\phaserulewidth}}
+\makeatother
+\usepackage{hyphenat}
+\hyphenpenalty=10000
+\tolerance=100
+\sloppy
+
+ 
+\newcommand{\Csharp}{%
+	{\settoheight{\dimen0}{C}\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\#}}}}
+\newcommand{\tony}[1]{{\textcolor{red}{ #1}}}
+\newcommand{\saven}[1]{{\textcolor{black}{ #1}}}
+\newcommand{\daniel}[1]{{\textcolor{black}{ #1}}}
+\newcommand{\tonyy}[1]{{\textcolor{black}{ #1}}}
+\newcommand{\system}{BriskStream\xspace}
+\newcommand{\tsystem}{TStream\xspace}
+
+ 
+%\settopmatter{printacmref=false} % Removes citation information below abstract
+%\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+%\pagestyle{plain} % removes running headers
+
+\makeatletter
+\def\@copyrightpermission{\relax}
+\makeatother
+
+
+
+\author{Shuhao Zhang}
+%\authornote{Work done while as research trainee at SAP Singapore.}
+%\orcid{1234-5678-9012}
+%\affiliation{%
+%  \institution{National University of Singapore}
+%  \streetaddress{P.O. Box 1212}
+%  \city{Dublin}
+%  \state{Ohio}
+%  \postcode{43017-6221}
+%}
+%\email{shuhao.zhang@comp.nus.edu.sg}
+\title 
+{Research Statement}
+
+\begin{document}
+
+
+\maketitle
+
+\input{background}
+
+\input{motivation}
+
+\input{overview}
+
+\input{body}
+
+\bibliographystyle{abbrv}
+\bibliography{sigproc}
+
+\end{document}
