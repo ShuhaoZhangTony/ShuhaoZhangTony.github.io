@@ -5,16 +5,16 @@ title: Jobs
 description: 
 ---
 
-    <h3 id="school-information">School Information</h3>
+### School Information
 
 <ul>
 	<li>Singapore University of Technology and Design (SUTD) (<a href="http://www.sutd.edu.sg/index.aspx">Link</a>) is the fourth autonomous university of Singapore, set up in collaboration with MIT and Zhejiang University. </li>
 	<li>SUTD is among <b>"four emerging learders"</b> in engineering education globally -- MIT New Engineering Education Transformation (NEET), 2018 (<a href="https://jwel.mit.edu/assets/document/global-state-art-engineering-education">Link</a>) </li>
 	<li>Information Systems Technology and Design (ISTD) Pillar of SUTD (<a href="https://istd.sutd.edu.sg/">Link</a>): We offer enriching computing education that includes a full-time undergraduate degree programme, PhD programme and a full-time/part-time Masters programme. </li>
 </ul>
-<hr />
+<hr/>
 
-<h3 id="research-direction">Research Direction</h3>
+### Research Direction
 
 <ul> 
 	<li>Data stream processing is a hot topic. It is a technique allowing users to process infinite data streams in real time. It is nowadays a buzzy word appearing almost everywhere because of internet of things, 5G, real time AI, etc. To cope with the fast increasing application demand, many stream processing systems have been proposed in the last decades, such as Storm, Flink, Spark-streaming, and so on. 
@@ -39,15 +39,14 @@ description:
      		     <li> Related Work: "BriskStream: Scaling Data Stream Processing on Shared-Memory Multicore Architectures, SIGMOD 2019", "Towards Concurrent Stateful Stream Processing on Multicore Processors, ICDE 2020". </li>
 		   </ul>
 	    </li>
-	    
 	<li> More projects to be announced.
 	</li>
 	Additional keywords<sup><a href="#fn1" id="ref1">1</a></sup>: <i> Modern Hardware, Timeseries, Internet of Things, Security </i>
 </ol>
 
-<hr />
+<hr/>
 
-<h3 id="requirement">Requirement</h3>
+### Requirement 
 <p><a href="https://istd.sutd.edu.sg/education/phd/phd-application-process/"> Link to General Application Process for PhD at ISTD, SUTD</a></p>
 <ul> 
 	<li> Fresh graduate or experienced employees with a Bachelor or Master’s degree are welcome to apply. 
@@ -63,7 +62,7 @@ description:
 
 <hr />
 
-<h3 id="remuneration">Remuneration</h3>
+### Remuneration
 
 <p>Tuition fee is fully covered, up to 6000 SGD stipends per month. 
 For good students, I can recommend them to exchange (in their senior years)/work (after graduate) in both academic and industry such as TU Berlin, SAP Walldorf, A*Star, etc. <br /><br /></p>

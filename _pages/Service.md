@@ -5,7 +5,7 @@ title: Service
 description: 
 ---
 
-<h2 id="program-committees">Program Committees</h2>
+### Program Committees
 
 <ul>
 	<li> International Workshop on Autonomic Solutions for Parallel and Distributed Data Stream Processing (Auto-DaSP), 2021, PC </li>	
@@ -17,7 +17,7 @@ description:
 	<li> IEEE International Conference on Cloud Computing and Intelligence Systems (CCIS), 2019, PC </li>
 </ul>
 
-<h2 id="mentoring">Mentoring</h2>
+### Mentoring
 
 <p>I am currently working with some fantastic students:</p>
 

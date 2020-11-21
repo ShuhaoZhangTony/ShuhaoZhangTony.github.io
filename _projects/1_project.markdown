@@ -21,10 +21,10 @@ input event and among a (tunable) batch of input events.
     <img class="col three" src="{{ site.baseurl }}/assets/img/tstream_fig1.png" alt="" title="Why TStream?"/>
 </div>
 <div class="col three caption">
-    This image can also have a caption. It's like magic.
+   As the number of cores used increases, the overhead of accessing states quickly dominates other operations due to serious contention. Therefore, we need a new solution for scaling concurrent state access during stream processing.
 </div>
 
-As the number of cores used increases, the overhead of accessing states quickly dominates other operations due to serious contention. Therefore, we need a new solution for scaling concurrent state access during stream processing.
+
  
 
  
