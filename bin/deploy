@@ -34,7 +34,7 @@ git push -f -q origin gh-pages
 
 # Push to School Website
 
-CSHOST := shuhao.zhang@sshgate.tu-berlin.de
+CSHOST=shuhao.zhang@sshgate.tu-berlin.de
 
 rsync --compress --recursive --checksum --itemize-changes --delete -e ssh _site/ $(CSHOST):public_html
 
