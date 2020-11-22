@@ -26,7 +26,7 @@ bundle exec jekyll build
 
 CSHOST="shuhao.zhang@sshgate.tu-berlin.de"
 
-rsync --compress --recursive --checksum --itemize-changes --delete -e ssh _site/* $CSHOST/s/shuhao.zhang/public_html/*
+rsync --compress --recursive --checksum --itemize-changes --delete -e ssh _site/* $CSHOST:s/shuhao.zhang/public_html/*
 
 # Delete and move files.
 find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name '.gitignore' -exec rm -rf {} \;
