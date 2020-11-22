@@ -32,6 +32,12 @@ git add -fA
 git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
 git push -f -q origin gh-pages
 
+# Push to School Website
+
+CSEHOST := shuhao.zhang@sshgate.tu-berlin.de
+
+rsync --compress --recursive --checksum --itemize-changes --delete -e ssh _site/ $(CSEHOST):public_html
+
 # Move back to previous branch.
 git checkout -
 
