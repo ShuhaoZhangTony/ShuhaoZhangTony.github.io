@@ -24,7 +24,7 @@
         &:not(:first-child) {
             margin-left: 10px;
         }
-    }
+    }        
     // @include media-query($on-palm) {
     //     position: fixed;
     //     top: 0px;
@@ -40,6 +40,10 @@
     // }
 }
 
+.site-nav ul
+{
+    display:block;
+}
 .header-bar{
     border-bottom: 1px solid $light-gray;
     font-size: 20px;

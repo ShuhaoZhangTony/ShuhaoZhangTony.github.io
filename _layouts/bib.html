@@ -28,7 +28,7 @@
           {% endif %}
         {% else %}
           and
-          {% if author.last == site.scholar.last_name %}
+          {% if author.first == site.scholar.first_name %}
             <em>{{author.last}}, {{author.first}}</em>
           {% else %}
             {% if site.data.coauthors[author.last] %}

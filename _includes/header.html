@@ -15,9 +15,6 @@
         <!-- Home -->
         <a class="page-link" href="{{ site.baseurl | prepend: site.url }}/">Home</a>
 
-        <!-- News -->
-        <a class="page-link" href="{{ '/news/' | prepend: site.baseurl | prepend: site.url }}">News</a>
-
         <!-- Pages -->
         {% for page in site.pages %}
           {% if page.title and page.url != "/" %}
