@@ -6,7 +6,9 @@
     left:0px;
     top:0px;
     width:100%;
-    z-index: 50;
+    margin-bottom: $nav-height;
+    z-index: 500;
+    display:block; 
 }
 
 .site-title {
