@@ -2,10 +2,20 @@
 layout: page
 title: Projects
 permalink: /Projects/
-description: More projects to be announced.
+description: 
 ---
 
-<p>Current running projects (each project will be allocated 2-3 PhD students and 1-2 postdocs):</p>
+<div class="img_row">
+	<img class="col one" src="{{ site.baseurl }}/assets/img/logo_full.png" alt="" title="BIDS Group"/>
+	<div class="col two caption_float">
+  	Each project will be allocated 2-3 PhD students and 1-2 postdocs. More projects to be announced.
+	</div>
+	<div class="one caption">
+	BIDS Group. 
+	</div>
+</div>
+
+
 <ol>
 	<li> <b>[Sesame]</b>: we will build a novel data stream management system to support emerging complex applications such as real time fraud detection with reinforcement learning. <br />
 	    	<ul>
