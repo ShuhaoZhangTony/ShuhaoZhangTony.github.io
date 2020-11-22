@@ -16,20 +16,20 @@ description:
 </div>
 
 
-<ol>
-	<li> <b>[Sesame]</b>: we will build a novel data stream management system to support emerging complex applications such as real time fraud detection with reinforcement learning. <br />
-	    	<ul>
-		     <li> Those applications are hard, if not impossible, to be supported by conventional stream processing engines or ML/database systems. </li>
-     		     <li> Required Skills: well-understanding of machine learning/data mining/graph algorithms/techniques, skillful in system development. </li>
-     		     <li> Related Work: "SAMOA: Scalable Advanced Massive Online Analysis, JMLR 2015", "Real-time Event Detection on Social Data Streams, KDD 2019", "Sub-millisecond Stateful Stream Querying over Fast-evolving Linked Data, SOSP 2017" </li>
-		</ul>
-	    </li>
+<ol>	
 	    <li> <b>[TStream]</b>: we will build a novel hardware-conscious full-fledged transactional stream processing system. <br />
 		    <ul>
 		     <li> We will revisit every corner of the design of modern TSP system with novel techniques including AI, Modern Hardware (e.g., GPGPU, FPGA, etc.).  </li>
 		     <li> Required Skills: well-understanding of transactional stream processing, skillful in system development, at least skillfull in one hardware architecture (multicore CPU, GPU, FPGA etc). </li>
      		     <li> Related Work: "BriskStream: Scaling Data Stream Processing on Shared-Memory Multicore Architectures, SIGMOD 2019", "Towards Concurrent Stateful Stream Processing on Multicore Processors, ICDE 2020". </li>
 		   </ul>
+	    </li>
+	    <li> <b>[Sesame]</b>: we will build a novel data stream management system to support emerging complex applications such as real time fraud detection with reinforcement learning. <br />
+	    	<ul>
+		     <li> Those applications are hard, if not impossible, to be supported by conventional stream processing engines or ML/database systems. </li>
+     		     <li> Required Skills: well-understanding of machine learning/data mining/graph algorithms/techniques, skillful in system development. </li>
+     		     <li> Related Work: "SAMOA: Scalable Advanced Massive Online Analysis, JMLR 2015", "Real-time Event Detection on Social Data Streams, KDD 2019", "Sub-millisecond Stateful Stream Querying over Fast-evolving Linked Data, SOSP 2017" </li>
+		</ul>
 	    </li>
 	<li> More projects to be announced.
 	</li>
