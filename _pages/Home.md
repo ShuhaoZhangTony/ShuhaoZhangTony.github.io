@@ -8,9 +8,8 @@ profile:
   align: right
   image: me.jpg
   address: >
-    <p>Room-721</p>
-    <p>EN7</p>
-    <p>TU Berlin</p>
+    <p>Room-721, EN7</p>
+    <p>TU Berlin, Germany</p>
 
 news: true
 social: true
