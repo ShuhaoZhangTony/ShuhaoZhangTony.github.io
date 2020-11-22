@@ -36,7 +36,7 @@ git push -f -q origin gh-pages
 
 CSHOST="shuhao.zhang@sshgate.tu-berlin.de"
 
-rsync --compress --recursive --checksum --itemize-changes --delete -e ssh _site/ $CSHOST:public_html
+rsync --compress --recursive --checksum --itemize-changes --delete -e ssh _site/ $CSHOST/home/s/shuhao.zhang/public_html
 
 # Move back to previous branch.
 git checkout -
