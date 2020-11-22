@@ -6,7 +6,7 @@ description:
 ---
 
 <div class="img_row">
-	<img class="col one" src="{{ site.baseurl }}/assets/img/logo_full.png" alt="" title="BIDS Group"/>
+	<img class="col one resize" src="{{ site.baseurl }}/assets/img/logo_full.png" alt="" title="BIDS Group"/>
 	<div class="col two caption_float">
   	Each project will be allocated 2-3 PhD students and 1-2 postdocs. More projects to be announced.
 	</div>
