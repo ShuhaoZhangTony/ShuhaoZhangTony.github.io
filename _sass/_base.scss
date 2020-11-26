@@ -3,6 +3,7 @@
 html, body {
   height: auto;
   min-height: 100%;
+  display:block
 }
 .invisiable {display: none;}
 img {
@@ -18,7 +19,8 @@ body {
           box-sizing: border-box;
      -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  	padding-top: 40px;
+  	padding-top: 10px;
+    display:block
 }
 
 .wrapper {
