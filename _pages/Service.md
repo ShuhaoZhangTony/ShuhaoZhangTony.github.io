@@ -12,6 +12,7 @@ social: true
 	<li> International Workshop on Autonomic Solutions for Parallel and Distributed Data Stream Processing (Auto-DaSP), 2021, PC </li>	
 	<li> International Symposium on Cluster, Cloud and Internet Computing (CCGrid), 2021, PC </li>
 	<li> The International Conference for High Performance Computing, Networking, Storage, and Analysis (SC), 2021 panels committee </li>
+	<li> IEEE International Smart Cities Conference (IS2C) 2020, PC </li>
 	<li> International Conference on Distributed Computing Systems (ICDCS), 2020, PC </li>
 	<li> IEEE INTERNATIONAL CONFERENCE ON HIGH PERFORMANCE COMPUTING, DATA, &amp; ANALYTICS (HiPC), 2020, PC </li>
 	<li> ACM International Conference on Information and Knowledge Management (CIKM), 2019, PC </li>
