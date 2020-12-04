@@ -57,7 +57,7 @@ collections:
     output: true
     permalink: /Projects/:path/
 
-news_limit: 8
+news_limit: 10
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -80,7 +80,7 @@ gems:
 scholar:
   last_name: Zhang
   first_name: Shuhao
-  style: apa
+  style: abbrv
   locale: en
 
   sort_by: year
