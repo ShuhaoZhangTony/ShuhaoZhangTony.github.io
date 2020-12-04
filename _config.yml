@@ -80,7 +80,7 @@ gems:
 scholar:
   last_name: Zhang
   first_name: Shuhao
-  style: abbrv
+  style: _bibliography/acm-sig-proceedings.csl
   locale: en
 
   sort_by: year
