@@ -81,7 +81,7 @@
             <div class="contact hidden-xs">
               <div class="contact-title">News</div>
               <ul class="media-list">
-                {% for post in site.posts limit: site.front_page_news %}
+                {% for post in site.posts limit: site.news_limit %}
                 <li class="media">
                   {% if post.photo %}
                   <div class="media-left news hidden-xs">

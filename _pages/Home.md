@@ -1,7 +1,7 @@
 ---
 layout: main
 permalink: /
-title: <strong>Shuhao</strong> Zhang
+title: Shuhao Zhang
 description: <a href="https://www.dima.tu-berlin.de/menue/team/">Postdoc Researcher</a>. 
 
 profile:
