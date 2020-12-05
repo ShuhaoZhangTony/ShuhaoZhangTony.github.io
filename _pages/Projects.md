@@ -36,7 +36,7 @@ social: true
 	    </li>
 	<li> More projects to be announced.
 	</li>
-	Additional keywords<sup><a href="#fn1" id="ref1">1</a></sup>: <i> Modern Hardware, Timeseries, Internet of Things, Security </i>
+	Additional keywords: <i> Modern Hardware, Timeseries, Internet of Things, Security </i>
 </ol>
 
 <!--
