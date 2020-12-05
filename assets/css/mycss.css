@@ -3,3 +3,10 @@
     color: blue;
 }
  
+.invisiable { display: none; } 
+
+<style>
+invisiable {
+  display: none;
+}
+</style> 

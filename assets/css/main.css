@@ -298,8 +298,6 @@ hr { border: 0; border-bottom-style: solid; border-bottom-width: 1px; border-bot
 
 .px4 { padding-left: 4rem; padding-right: 4rem; }
 
-.invisiable { display: none; }
-
 html, body { height: auto; min-height: 100%; }
 
 img { max-width: none; }
