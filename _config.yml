@@ -36,6 +36,21 @@ contact_note: >
 #    newer: 'Newer'
 #    older: 'Older'
 
+# Navigation bar links.
+navigation:
+    - title: Home
+      link: /
+    - title: Jobs
+      link: /Jobs/
+    - title: Publications
+      link: /publications/
+    - title: Service
+      link: /service/
+ #   - title: Code
+ #     link: /code.html
+ #   - title: CV
+ #     link: /cv/cv.pdf
+
 # Comments
 disqus_shortname: shuhaozhangtony # put your disqus shortname
 
