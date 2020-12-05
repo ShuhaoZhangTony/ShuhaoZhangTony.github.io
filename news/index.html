@@ -1,20 +1,20 @@
 ---
-layout: page
-description: News and Announcements
+layout: main
+title: News & Happenings
 ---
 
-    <table>
-    {% assign news = site.news | reverse %}
-    {% for item in news %}
-      <tr>
-        <td class="date">{{ item.date | date: "%b %-d, %Y" }}</td>
-        <td class="announcement">
-          {% if item.inline %}
-            {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-          {% else %}
-            <a class="news-title" href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a>
-          {% endif %}
-        </td>
-      </tr>
-    {% endfor %}
-    </table>
+<ul class="news list-unstyled">
+{% for post in site.posts %}
+    {% if post.shortnews %}
+        <li class="shortnews">
+            <span class="date">{{ post.date | date_to_long_string }}</span>
+            {{ post.content }}
+        </li>
+    {% else %}
+        <li class="bloglink">
+            <span class="date">{{ post.date | date_to_long_string }}</span>
+            <b>Blog Post: </b><a href="{{ post.url }}">{{ post.title }}</a><br />
+        </li>
+    {% endif %}
+{% endfor %}
+</ul>
