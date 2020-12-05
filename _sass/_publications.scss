@@ -20,13 +20,15 @@
     margin-bottom: 50px;
     margin-top: 20px;
     list-style-type: circle;
-
     li {
         margin: 10px 0;
         position: relative;
-
-        span { display: block; }
-        .title { font-size: 12px; }
+        span {
+            display: block;
+        }
+        .title {
+            font-weight: normal;
+        }
         .author {
             a {
                 border-bottom: 1px dashed $theme-color;
@@ -40,7 +42,10 @@
                 font-style: normal;
             }
         }
-        a.abstract, a.bibtex { cursor: pointer; }
+        a.abstract,
+        a.bibtex {
+            cursor: pointer;
+        }
         .hidden {
             font-size: $small-font-size;
             max-height: 0px;
@@ -51,7 +56,6 @@
             -ms-transition: 0.15s ease;
             -o-transition: 0.15s ease;
             transition: all 0.15s ease;
-
             p {
                 line-height: 1.4em;
                 margin: 10px;
@@ -79,9 +83,9 @@
     }
     abbr {
         position: absolute;
-            left: -7em;
+        left: -7em;
     }
- }
+}
 .star {
     color: $theme-color;
     font-style: normal;
