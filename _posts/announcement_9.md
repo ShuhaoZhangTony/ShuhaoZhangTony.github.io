@@ -1,6 +1,6 @@
 ---
 layout: post
 date: 2020-11-06 09:00:00 CET
-inline: true
+shortnews: true
 ---
 <span style="color:blue">[Service]</span> I serve as a PC member for Autonomic Solutions for Parallel and Distributed Data Stream Processing ([Auto-DaSP 2021](http://calvados.di.unipi.it/auto-dasp-21/)). The workshop tries to attract submissions in the field of new run-time systems for Data Stream Processing on emerging architectures, with a special emphasis this year on performance evaluation. 
