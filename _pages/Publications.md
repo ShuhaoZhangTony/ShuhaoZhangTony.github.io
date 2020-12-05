@@ -4,7 +4,7 @@ permalink: /Publications/
 title: Publications
 description: For full list, please refere to <a href="https://scholar.google.com/citations?user=Xwn7lCEAAAAJ">Google Scholar</a>
 years: [2020, 2019, 2017, 2016, 2015, 2014, 2013]
-social: true
+notitle: true
 ---
 
 {% for y in page.years %}
