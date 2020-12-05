@@ -8,7 +8,7 @@ description:
 
 
 
-  <div class="col-xs-3">
+  <div class="col-xs-4">
     <img src="{{ site.baseurl }}/assets/img/me3.jpg" alt="Photo of me" class="img-responsive">
   </div>
   <div class="col-xs-9 jumbotron">
