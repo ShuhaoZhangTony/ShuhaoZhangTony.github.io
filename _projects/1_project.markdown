@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: main
 title: TStream
 description: Transactional Stream Processing Engine on Multicores
 img: /assets/img/tstreamicon.png
