@@ -68,9 +68,9 @@ enable_katex:       true
 #      layout: post
 #    output: true
 #    permalink: /news/:path/
-#  projects:
-#    output: true
-#    permalink: /Projects/:path/
+projects:
+    output: true
+    permalink: /Projects/:path/
 
 news_limit: 3
 
