@@ -244,4 +244,7 @@ p, div {
   margin: 30px 0;
 }
 
-
+.venue {
+	color:blue;
+	display:inline;
+}
