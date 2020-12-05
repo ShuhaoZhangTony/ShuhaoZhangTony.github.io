@@ -8,6 +8,6 @@ social: true
 ---
 
 {% for y in page.years %}
-  <h3 class="year">{{y}}</h3>
+  <h4 class="year">{{y}}</h4>
   {% bibliography -f papers -q @*[year={{y}}]* %}
 {% endfor %}
