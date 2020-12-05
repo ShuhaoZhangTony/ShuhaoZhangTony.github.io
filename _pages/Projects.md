@@ -39,6 +39,7 @@ social: true
 	Additional keywords<sup><a href="#fn1" id="ref1">1</a></sup>: <i> Modern Hardware, Timeseries, Internet of Things, Security </i>
 </ol>
 
+<!--
 <hr/>
 
 {% for project in site.projects %}
@@ -82,3 +83,4 @@ social: true
 {% endif %}
 
 {% endfor %}
+-->
