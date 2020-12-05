@@ -5,12 +5,11 @@ title: Shuhao Zhang
 description: <a href="https://www.dima.tu-berlin.de/menue/team/">Postdoc Researcher</a>. 
 ---
 
-<div class="container">
 <img src="{{ site.baseurl }}/assets/img/me3.jpg" alt="Photo of me" style="float:left;">Shuhao Zhang is a <b>postdoctoral researcher</b> at <a href="https://www.dima.tu-berlin.de/menue/staff/">DIMA Technische Universität Berlin</a>. 
 He obtained his Ph.D. degree from the school of computing at <a href="https://www.nus.edu.sg/">National University of Singapore</a>.
 His current research interest include big data management systems (with special interests in stream processing and timeseries management), distributed and parallel computing and emerging ML/AI applications. 
 <!-- He had served as a PC member in a list of <a href="Service/">academic conferences</a>. -->
-</div>
+<div class="w-100"></div>
 
 <hr>
 :boom: I will be joining <a href="https://istd.sutd.edu.sg/people/faculty/shuhao-zhang">ISTD Pillar of SUTD as a faculty</a> in early 2021. 
