@@ -9,7 +9,7 @@ description:
 
 
   <div class="col-xs-3">
-    <img src="{{ site.baseurl }}/assets/img/me3.jpg" alt="Photo of me">
+    <img src="{{ site.baseurl }}/assets/img/me3.jpg" alt="Photo of me" class="img-responsive">
   </div>
   <div class="col-xs-10 jumbotron">
     <h2>I am a <b>postdoctoral researcher</b> at <a href="https://www.dima.tu-berlin.de/menue/staff/">DIMA Technische Universität Berlin</a>. 
