@@ -1,90 +1,178 @@
----
-layout: main
----
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+    <body>
+      <div class="header">
+        <div class="title clearfix">Shuhao Zhang</div>
+	<ul class="nav nav-pills nav-justified">
+          {% for item in site.navigation %}
+          {% assign shorturl = item.link | replace: '.html', '' %}
+          <li {% if page.url == shorturl %}class="active"{% endif %}>
+            <a href="{{ item.link }}">
+              {% if page.url == shorturl %}- {% endif %}{{ item.title
+              }}{% if page.url == shorturl %} -{% endif %}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
 
-{% if entry.abbr %}
-  {% if site.data.venues[entry.abbr] %}
-    <abbr>[<a href="{{site.data.venues[entry.abbr].url}}" target="_blank">{{entry.abbr}}</a>]</abbr>
-  {% else %}
-    <abbr>[{{entry.abbr}}]</abbr>
-  {% endif %}
-{% endif %}
-
-<div id="{{entry.key}}">
-  {% if entry.type == "thesis" %}
-    {{reference}}
-  {% else %}
-    <span class="title">{{entry.title}}</span>
-    <span class="author">
-      {% for author in entry.author_array %}
-        {% unless forloop.last %}
-          {% if author.first == site.scholar.first_name %}
-            <b>{{author.last}}, {{author.first}}</b>,
-          {% else %}
-            {% if site.data.coauthors[author.last] %}
-              <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.last}}, {{author.first}}</a>,
-            {% else %}
-              {{author.last}}, {{author.first}},
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8">
+	    {% comment %}Liquid is sort of terrible! I think "!= true" is the
+            only way to do negation?{% endcomment %}
+            {% if page.notitle != true %}
+            <h2>{{ page.title }}</h2>
+	    {% else %}
+	    <h3></h3>
             {% endif %}
-          {% endif %}
-        {% else %}
-          and
-          {% if author.first == site.scholar.first_name %}
-            <b>{{author.last}}, {{author.first}}</b>
-          {% else %}
-            {% if site.data.coauthors[author.last] %}
-              <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.last}}, {{author.first}}</a>
-            {% else %}
-              {{author.last}}, {{author.first}}
-            {% endif %}
-          {% endif %}
-        {% endunless %}
-      {% endfor %}
-    </span>
+		{% if entry.abbr %}
+		  {% if site.data.venues[entry.abbr] %}
+		    <abbr>[<a href="{{site.data.venues[entry.abbr].url}}" target="_blank">{{entry.abbr}}</a>]</abbr>
+		  {% else %}
+		    <abbr>[{{entry.abbr}}]</abbr>
+		  {% endif %}
+		{% endif %}
 
-    <span class="periodical">
-    {% if entry.type == "article" %}
-      <em>{{entry.journal}}</em>
-    {% elsif entry.type == "inproceedings" %}
-      <em>In {{entry.booktitle}}</em>
-    {% endif %}
-    {% if entry.year %}
-      {{entry.year}}
-    {% endif %}
-    </span>
-  {% endif %}
+		<div id="{{entry.key}}">
+		  {% if entry.type == "thesis" %}
+		    {{reference}}
+		  {% else %}
+		    <span class="title">{{entry.title}}</span>
+		    <span class="author">
+		      {% for author in entry.author_array %}
+			{% unless forloop.last %}
+			  {% if author.first == site.scholar.first_name %}
+			    <b>{{author.last}}, {{author.first}}</b>,
+			  {% else %}
+			    {% if site.data.coauthors[author.last] %}
+			      <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.last}}, {{author.first}}</a>,
+			    {% else %}
+			      {{author.last}}, {{author.first}},
+			    {% endif %}
+			  {% endif %}
+			{% else %}
+			  and
+			  {% if author.first == site.scholar.first_name %}
+			    <b>{{author.last}}, {{author.first}}</b>
+			  {% else %}
+			    {% if site.data.coauthors[author.last] %}
+			      <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.last}}, {{author.first}}</a>
+			    {% else %}
+			      {{author.last}}, {{author.first}}
+			    {% endif %}
+			  {% endif %}
+			{% endunless %}
+		      {% endfor %}
+		    </span>
 
-  <span class="links">
-  {% if entry.abstract %}
-    [<a class="abstract">Abstract</a>]
-  {% endif %}
-  {% if entry.arxiv %}
-    [<a href="http://arxiv.org/abs/{{ entry.arxiv }}" target="_blank">arXiv</a>]
-  {% endif %}
-  {% if entry.html %}
-    [<a href="{{ entry.html }}" target="_blank">HTML</a>]
-  {% endif %}
-  {% if entry.pdf %}
-    [<a href="{{ entry.pdf | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>]
-  {% endif %}
-  {% if entry.supp %}
-    [<a href="{{ entry.supp | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Supp</a>]
-  {% endif %}
-  {% if entry.poster %}
-    [<a href="{{ entry.poster | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Poster</a>]
-  {% endif %}
-  {% if entry.slides %}
-    [<a href="{{ entry.slides | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Slides</a>]
-  {% endif %}
-  {% if entry.code %}
-    [<a href="{{ entry.code }}" target="_blank">Code</a>]
-  {% endif %}
-  </span>
+		    <span class="periodical">
+		    {% if entry.type == "article" %}
+		      <em>{{entry.journal}}</em>
+		    {% elsif entry.type == "inproceedings" %}
+		      <em>In {{entry.booktitle}}</em>
+		    {% endif %}
+		    {% if entry.year %}
+		      {{entry.year}}
+		    {% endif %}
+		    </span>
+		  {% endif %}
 
-  <!-- Hidden abstract block -->
-  {% if entry.abstract %}
-  <span class="abstract hidden">
-    <p>{{ entry.abstract }}</p>
-  </span>
-  {% endif %}
-</div>
+		  <span class="links">
+		  {% if entry.abstract %}
+		    [<a class="abstract">Abstract</a>]
+		  {% endif %}
+		  {% if entry.arxiv %}
+		    [<a href="http://arxiv.org/abs/{{ entry.arxiv }}" target="_blank">arXiv</a>]
+		  {% endif %}
+		  {% if entry.html %}
+		    [<a href="{{ entry.html }}" target="_blank">HTML</a>]
+		  {% endif %}
+		  {% if entry.pdf %}
+		    [<a href="{{ entry.pdf | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>]
+		  {% endif %}
+		  {% if entry.supp %}
+		    [<a href="{{ entry.supp | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Supp</a>]
+		  {% endif %}
+		  {% if entry.poster %}
+		    [<a href="{{ entry.poster | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Poster</a>]
+		  {% endif %}
+		  {% if entry.slides %}
+		    [<a href="{{ entry.slides | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Slides</a>]
+		  {% endif %}
+		  {% if entry.code %}
+		    [<a href="{{ entry.code }}" target="_blank">Code</a>]
+		  {% endif %}
+		  </span>
+
+		  <!-- Hidden abstract block -->
+		  {% if entry.abstract %}
+		  <span class="abstract hidden">
+		    <p>{{ entry.abstract }}</p>
+		  </span>
+		  {% endif %}
+		</div>             
+          </div>
+          <div class="col-sm-4 col-xs-12">
+            <div class="contact">
+              <div class="contact-title">
+                Contact</div>
+                <ul class="fa-ul">
+	          <li><i class="fa-li fa fa-envelope"></i>shuhao.zhang
+	            @tu-berlin.de</li>
+	          <li><i class="fa-li fa fa-building"></i>Office 721,
+                    Building En7</li>
+	          <li><i class="fa-li fa fa-location-arrow"></i>des 17. Juni 135 St.
+                    <br class="hidden-xs"> Berlin, DE</li>
+	          <li><i class="fa-li fa
+	                        fa-github-alt"></i><a href="https://github.com/shuhaozhangtony/">shuhao@github</a></li>
+                  	          <li><i class="fa-li fa fa-twitter"></i><a href="https://twitter.com/shuhao_tony">shuhao@twitter</a></li>
+
+                </ul>
+            </div>
+            <div class="contact hidden-xs">
+              <div class="contact-title">News</div>
+              <ul class="media-list">
+                {% for post in site.posts limit: site.news_limit %}
+                <li class="media">
+                  {% if post.photo %}
+                  <div class="media-left news hidden-xs">
+                    {% if post.link %}
+                    <a href="{{ post.link }}">
+                      {% endif %}
+	              <img class="media-object img-thumbnail"
+                           src="{{ post.photo }}" >
+                      {% if post.link %} </a> {% endif %}
+                  </div>
+                  {% endif %}
+                  <div class="media-body">
+                    <h5 class="media-heading">
+                      {{ post.date | date_to_long_string }}
+                    </h5>
+                    {% if post.shortnews %}
+                    {{ post.content }}
+                    {% else %}
+                    <b>New Blog Post:</b>
+                        <a href="{{ post.url}}">{{ post.title }}</a>
+                    {% endif %}
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
+              <p><a href="news/">&nbsp;&nbsp;&nbsp;Older posts&hellip;</a></p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ {% include footer.html %} 
+ {% include hemline.html %} 
+ 
+
+<invisiable>  
+     <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=200&t=m&d=5WJjJUBiRIHzBC9nmIj6WxfZfGy834mfkzRgb_KJOJQ'></script>
+</invisiable>   
+
+    </body>
+</html>
