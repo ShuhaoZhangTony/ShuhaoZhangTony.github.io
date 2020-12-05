@@ -483,7 +483,7 @@ article a:hover, .news a:hover { text-decoration: underline; }
 
 .measure { margin: 0 auto; max-width: 42rem; }
 
-@media screen and (min-width: 32em) { html { font-size: 25px; }
+@media screen and (min-width: 32em) { html { font-size: 20px; }
   h1, .h1 { font-size: 2.998rem; }
   .site-header { text-align: left; }
   .site-nav { margin-top: 0; }
@@ -514,7 +514,7 @@ table > thead > tr > th { vertical-align: bottom; border-bottom: 2px solid #333;
 table > caption + thead > tr:first-child > th, table > caption + thead > tr:first-child > td, table > colgroup + thead > tr:first-child > th, table > colgroup + thead > tr:first-child > td, table > thead:first-child > tr:first-child > th, table > thead:first-child > tr:first-child > td { border-top: 0; }
 table > tbody + tbody { border-top: 2px solid #333; }
 
-html { font-size: 25px; }
+html { font-size: 20px; }
 
 body { color: #666; font-weight: 100; }
 
