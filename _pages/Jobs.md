@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /Jobs/
-title: 
+title: Jobs
 description: I'm currently looking for 2021 Aug/Sep intake Phd Students
 social: true
 ---

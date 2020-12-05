@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 
+title: Projects
 permalink: /Projects/
 description: Each project will be allocated 2-3 PhD students and 1-2 postdocs. More projects to be announced.
 social: true
