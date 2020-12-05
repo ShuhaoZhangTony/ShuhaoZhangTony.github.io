@@ -46,8 +46,8 @@ navigation:
       link: /publications/
     - title: Service
       link: /service/
- #   - title: Code
- #     link: /code.html
+    - title: Projects
+      link: /Projects/
  #   - title: CV
  #     link: /cv/cv.pdf
 
@@ -62,15 +62,15 @@ enable_katex:       true
 # -----------------------------------------------------------------------------
 # Collections
 # -----------------------------------------------------------------------------
-collections:
-  news:
-    defaults:
-      layout: post
-    output: true
-    permalink: /news/:path/
-  projects:
-    output: true
-    permalink: /Projects/:path/
+#collections:
+#  news:
+#    defaults:
+#      layout: post
+#    output: true
+#    permalink: /news/:path/
+#  projects:
+#    output: true
+#    permalink: /Projects/:path/
 
 news_limit: 3
 

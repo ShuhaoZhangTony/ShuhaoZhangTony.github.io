@@ -1,38 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <Title>{{ site.name }}: {{ page.title }}</title>
-        <meta name="viewport" content="width=device-width,
-				       initial-scale=1.0">
-	<link href="https://shuhaozhangtony.github.io/" rel="canonical">
-        <base href="https://shuhaozhangtony.github.io">
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/group.css" rel="stylesheet">
-        <link rel="alternate" type="application/atom+xml" title="Atom"
-              href="blog/blog.xml">
-        <link href="https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans:400,400i,700|Raleway:500,700"
-              rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <!-- Piwik -->
-        <script type="text/javascript">
-            var _paq = _paq || [];
-            _paq.push(["setDomains", ["*.irenezhang.net","*.irenezhang.com","*.schemeprincess.com"]]);
-            _paq.push(['trackPageView']);
-            _paq.push(['enableLinkTracking']);
-            (function() {
-              var u="//www.ambulatoryclam.net/piwik/";
-              _paq.push(['setTrackerUrl', u+'piwik.php']);
-              _paq.push(['setSiteId', '2']);
-              var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-              g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-            })();
-        </script>
-        <noscript><p><img src="//www.ambulatoryclam.net/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
-
-    </head>
+{% include head.html %}
     <body>
       <div class="header">
         <div class="title clearfix">Shuhao Zhang</div>
@@ -113,13 +81,7 @@
           </div>
         </div>
       </div>
-      <div class="footer">
-        <p>
-          <a href="https://www.dima.tu-berlin.de/menue/staff/">DIMA</a> at Technische Universität Berlin
-        </p>
-      </div>
-      <div class="invisiable">  
-     <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=200&t=m&d=5WJjJUBiRIHzBC9nmIj6WxfZfGy834mfkzRgb_KJOJQ'></script>
-	</div>   
+{% include footer.html %}
+{% include hemline.html %}  
     </body>
 </html>

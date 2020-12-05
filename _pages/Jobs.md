@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: main
 permalink: /Jobs/
 title: Jobs
 description: I'm currently looking for 2021 Aug/Sep intake Phd Students
