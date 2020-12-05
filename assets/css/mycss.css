@@ -10,3 +10,8 @@ invisiable {
   display: none;
 }
 </style> 
+
+.venue {
+	color:blue;
+	display:inline;
+}
