@@ -126,9 +126,12 @@ h6, .h6 { font-size: 0.75rem; }
 /* Basscss Color Base */
 body { color: #333; background-color: white; }
 
+/*
 a { color: #B509AC; text-decoration: none; }
 
 a:hover { text-decoration: underline; }
+
+*/
 
 pre, code { background-color: #eee; border-radius: 3px; }
 
@@ -472,8 +475,10 @@ figcaption { font-size: 0.875rem; }
 
 .gist .lines { width: 100%; }
 
+/*
 a { color: #666; text-decoration: none; }
 a:hover { color: #B509AC; text-decoration: none; }
+*/
 
 article a, .news a { color: #B509AC; font-weight: 100; }
 article a:hover, .news a:hover { text-decoration: underline; }
