@@ -11,7 +11,7 @@ description:
   <div class="col-xs-4">
     <img src="{{ site.baseurl }}/assets/img/me3.jpg" alt="Photo of me" class="img-responsive">
   </div>
-  <div class="col-xs-9 jumbotron">
+  <div class="col-xs-8 jumbotron">
     <h2>I am a <b>postdoctoral researcher</b> at <a href="https://www.dima.tu-berlin.de/menue/staff/">DIMA Technische Universität Berlin</a>. 
     </h2>
   </div>
