@@ -18,7 +18,7 @@ notitle: true
   </div>
   
   
-I obtained my Ph.D. degree from the school of computing at <a href="https://www.nus.edu.sg/">National University of Singapore</a>.
+I obtained the Ph.D. degree from the school of computing at <a href="https://www.nus.edu.sg/">National University of Singapore</a> in 2019 and the Bachelor degree with first-class honours from the school of computer engineering at <a href="https://www.ntu.edu.sg/">Nanyang Technological University, Singapore</a> in 2014.
 My current research interest include big data management systems (with special interests in stream processing and timeseries management), distributed and parallel computing and emerging ML/AI applications. 
 <!-- He had served as a PC member in a list of <a href="Service/">academic conferences</a>. -->
 
