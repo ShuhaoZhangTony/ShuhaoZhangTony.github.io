@@ -24,14 +24,16 @@
 	issn         = {2364-7108},
 	url          = {https://www.ronpub.com/ojiot/OJIOT_2020v6i1n07_Zeuch.html},
 	bibsource    = {RonPub},
-	abstract     = {The arising Internet of Things (IoT) will require significant changes to current stream processing engines (SPEs) to enable large-scale IoT applications. In this paper, we present challenges and opportunities for an IoT data management system to enable complex analytics beyond the cloud. As one of the most important upcoming IoT applications, we focus on the vision of a smart city. The goal of this paper is to bridge the gap between the requirements of upcoming IoT applications and the supported features of an IoT data management system. To this end, we outline how state-of-the-art SPEs have to change to exploit the new capabilities of the IoT and showcase how we tackle IoT challenges in our own system, NebulaStream. This paper lays the foundation for a new type of systems that leverages the IoT to enable large-scale applications over millions of IoT devices in highly dynamic and geo-distributed environments.}
+	abstract     = {The arising Internet of Things (IoT) will require significant changes to current stream processing engines (SPEs) to enable large-scale IoT applications. In this paper, we present challenges and opportunities for an IoT data management system to enable complex analytics beyond the cloud. As one of the most important upcoming IoT applications, we focus on the vision of a smart city. The goal of this paper is to bridge the gap between the requirements of upcoming IoT applications and the supported features of an IoT data management system. To this end, we outline how state-of-the-art SPEs have to change to exploit the new capabilities of the IoT and showcase how we tackle IoT challenges in our own system, NebulaStream. This paper lays the foundation for a new type of systems that leverages the IoT to enable large-scale applications over millions of IoT devices in highly dynamic and geo-distributed environments.},
+	pdf	     = {papers/OJIOT_2020v6i1n07_Zeuch.pdf}
 }
 @inproceedings{Zhang2020PewLSTM,
 	title        = {<div class="venue">[IJCAI]</div> PewLSTM: Periodic LSTM with Weather-Aware Gating Mechanism for Parking Behavior Prediction},
 	author       = {Feng Zhang and Ningxuan Feng and Yani Liu and Cheng Yang and Jidong Zhai and Shuhao Zhang and Bingsheng He and Jiazao Lin and Xiaoyong Du},
 	year         = 2020,
 	booktitle    = {International Joint Conference on Artificial Intelligence(IJCAI)},
-	abstract     = {In big cities, there are plenty of parking spaces, but we often find nowhere to park. For example, New York has 1.4 million cars and 4.4 million on-street parking spaces, but it is still not easy to find a parking place near our destination, especially during peak hours. The reason is the lack of prediction of parking behavior. If we could provide parking behavior in advance, we can ease this parking problem that affects human well-being. We observe that parking lots have periodic parking patterns, which is an important factor for parking behavior prediction. Unfortunately, existing work ignores such periodic parking patterns in parking behavior prediction, and thus incurs low accuracy. To solve this problem, we propose PewLSTM, a novel periodic weather-aware LSTM model that successfully predicts the parking behavior based on historical records, weather, environments, and weekdays. PewLSTM has been successfully integrated into a real parking space reservation system, ThsParking, which is one of the top smart parking platforms in China. Based on 452,480real parking records in 683 days from 10 parking lots, PewLSTM yields 85.3% parking prediction accuracy, which is about 20% higher than the state-of-the-art parking behavior prediction method. The code and data can be obtained fromhttps://github.com/NingxuanFeng/PewLSTM.}
+	abstract     = {In big cities, there are plenty of parking spaces, but we often find nowhere to park. For example, New York has 1.4 million cars and 4.4 million on-street parking spaces, but it is still not easy to find a parking place near our destination, especially during peak hours. The reason is the lack of prediction of parking behavior. If we could provide parking behavior in advance, we can ease this parking problem that affects human well-being. We observe that parking lots have periodic parking patterns, which is an important factor for parking behavior prediction. Unfortunately, existing work ignores such periodic parking patterns in parking behavior prediction, and thus incurs low accuracy. To solve this problem, we propose PewLSTM, a novel periodic weather-aware LSTM model that successfully predicts the parking behavior based on historical records, weather, environments, and weekdays. PewLSTM has been successfully integrated into a real parking space reservation system, ThsParking, which is one of the top smart parking platforms in China. Based on 452,480real parking records in 683 days from 10 parking lots, PewLSTM yields 85.3% parking prediction accuracy, which is about 20% higher than the state-of-the-art parking behavior prediction method. The code and data can be obtained fromhttps://github.com/NingxuanFeng/PewLSTM.},
+	papers	     = {papers/predictionIJCAI.pdf}
 }
 @inproceedings{254469,
 	title        = {<div class="venue">[ATC]</div> FineStream: Fine-Grained Window-Based Stream Processing on CPU-GPU Integrated Architectures},
@@ -43,7 +45,8 @@
 	pages        = {633--647},
 	isbn         = {978-1-939133-14-4},
 	url          = {https://www.usenix.org/conference/atc20/presentation/zhang-feng},
-	abstract     = {Accelerating SQL queries on stream processing by utilizing heterogeneous coprocessors, such as GPUs, has shown to be an effective approach. Most works show that heterogeneous processors bring significant performance improvement because of their high parallelism and computation capacity. However, the discrete memory architectures with relatively low PCI-e bandwidth and high latency have dragged down the benefits of heterogeneous coprocessors. Recently, hardware vendors propose CPU-GPU integrated architectures that integrate CPU and GPU on the same chip. This integration provides new opportunities for fine-grained cooperation be-tween CPU and GPU for optimizing SQL queries on stream processing. In this paper, we propose a data stream system, called FineStream, for efficient window-based stream pro-cessing on integrated architectures. Particularly, FineStreamperforms fine-grained workload scheduling between CPU and GPU to take advantage of both architectures, and also targets at dynamic stream query co-processing with window handling. Our experimental results show that 1) on integrated architectures, FineStream achieves an average 52% throughput improvement and 36% lower latency over the state-of-the-art stream processing engine; 2) compared to the stream processing engine on the discrete architecture, FineStream on the integrated architecture achieves 10.4x price-throughput ratio, 1.8x energy efficiency, and can enjoy lower latency benefits.}
+	abstract     = {Accelerating SQL queries on stream processing by utilizing heterogeneous coprocessors, such as GPUs, has shown to be an effective approach. Most works show that heterogeneous processors bring significant performance improvement because of their high parallelism and computation capacity. However, the discrete memory architectures with relatively low PCI-e bandwidth and high latency have dragged down the benefits of heterogeneous coprocessors. Recently, hardware vendors propose CPU-GPU integrated architectures that integrate CPU and GPU on the same chip. This integration provides new opportunities for fine-grained cooperation be-tween CPU and GPU for optimizing SQL queries on stream processing. In this paper, we propose a data stream system, called FineStream, for efficient window-based stream pro-cessing on integrated architectures. Particularly, FineStreamperforms fine-grained workload scheduling between CPU and GPU to take advantage of both architectures, and also targets at dynamic stream query co-processing with window handling. Our experimental results show that 1) on integrated architectures, FineStream achieves an average 52% throughput improvement and 36% lower latency over the state-of-the-art stream processing engine; 2) compared to the stream processing engine on the discrete architecture, FineStream on the integrated architecture achieves 10.4x price-throughput ratio, 1.8x energy efficiency, and can enjoy lower latency benefits.},
+	pdf	     = {papers/atc20-zhang-feng.pdf}
 }
 @article{10.1145/3385658.3385662,
 	title        = {<div class="venue">[SIGMOD RECORD]</div> Hardware-Conscious Stream Processing: A Survey},
@@ -61,7 +64,8 @@
 	url          = {https://doi.org/10.1145/3385658.3385662},
 	issue_date   = {December 2019},
 	abstract     = {Data stream processing systems (DSPSs) enable users to express and run stream applications to continuously process data streams. To achieve realtime data analytics, recent researches keep focusing on optimizing the system latency and throughput. Witnessing the recent great achievements in the computer architecture community, researchers and practitioners have investigated the potential of adoption hardware-conscious stream processing by better utilizing modern hardware capacity in DSPSs. In this paper, we conduct a systematic survey of recent work in the field, particularly along with the following three directions: 1) computation optimization, 2) stream I/O optimization, and 3) query deployment. Finally, we advise on potential future research directions.},
-	numpages     = 12
+	numpages     = 12,
+  	pdf 	     = {papers/04_Surveys_Zhang.pdf},
 }
 @inproceedings{8919445,
 	title        = {<div class="venue">[BIGMM]</div> TraV: An Interactive Exploration System for Massive Trajectory Data},
@@ -71,7 +75,8 @@
 	volume       = {},
 	number       = {},
 	pages        = {309--313},
-	doi          = {10.1109/BigMM.2019.000-4}
+	doi          = {10.1109/BigMM.2019.000-4},
+	pdf 	     = {papers/Ang-2019-Trav-an-interactive-exploration-sys.pdf}
 }
 @inproceedings{10.1145/3299869.3300067,
 	title        = {<div class="venue">[SIGMOD]</div> BriskStream: Scaling Data Stream Processing on Shared-Memory Multicore Architectures},
@@ -122,7 +127,8 @@
 	volume       = {},
 	number       = {},
 	pages        = {875--886},
-	doi          = {10.1109/SC.2016.74}
+	doi          = {10.1109/SC.2016.74},
+	papers=      = {papers/Tang-2016-Elastic-multi-resource-fairness-bal.pdf}
 }
 @article{7501903,
 	title        = {<div class="venue">[TPDS]</div> Understanding Co-Running Behaviors on Integrated CPU/GPU Architectures},
@@ -132,7 +138,8 @@
 	volume       = 28,
 	number       = 3,
 	pages        = {905--918},
-	doi          = {10.1109/TPDS.2016.2586074}
+	doi          = {10.1109/TPDS.2016.2586074},
+	papers	     = {papers/Zhang-2016-Understanding-co-running-behaviors-.pdf}
 }
 @article{7425227,
 	title        = {<div class="venue">[TPDS]</div> Melia: A MapReduce Framework on OpenCL-Based FPGAs},
@@ -142,7 +149,8 @@
 	volume       = 27,
 	number       = 12,
 	pages        = {3547--3560},
-	doi          = {10.1109/TPDS.2016.2537805}
+	doi          = {10.1109/TPDS.2016.2537805},
+	papers	     = {papers/Wang-2016-Melia-a-mapreduce-framework-on-open.pdf}
 }
 @inproceedings{7330177,
 	title        = {<div class="venue">[MASCOTS]</div> To Co-run, or Not to Co-run: A Performance Study on Integrated Architectures},
@@ -152,7 +160,8 @@
 	volume       = {},
 	number       = {},
 	pages        = {89--92},
-	doi          = {10.1109/MASCOTS.2015.27}
+	doi          = {10.1109/MASCOTS.2015.27},
+	papers	     = {papers/10.1109_mascots.2015.27.pdf}
 }
 @article{10.14778/2735496.2735497,
 	title        = {<div class="venue">[VLDB]</div> In-Cache Query Co-Processing on Coupled CPU-GPU Architectures},
@@ -169,7 +178,8 @@
 	url          = {https://doi.org/10.14778/2735496.2735497},
 	issue_date   = {December 2014},
 	abstract     = {Recently, there have been some emerging processor designs that the CPU and the GPU (Graphics Processing Unit) are integrated in a single chip and share Last Level Cache (LLC). However, the main memory bandwidth of such coupled CPU-GPU architectures can be much lower than that of a discrete GPU. As a result, current GPU query co-processing paradigms can severely suffer from memory stalls. In this paper, we propose a novel in-cache query co-processing paradigm for main memory On-Line Analytical Processing (OLAP) databases on coupled CPU-GPU architectures. Specifically, we adapt CPU-assisted prefetching to minimize cache misses in GPU query co-processing and CPU-assisted decompression to improve query execution performance. Furthermore, we develop a cost model guided adaptation mechanism for distributing the workload of prefetching, decompression, and query execution between CPU and GPU. We implement a system prototype and evaluate it on two recent AMD APUs A8 and A10. The experimental results show that 1) in-cache query co-processing can effectively improve the performance of the state-of-the-art GPU co-processing paradigm by up to 30% and 33% on A8 and A10, respectively, and 2) our workload distribution adaption mechanism can significantly improve the query performance by up to 36% and 40% on A8 and A10, respectively.},
-	numpages     = 12
+	numpages     = 12,
+	papers	     = {papers/He-2014-In-cache-query-co-processing-on-cou.pdf}
 }
 @article{10.14778/2536274.2536319,
 	title        = {<div class="venue">[VLDB]</div> OmniDB: Towards Portable and Efficient Query Processing on Parallel CPU/GPU Architectures},
@@ -186,5 +196,6 @@
 	url          = {https://doi.org/10.14778/2536274.2536319},
 	issue_date   = {August 2013},
 	abstract     = {Driven by the rapid hardware development of parallel CPU/GPU architectures, we have witnessed emerging relational query processing techniques and implementations on those parallel architectures. However, most of those implementations are not portable across different architectures, because they are usually developed from scratch and target at a specific architecture. This paper proposes a kernel-adapter based design (OmniDB), a portable yet efficient query processor on parallel CPU/GPU architectures. OmniDB attempts to develop an extensible query processing kernel (qKernel) based on an abstract model for parallel architectures, and to leverage an architecture-specific layer (adapter) to make qKernel be aware of the target architecture. The goal of OmniDB is to maximize the common functionality in qKernel so that the development and maintenance efforts for adapters are minimized across different architectures. In this demo, we demonstrate our initial efforts in implementing OmniDB, and present the preliminary results on the portability and efficiency.},
-	numpages     = 4
+	numpages     = 4,
+	papers	     = {papers/Zhang-2013-Omnidb.pdf}
 }

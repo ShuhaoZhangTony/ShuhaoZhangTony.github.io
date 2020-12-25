@@ -1,0 +1,451 @@
+\section{Evaluation}
+\label{sec:eva}
+In this section, we evaluate different state management concurrency control algorithms. 
+First, we evaluate and analyze our method based on a modified YCSB workload. 
+%The analysis of YCSB helps use to choose and compare different schemes of our system.
+%allows us to flexibly change its parameters and create a variety of scenarios that stress and compares different concurrency control schemes in different ways. 
+%Next, we examine system performance and scalability (Section~\ref{subsec:real}) in processing real-life workloads. 
+Then, we use real workloads to examine the performance and scalability of our system.
+
+\subsection{Experimental Setup}
+We conduct the experiment on a 4-socket Intel Xeon E7-4820 server with 128 GB DRAM.
+Each socket contains ten 1.9 GHz cores and 25 MB of L3 cache,
+so the platform has 40 cores.
+The operating system is Linux 4.4.0-62-generic. 
+In our evaluation, there is a one-to-one binding between threads and cores. We reserve two cores in the system: one for running data stream producer, and the other for output stream receiver. 
+%\tony{
+  We devote 2 to 38 cores for running working threads to evaluate the system scalability. 
+  %(Feng: unclear)
+%}
+
+We configure the data placement of the internal state in an island-aware manner following previous work~\cite{Porobic:2012:OHI:2350229.2350260} for NUMA-awareness. 
+Specifically, we first partition the workload evenly to each NUMA node, so that the workload assigned to each node is balanced.
+%allocate each working thread over all cores.
+%divided shared state into disjoint subsets with approximately same size. Then, each working thread is uniformly allocated over multiple sockets.
+Then, the TP-Layer is divided into several groups, where each group is responsible for workloads of part of the CPU sockets (i.e., island). 
+We evaluate the effect of such grouping in our experiments.
+
+% \textbf{No-Order CC (NOCC).}
+At its minimum, stateful stream processing needs to ensure that accesses to the internal state are processed with ACID guarantees.
+We implement such a special \system w/o guaranteeing ordering-preserving consistency as a baseline (named as \textbf{No-Order CC (NOCC)}).
+% based on conventional concurrency control protocol implementations originated from \tony{Cavalia~\cite{Wu2016} database system}. 
+For the sake of simplicity, we show the results of adopting the classical two-phase-locking with no-wait deadlock prevention strategy~\cite{Eswaran:1976:NCP:360363.360369}. More advanced conventional concurrency control protocols are applicable but do not guarantee ordering-preserving consistency as we have discussed before.
+
+In addition to runtime statistics evaluation, we also report how much time each transaction spends in different components of the system. 
+Similar to the previous work~\cite{Yu2015}, 
+we classify these work as follows:
+%we group these measurement into the following categories. 
+%In addition, we need to consider RMA for a transaction accessing records from remote memory.
+\begin{myitemize}
+  \item	\textbf{Useful work:} 
+    the time that the transaction is really operating on records in the system.
+    %\tony{(Feng: unclear)}
+    %the time that the transaction is actually executing application logic and operating on records in the system.
+\item	\textbf{Abort\&Redo:} the time spent due to transaction abort (e.g., failure for acquiring locks in NOCC). 
+  As stateful stream processing application requires all operations to complete, each abort transaction has to be redo, this subsequently adds more execution runtime.
+\item	\textbf{TS Allocation:} the time that the system spends to acquire a unique timestamp. 
+  This is not a must for ordering preserving algorithms (e.g., LAL, LWM and \system) because each transaction has a unique event-associated timestamp.
+\item	\textbf{Index:} The time that the transaction spends in the hash indexes for tables, including the overhead of low-level latching of the buckets in the hash tables.
+\item	\textbf{Wait:} The total amount of time that a transaction spends due to synchronization for ordering preserving.
+  A transaction may either wait for a global variable (e.g., LWM) or wait for a periodic synchronization (e.g., \system).
+\item	\textbf{Lock:} The total amount of time that a transaction spends due to lock acquisition.
+%\item	\textbf{RMA:} The time spent due to remote memory access to the records. We use a simple formula to estimate the cost of RMA based on prior work~\cite{byna2004predicting} shown as follows.
+%$$ \lceil N/S \rceil * L$$, where N stands for the size of data transfer, S denotes the cache line size, and L represents the wort case remote memory access latency.
+\item	\textbf{Manager:} All the rest time spent in the system. It includes the construction time of operation chain for \system.
+\end{myitemize}
+
+\subsection{YCSB Benchmark Analysis}
+\label{subsec:YCSB}
+We modify the YCSB~\cite{Cooper:2010:BCS:1807128.1807152} benchmark to model different workload settings of applications. 
+%\begin{figure}
+%\begin{wrapfigure}{r}{0.2\textwidth}
+%    \includegraphics[width=0.2\textwidth]{figure/microbenchmark.pdf}   
+%    \caption{Application topology of our modified YCSB benchmark.}                   
+%    \label{fig:microbenchmark}
+%\end{wrapfigure}  
+%\end{figure}
+Figure~\ref{fig:microbenchmark} shows the topology of our streaming YCSB benchmark. 
+We continuously feed the stream of synthetic input events to three operators: $R$, $W$ and $C$ (explained in Section~\ref{sec:arch}). 
+%This workload concentrate on the case of concurrent read and write operations from a single stage.
+Upon receiving each event, operator $R$ sends a read operation to the internal state to obtain the value. 
+%, where $n$ stands for the working set size of the operation, and the default value is set to be $10$. 
+Operator $C$ performs a summation calculation based on the returned state from $R$ and then emits the evaluation result to its downstream. 
+Operator $W$ updates the value of the interested record, and then forwards its updated value to its downstream.
+All operators are carried by one or multiple physical threads.
+We measure the total throughput and end-to-end processing latency from both stream pipelines.
+
+Each input event fed into the system has the following four attributes.
+\begin{enumerate}
+\item \emph{timestamp} that indicates its event sequence. For simplicity, we assume that the stream events fed into the system are totally ordered by their timestamp. 
+\item \emph{tag} is a Boolean value that determines the receiving operator ($R$ or $W$), which effectively specifies the workload's read-write ratio.
+\item \emph{keys} specifies the interested records of the internal state. 
+%\tony{Feng: reads stupid}
+\item \emph{values} that contains the value to be used in updating the record.
+\end{enumerate}
+
+We explore different aspects of the system by varying the skew of keys, read-write ratio and state partition. Each transaction access ten records. 
+%As all testing algorithms are pessimistic in nature, there is no significant performance changing for varying working set sizes. 
+The partition-based scheme is excluded from our initial experiments and is only introduced when we analyze the state partitioning.
+The number of cores devoted to the system and the size of watermark interval are system parameters, which can be varied by the system administrator. We vary both parameters in our experiments. 
+%Unless otherwise stated, 
+Moreover, we use a single table consisting of 100,000 records as the application internal state.
+Each record has a size of 100 bytes, and the watermark interval is set to 100 ms in \system. 
+
+\textbf{Read-Only Workload.}
+In the first scalability analysis, 
+%In this first scalability analysis experiment, 
+we configure input events with only read requests.
+We also set the key skew factor to be 0, and hence the data is accessed with uniform frequency.
+The read-only workload helps to stress the handover between stream computation and state management as much as possible. That is, operator C can only start the computation for summation after operator R successfully obtains state.
+Under \system scheme, all input events, in this workload, have to be marked as ``in-complete'' and their reading operations need to be processed (all at once) once the watermark is arrived. 
+
+\begin{figure}
+\centering
+    \subfloat[Total Throughput]{%
+        \includegraphics*[width=0.25\textwidth]{figure/Read_only.pdf}
+    }       
+    \subfloat[Runtime Breakdown (38 cores)]{%
+        \includegraphics*[width=0.25\textwidth]{figure/breakdownR_40.pdf}
+    }        
+    \caption{\textbf{Read-only Workload} – Results for a read-only YCSB workload.}
+    \label{fig:read_only}
+\end{figure}
+
+Figure~\ref{fig:read_only}(a) shows the results of our experiment, and we have three main observations.
+%First, 
+First, the throughput of the most relaxed scheme -- NOCC, increases linearly with the number of cores. 
+It stops further scaling, however, for more than 32 cores being used. The time breakdown in Figure~\ref{fig:read_only}(b) indicates that index look up becomes the bottleneck with a large core count. 
+%As this is not an issue for ordering-preserving algorithms (LAL, LWM and \system), which this paper focus on, we defer the problem of scaling index for multicores as future work.
+%\tony{Need explain, I plan to use Vtune profilier to see if it is caused by memory bandwidth saturation.}
+Second, lock-ahead based algorithms (LAL and LWM) perform well when the number of cores is small, but they stop scaling when more than 8 cores are used. 
+%First, lock-ahead based algorithms (LAL and LWM) perform well when small number of cores are used, but both of them quickly stop scaling when more than 8 cores are used. 
+The time breakdown in Figure~\ref{fig:read_only}(b) indicates that \emph{wait time} dominates the runtime of both LAL and LWM with a large core count. This is primarily caused by their centralized locking mechanism. 
+We find that LWM performs even worse than LAL, due to the additional overhead in maintaining the low-water-mark counter for each record. 
+Third, \system performs much better than LAL and LWM while guaranteeing the same consistency. However, Figure~\ref{fig:read_only}(b) indicates that \system still spends a large portion of time in synchronization. There is large room for further improvement.
+ 
+\textbf{Write-Intensive Workload.}
+We also study a write-intensive YCSB workload, where every input event triggers a write request to the internal state.
+To represent a more realistic scenario, we model the accessing distribution as Zipfian skew, where certain records are more likely to be accessed than others. 
+The amount of skew in the workload is determined by the parameter, $theta$.
+We use the medium and high contention levels for the transactions’ access patterns.
+
+The medium contention results in Figure~\ref{fig:write_only}(a) shows a similar trend for LAL, LWM and \system as in read-only case. 
+NOCC performs poorly with larger core counts. 
+Figure~\ref{fig:write_only}(b) shows that there is a significant time increase in management. Under NOCC, transaction needs to hold a copy of records so that it can roll back the changes during aborting. Other order-preserving schemes are permissive in nature and does not involve any transaction aborts. Therefore, they do not bear such memory-copy overhead.
+%NOCC spends significant time in index; this is due to the increasing abort and restart process.
+%\system scale well with increasing number of cores. 
+%Figure~\ref{fig:write_only}(b) shows that \system has a smaller wait time compared to read-only case. 
+%This is because \system does not have to stall for write-only events.
+The results of high contention case shown in Figure~\ref{fig:write_only2} show that only \system is able to further improve its performance beyond 32 cores. The reasons are two folds. 
+First, \system is abort-free, skew level only potentially brings higher workload unbalancing (some operation chain may be significant longer than others) to \system. Second, \system's work-stealing scheme relieve the pain-point of increased workload unbalance (i.e., those long-chains will be cooperatively processed by multiple threads). 
+%Conversely, \tony{\system is permissive in nature and does not involve any transaction abort issue and is well tolerated to key skewness. (Feng: unclear)}
+The breakdown in Figure~\ref{fig:write_only2}(b) indicates that NOCC is inhibited by excessive abort and redo. Again, LAL and LWM spend most of their execution time in synchronization for guaranteeing correct lock insertion sequence.
+
+\begin{figure} 
+\centering
+    \subfloat[Total Throughput]{%
+        \includegraphics*[width=0.25\textwidth]{Write_only.pdf}   
+    }    
+    \subfloat[Runtime Breakdown (38 cores)]{%
+        \includegraphics*[width=0.25\textwidth]{breakdownW_40.pdf}
+    }        
+    \caption{\textbf{Write-Intensive Workload (Medium)} – Results for YCSB workload with medium contention (theta=0.6).}
+     \label{fig:write_only}
+\end{figure}
+
+
+\begin{figure} 
+\centering
+    \subfloat[Total Throughput]{%
+        \includegraphics*[width=0.25 \textwidth]{Write_only2.pdf}
+    }     
+    \subfloat[Runtime Breakdown (38 cores)]{%
+        \includegraphics*[width=0.25 \textwidth]{breakdownW_40_2.pdf}
+    }        
+    \caption{\textbf{Write-Intensive Workload (High)} – Results for YCSB workload with high contention (theta=0.8).}
+    \label{fig:write_only2}
+\end{figure}
+
+\textbf{Read/Write Mixture Workload.}
+An application may issue both read and write operations to the internal state. 
+%The performance of all algorithms except \system increases with more read operations.
+%It seems supervising that \system's performance drops with increasing of read operation.
+Due to the ordering-preserving consistency, the read/write ratio affects the system performance non-trivially. 
+On one hand, more write operations lead to more contentions; 
+On the other hand, read operations are not competing for locks but may has to be stalled to guarantee the correct reading sequence, which may also reduce the systems' concurrency. 
+
+In our experiment, we vary the percentage of read operations executed by each transaction. 
+%Each transaction executes using the medium skew setting (theta=0.6).
+Figure~\ref{fig:mixworkload}(a) shows that NOCC performs better with more read operations. 
+The reason is that there is an increasing concurrency with lesser contention.
+%This is expected as there is an increasing concurrency with lesser contention.
+LAL and LWM are not affected by the read-write ratio because their run time are dominated by waiting time for enforcing event ordering.
+\system also performs similar regardless of read-write ratio, which is mainly due to the dual-tier architecture.
+On one hand, the average processing time per event per core of \system increases with more write requests, which is shown in Figure~\ref{fig:mixworkload}(b);
+On the other hand, each read request contains a place holder to be filled up, which also requires write operations by the system.
+Figure~\ref{fig:mixworkload}(b) also indicates that the workload unbalancing issue in \system, even under contended workload, is mostly insignificant due to the work-stealing scheme. 
+
+\begin{figure} 
+\centering
+    \subfloat[Total Throughput]{%
+        \includegraphics*[width=0.25\textwidth]{mixworkload.pdf}  
+    }   
+%    \subfloat[Runtime Breakdown (40 cores, 50\% read)]{%
+%        \includegraphics*[width=0.4\textwidth]{mixworkload_breakdown.pdf}  
+%    }
+%      
+    \subfloat[Processing time per core]{%
+        \includegraphics*[width=0.25\textwidth]{mix_breakdown_per_core.pdf}
+    }         
+    \caption{\textbf{Read/Write Mixture} – Results for YCSB with a varying percentage of read operation with medium contention (theta=0.6).}
+      \label{fig:mixworkload}
+\end{figure}
+
+%\textbf{Working Set Size.}
+%The number of tuples accessed by a transaction is another factor that impacts scalability. 
+%When a transaction’s working set is large, it increases the likelihood that the same data is accessed by concurrent transactions. 
+%The results in Figure~\ref{fig:workingset} show that there is no significant performance degradation for increasing working set sizes for all testing algorithms. This is because as all our testing schemes are pessimistic in nature.
+%Figure~\ref{fig:workingset} also indicates that \system is tolerant to increasing contention.
+%
+%\begin{figure} 
+%\centering
+%    \subfloat[Total Throughput]{%
+%        \includegraphics*[width=0.4\textwidth]{workingset.pdf}   
+%    }   
+%        
+%    \subfloat[Runtime Breakdown (transaction length = 1)]{%
+%        \includegraphics*[width=0.4\textwidth]{workingset_breakdown.pdf} 
+%    }        
+%    
+%%    \subfloat[Runtime Breakdown (transaction length = 16)]{%
+%%        \includegraphics*[width=0.4\textwidth]{workingset_breakdown2.pdf} 
+%%    }     
+%    \caption{\textbf{Working Set Size} – The number of tuples accessed for transactions with a varying working set size (theta=0.6).} \label{fig:workingset}
+%\end{figure}
+
+
+%\textbf{Shared State Size}
+%We now evaluate the effect of varying the size of shared state being accessed. As there is only one table in YCSB benchmark, we simply vary the size of it from 1K rows to 1M rows.
+%We use a read-write mixture workload (50\% read) for this experiment.
+%Figure~\ref{} shows that this affects system performance non-trivially. 
+%With a small table size, latch overhead becomes obvious even if there is no lock contention, this is why NOCC performs poorly under such configuration.
+%Conversely, \system 
+%
+%\begin{figure} 
+%\centering
+%    \subfloat[Total Throughput]{%
+%        \includegraphics*[width=0.4\textwidth]{workingset.pdf}   
+%    } 
+%    \caption{\textbf{Shared State Size} – The results of varying the size of shared state (theta=0.6).} \label{fig:SharedStateSize}
+%\end{figure}
+
+\textbf{The Effect of State Partitioning.}
+%Up to this point in our analysis, 
+Until this section,
+we assume that the out-of-core-state is stored as a single partition in memory and all worker threads can access any record. 
+With the PAT (based on SStore) scheme, however, the internal state is assumed to be pre-partitioned into disjoint subsets to increase scalability~\cite{Pavlo2012}. 
+%This approach achieves good performance only if the database is partitioned in such a way that enables a majority of transactions to only need to access data at a single partition. It does not work well when the workload contains multi-partition transactions because of its coarse-grained locking scheme. It also matters how many partitions each transaction accesses; for example, it will still perform poorly even with a small number of multi-partition transactions if they access all partitions.
+%Previous work~\cite{Jones:2010:LOC:1807167.1807233} has investigated different approaches to increase the performance of multi-partition transactions in the context of \emph{distributed transactions}, where database are partitioned into multiple nodes and the DBMS needs to employ two-phase commit or a similar distributed consensus protocol to ensure atomicity and serializability.
+%We leave selecting the best alternative to future work, and only evaluate the locking scheme in this paper. To prevent deadlock, transactions that fails to acquire a lock will roll back and restart.
+%Similar to LAL and LWM, PAT needs to achieve ordering-preserving consistency.
+%Under PAT, each thread only needs to guarantee the order of inserting lock of its targeting partitions. In such way, different threads are separately synchronized at different (hopefully with uniformed key distribution) partitions, which increases system concurrency.
+%\tony{This approach achieves good performance if the shared state is partitioned in such a way that enables a majority of transactions to only need to access record at a single partition.}
+%Previous work~\cite{Jones:2010:LOC:1807167.1807233} has investigated different approaches to increase the performance of multi-partition transactions. 
+%Specifically, to prevent deadlock, transactions that fails to acquire a lock will immediately roll back and restart. 
+%We leave selecting the best alternative to future work, and only evaluate the locking scheme in this paper. 
+%In our context, the roll back has little overhead, as it simply release the locks it has acquired during the lock-insertion phase.
+We first compare PAT to other schemes under ideal conditions. 
+We then analyze its performance with multi-partition transactions. 
+We divide the out-of-core state into the same number of partitions as the number of cores. 
+Because YCSB has only one table, we use a simple hashing strategy to assign the records to partitions based on their primary keys so that each partition stores approximately the same number of records. 
+%These tests use a read-only workload where each transaction executes 10 queries that all use index look-ups without any skew (theta=0.0). 
+%We also configure the input stream so that it send out events targeting at partitions uniformly.
+
+In the first experiment, we execute a workload comprised of only single-partition transactions. 
+The results in Figure~\ref{fig:single_partition} show that PAT outperforms all other order-preserving schemes.
+Since it is especially designed to take advantage of partitioning, it has a much lower overhead for synchronization than the other schemes. 
+We next vary the percentage of multi-partition transactions in the workload and deploy the system on 38 cores. We set the length of multi-partition to be 6. 
+The results are shown in Figure~\ref{fig:multi_partition}(a). 
+Note that, the performance gaps between real-only and write-intensive under PAT scheme, is not related to locking, but mainly caused by the additional computation step in operator C, as there is no difference in performance whether or not the workload contains writing transactions under PAT scheme~\cite{Pavlo2012}. 
+Their throughput becomes similar when contentions are increased with more multi-partition transactions as the synchronization overhead dominates the run time. 
+\tony{Furthermore, the system's throughput degrades with more multi-partition transactions as they reduce the amount of parallelism. When there are more than 50\% of the transactions access multi-partition, PAT scheme performs worse than \system.
+We next execute YCSB with 50\% multi-partition transactions, and Figure~\ref{fig:multi_partition}(b) illustrates the results of varying the number of partitions that they access.
+The system performance drops significantly with transactions accessing four or more partitions because of the increased need of preserving ordering on the same partition.
+}
+
+%\begin{figure} 
+%\centering
+%%    \subfloat[Total Throughput (Read-Only)]{%
+%        \includegraphics*[width=0.4\textwidth]{single_partitionR.pdf}    
+%%        \label{fig:single_partitionR}
+%%    }
+%    
+%%    \subfloat[Total Throughput (Write-Intensive)]{%
+%%         \includegraphics*[width=0.4\textwidth]{single_partitionW.pdf}    \label{fig:single_partitionW}
+%%    }
+%    \caption{\textbf{Out-of-Core State Partitioning} -- Results for a read-only workload on a partitioned out-of-core state (theta=0.0).}
+%    \label{fig:single_partition}
+%\end{figure}
+
+\begin{figure*} 
+\centering
+\begin{minipage}[b]{0.33\textwidth}
+	 \includegraphics*[width=\textwidth]{single_partitionR.pdf}    
+ 	\caption{\textbf{Out-of-Core State Partitioning} -- Results for a read-only workload on a partitioned out-of-core state (theta=0.0).}
+     \label{fig:single_partition}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.63\textwidth}
+    \subfloat[Muli-Partition Percentage]{%
+        \includegraphics*[width=0.5\textwidth]{multi_partition_r.pdf}    \label{fig:multi_partition_r}
+    }
+    \subfloat[Partitions per Transaction]{%
+         \includegraphics*[width=0.5\textwidth]{multi_partition_n.pdf}   \label{fig:multi_partition_n}
+    }
+    \caption{\textbf{Multi-Partition Transactions} – Sensitivity analysis of the PAT scheme for YCSB workloads with multi-partition transactions.}
+    \label{fig:multi_partition}
+\end{minipage}    
+\end{figure*}
+
+\textbf{The Effect of Watermark Interval.}
+In this part, we study the effect of varying size of watermark interval in \system, on latency and throughput.
+Following previous work~\cite{adaptivebatch}, we define the end-to-end latency of a streaming workload as the duration between the time when an input event enters the system and the time when the results corresponding to that event is generated. 
+The results in Figure~\ref{fig:interval} show that 1) the relationship between system throughput and watermark interval is non-linear. Deciding a suitable batch size can be complex. \tony{Potential applicable techniques have been studied in previous work~\cite{adaptivebatch}, and we leave it as future work to enhance our system}; 2) the end-to-end latency of \system is comparable  to other schemes and can be tuned to be even smaller. This is a highly desired feature as different applications can have different latency requirements, and \system provides users the opportunity to tune the system flexibly.
+
+\begin{figure} 
+\centering
+    \subfloat[Total Throughput]{%
+        \includegraphics*[width=0.245\textwidth]{interval.pdf}    \label{fig:interval_throughput}
+    }
+    \subfloat[$90^{th}$ Percentile End-to-End Latency (Read/Write 50\% mixture workload)]{%
+         \includegraphics*[width=0.245\textwidth]{interval_latency.pdf}    \label{fig:interval_latency}
+    }
+    \caption{\textbf{Effect of watermark interval size} -- Sensitivity analysis of watermark interval size of \system.}
+    \label{fig:interval}
+\end{figure}
+
+\textbf{Small State Size.}
+The internal state of stream processing (e.g., IoT) can be relatively small compared to traditional relational database. Under such configuration, the chances of transaction contention is very high. 
+Figure~\ref{fig:smallDB} shows that NOCC cannot progress even with a small portion of write requests due to the excessive abort and redo process. Conversely, \system shows similar and sometimes even better performance. In particular, under highly contended workload, \system performs similar to the well partitioned case under PAT scheme. 
+The robust of \system under highly contended workloads comes from two aspects.
+First, under such configuration, many transaction requests are targeting at the same record. The overhead of constructing operation chains are effectively amortized.
+Second, \system's work-stealing scheme successfully reduces the potential workload unbalancing among working threads. 
+%The reasons are two folds. 
+%First, there is a considerable overhead of operation chain construction and submission in TP-Layer of \system. If many requests are towards the same record, the associated overhead of each operation chain is effectively amortized.
+
+%\begin{figure} 
+%\centering
+%%    \subfloat[Medimum state size (size=10000)]{%
+%        \includegraphics*[width=0.4\textwidth]{smallDB_mix.pdf}    \label{fig:smallDB_mix}
+%%    \subfloat[End-to-End Latency (Read-Only workload)]{%
+%%         \includegraphics*[width=0.25\textwidth]{smallDB_size.pdf}    \label{fig:smallDB_sizestudy}
+%%    }
+%    \caption{\textbf{Small Internal State Size} – Results for YCSB workload with a internal state size of records=10,000.}
+%    \label{fig:smallDB}
+%\end{figure}
+
+
+\textbf{Factor Study.}
+Figure~\ref{fig:factor} shows the relative effectiveness of several optimization techniques of \system.  Changes are added left to right and are cumulative.
+\tony{
+\emph{Simple} refers to \system with an integrated design -- threads needs to construct operation chains and process on those operation chains by themselves. There is no evaluation push down nor work-stealing under such scheme.
+\emph{+NUMA-aware} adds the consideration of different NUMA-aware thread and workload placement configurations.
+\emph{+dual-tier} detaches the execution into two layers and evaluation push down is thereafter enabled.
+\emph{+work-stealing} further enables work-stealing technique with foundation of the dual-tire architecture.
+}
+\tony{First, NUMA-awareness brings minor performance improvement. 
+This is due to the little memory-to-memory copying overhead in \system as it reads records in place instead of copying them to local copy to perform a read. Furthermore, each record is always processed by the same thread in \system (as long as work stealing is not involved for that record), which also minimize NUMA traffic. 
+%In particular, only pointer to the record is transferred from TP-Layer to SP-Layer to serve read requests, and records are modified instead of overwrite for write requests to reduce cost.
+%This is due to little copying overhead for YCSB benchmark. It is expected to have larger impact when the record value size is larger. 
+Second, dual-tier architecture hurts system performance in read-only workload. Under which, TP-Layer needs to write-back the fetched record to place-holders created by SP-Layer, that brings considerable cross-core communication overhead. Conversely, for write-intensive workloads, dual-tier architecture brings remarkable performance improvement as the evaluation is push down to TP-Layer and does not require a write-back.
+%due to its evaluation push down design.
+Third, work-stealing, which builds on the foundation of dual-tier architecture, plays a critical role in optimizing \system. Its performance gain overcome the cross-core communication overhead bringing by the dual-tier architecture.}
+
+%\begin{figure}
+%\centering
+%    \includegraphics[width=0.4\textwidth]{figure/factor.pdf}   
+%    \caption{\textbf{A factor analysis for \system}. Changes are added left to right and are cumulative.}                   
+%    \label{fig:factor}
+%\end{figure}
+
+\begin{figure} 
+\centering
+\begin{minipage}[b]{0.5\textwidth}
+	\begin{minipage}[b]{0.47\textwidth}
+    \includegraphics*[width=\textwidth]{smallDB_mix.pdf}    \label{fig:smallDB_mix}
+    \vspace{-10pt}
+    \caption{\textbf{Small State Size} – Internal state size=10,000.}
+    \label{fig:smallDB}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.52\textwidth}
+	\includegraphics[width=\textwidth]{figure/factor.pdf}  
+	\vspace{-15pt}
+	\caption{{A factor analysis for \system}.}   
+	\label{fig:factor}
+	\end{minipage}
+%	\begin{minipage}[b]{0.35\textwidth}
+%	\includegraphics[width=\textwidth]{figure/CT_application.pdf}  
+%	\caption{Streaming Transaction across Tables Use Case.}  
+%	\label{fig:CT_topo}
+%	\end{minipage}
+\end{minipage}	
+\end{figure}
+%\begin{figure}
+%\centering
+%    \includegraphics[width=0.4\textwidth]{figure/factor.pdf}   
+%    \caption{\textbf{A factor analysis for \system}. Changes are added left to right and are cumulative.}                   
+%    \label{fig:factor}
+%\end{figure}
+
+\subsection{Use Case Study}
+\label{subsec:real}
+%We implement two real world use cases to evaluate \system. Both use cases require state access aligned with triggering event's timestamp, hence we only evaluate LAL, LWM, \system and PAT four schemes.
+%\textbf{Use case 1: Streaming Transactions across Tables.}
+We now evaluate the system based on applications that are used in previous studies.
+%\begin{wrapfigure}{r}{0.3\textwidth}
+%\begin{figure}
+%\centering
+%    \includegraphics[width=0.35\textwidth]{figure/CT_application.pdf}   
+%    \caption{Streaming Transaction across Tables.}                   
+%    \label{fig:CT_topo}
+%\end{figure}
+%\end{wrapfigure}
+This use case, called  \emph{streaming transactions across tables}, considers wring money and assets between accounts and ledger entries as depicted in Figure~\ref{fig:CT_topo}. 
+%For more details, readers can refer to the 
+This workload is suggested in the very recently announced commercial (close-sourced) stateful DSPSs -- Streaming-Leger's white paper~\cite{Transactions2018}. For more details, readers can refer to their original paper.
+%which is observed during their joint work with leading adopters of stream processing. 
+%There are two tables maintained in the system: ``accounts'' and ``asset ledger'', and each contains one million rows.
+%The input event stream describes transfers between accounts, ledger entries, or both, with additional preconditions.
+%When an event comes in, the transaction function accesses the relevant rows, checks the preconditions, and decides to process or reject the transfer. 
+%In the former case, it updates the respective rows in the tables. 
+%In both cases, the transaction function may optionally produce result events that indicate whether the transfer is accepted or rejected.
+%The workload contains 50\% deposit event and 50\% transfer events and 
+In this experiment, we use a skew factor of 0.6. The transfer and deposit operators are configured in the same consistency stage, and their execution needs to preserve input event order. Hence, we only evaluate LAL, LWM, PAT and \system in this experiment.
+
+The results shown in Figure~\ref{fig:CT}(a) show that \system (100 ms watermark interval) outperforms all other schemes significantly at large core counts. In general, the main problem for other three schemes is the blocking on event sequence. 
+For PAT scheme, the cross-account (and assets) operations introduce high chances of remote transactions, which ends up with high synchronization cost. It only become worse under larger core counts,  which is indicated in Figure~\ref{fig:CT}(b). 
+In the extreme case, it falls back to LAL, where all transactions are waiting to be sequentially processed.
+Finally, Figure~\ref{fig:CT}(c) confirms that \system has comparable latency to other schemes thanks to its much reduced processing time per event.
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.35\textwidth]{figure/CT_application.pdf}   
+    \caption{Streaming Transaction across Tables.}                   
+    \label{fig:CT_topo}
+\end{figure}
+
+\begin{figure*}
+\centering
+    \subfloat[Total Throughput]{%
+        \includegraphics*[width=0.33\textwidth]{figure/CT.pdf}
+    }    
+    \subfloat[Runtime Breakdown (38 cores)]{%
+        \includegraphics*[width=0.33\textwidth]{figure/CT_breakdown.pdf} 
+    }             
+    \subfloat[90$^{th}$ Percentile End-to-End Latency]{%
+        \includegraphics*[width=0.33\textwidth]{figure/CT_latency.pdf}  
+    }       
+    \caption{\textbf{Use Case Study} -- Results for streaming transactions across tables use case (theta=0.6).}
+      \label{fig:CT}
+\end{figure*}

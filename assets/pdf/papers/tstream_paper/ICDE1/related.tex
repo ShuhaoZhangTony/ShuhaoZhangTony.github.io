@@ -1,0 +1,62 @@
+\section{Related Work}
+\label{sec:related}
+%Some of the related work are already reviewed in Section~\ref{sec:background}.
+%We group related work in the following two aspects. 
+
+\textbf{Stateful DSPSs.}
+Most modern DSPSs either do not support out-of-core state or have to rely on third-party data storage frameworks (e.g.,~\cite{Smaza,stateful_flink}),  which not only degrades the system performance but also violates the state consistency~\cite{S-Store-demo}. 
+Similar motivations have lead to a very recent launch of a commercial system, called Ledger~\cite{Transactions2018}, developed by $Data\ Artisans$. It is close-sourced, and we cannot compare our system with it. 
+Wang et al.~\cite{acep} conducted an early study on 
+%were among the first to study 
+the importance of supporting out-of-core state. 
+In their proposal, DSPSs must support a new computing paradigm,
+called \emph{active complex event processing} (ACEP), to enable complex interactive real-time analytics.
+Botan et al.~\cite{botan2012transactional} presented an \textit{unified transactional model} for streaming applications, called UTM. 
+Recently, MeeHan et al.~\cite{S-Store} attempted to fuse OLTP and streaming processing together and developed the SStore system. 
+Different from previous implementation, \system adopts a dual-tier architecture, and is shown to achieve much higher throughput and scalability. 
+%The key insight from our method is that \emph{sort} instead of \emph{lock} brings considerable
+%Encouraged by the promising experimental results, we believe that \system shall lead to a better recognition of the importance of efficiently supporting shared state management of DSPSs in the community. 
+%by making our system publicly available.
+
+\tony{\textbf{Concurrency Control.}}
+Concurrency-control protocols have been investigated widely in decades~\cite{Bernstein:1981:CCD:356842.356846,Faleiro:2014:LET:2588555.2610529,Yu2015,Wu2016},
+%Guaranteeing ACID properties~\cite{Bernstein:1996:PTP:261193} has long been the correctness criterion for transaction processing.
+Beyond guaranteeing ACID properties, stateful stream processing must provide \emph{ordering-preserving consistency} -- a property that conventional concurrency control methods are not well prepared for. 
+%In the following, we focus on two kinds of studies that are closely related to our study. 
+%Transaction chopping~\cite{Shasha:1995:TCA:211414.211427}, a widely adopted technique to partition transactions, have been applied to several modern database applications. We use the similar idea to decompose transaction triggered by one event into multiple transaction slices. Based on it, we explore more concurrency among transaction slices triggered by different events.
+Lazy transaction execution engine~\cite{Faleiro:2014:LET:2588555.2610529} inspired our design of the operation chain based processing model. 
+The key contribution of our work is the application of lazy evaluation techniques to scale stateful stream processing with ordering-preserving consistency. In particular, we show that the overhead of maintaining sorted data structure (the key technique to preserve order in \system) can be overcome by the performance gains from evaluation push-down and work-stealing scheme. 
+Several prior works~\cite{Yu2015,Wu:2017:EEI:3067421.3067427,Harding2017} studied the scalability bottlenecks in varies aspects of concurrency control algorithms. Different from these works, our work studied the concurreny control algorithms in the context of DSPSs, and presented a new mechanism for scaling streaming applications on multicores.
+%Our work differs from previous studies for different application and system designs resulting in different scalability bottlenecks.
+
+\textbf{Multicore databases.}
+Multicore architectures have brought many research challenges and opportunities for in-memory data management, as outlined in recent surveys~\cite{inmemorydbsurvey, inmemorybigdata}. There have been studies on optimizing the instruction cache performance~\cite{Zhou:2004:BDO:1007568.1007592, Harizopoulos:2006:IIC:1166074.1166079}, the memory and cache performance~\cite{AilamakiVLDB99, 1410200, databaseNewBottleneck, balkesen13} and NUMA~\cite{Leis:2014:MPN:2588555.2610507,LiPMRL13,Deployment}.
+We focus on two studies that are closely related to our system designs.
+To better utilize hardware resource, StagedDB~\cite{Harizopoulos03acase} introduced a staged design for DBMS, which breaks down DBMS into smaller self-contained modules. Such decomposition inspired our dual-tier architecture in \system. 
+To address the needs for a NUMA-aware OLTP system, Porobic et al.~\cite{Porobic:2012:OHI:2350229.2350260} proposed ``hardware islands'', in which NUMA nodes are grouped into logical partitions as islands and communicate through message passing among different islands. We applied the similar idea in \system but it shows only minor improvement due to the low memory copy overhead in \system.
+
+
+%We have followed a similar experimental methodology in evaluating different shared state management designs.
+
+%the application of these lazy execution techniques to transaction execution in database systems.
+
+%First, we compare a few computational models are proposed for transactional stream processing (TSP), and we particularly highlight the differences of ours.
+%Then, we review several recent TSP systems.
+%Finally, we discuss several prior studies of OLTP databases that are closely related to our optimization techniques.
+%
+%\textbf{The Computational Model of TSP.}
+%Prior~\cite{S-Store} considers to ensure a stream order constraint of each operator, and a topologically ordered execution sequence among operators. 
+%However, this model overlooks the stream order constraint among operators. For example, operator A and C of Figure~\ref{fig:application} (a) have no flow dependency, but we need to ensure their transactions are executed in the correct event sequence.
+%
+%
+%\textbf{TSP systems.}
+%In the literature, several recent systems have proposed transactional management capability for streaming processing~\cite{acep,botan2012transactional,S-Store}, and we highlight a few of them as follows.
+%S-Store~\cite{S-Store} which has proposed a general stream transaction model along with its implementation. 
+%The key idea behind S-Store is to leverage on standard transaction semantics to ensure ACID properties, and provides mechanisms to further ensure the additional two order constraints including \emph{dataflow graph order constraint} (G-constraint) and \emph{stream order constraint} (S-constraint). 
+%S-Store is build based on H-Store, a partition based database avoiding the usage of concurrency control.
+%This strategy makes sense if we can pre-partition stored data perfectly such that one transaction (i.e., one operator) only needs to touch on its own private data partition~\cite{Jones:2010:LOC:1807167.1807233}. 
+%However, stored data are gradually evolved (including insert, delete and update) during stream computation making them difficult to be perfectly partitioned~\footnote{In fact, S-Store had limited the data access by a single thread.}. 
+%%For this reason, a concurrency control scheme that allows multiple transactions touch on shared data store is necessary to scale stream transaction processing on multicores.
+%
+%\textbf{OLTP databases.}
+

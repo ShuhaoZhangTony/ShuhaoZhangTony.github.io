@@ -1,0 +1,106 @@
+\section{Introduction}
+\label{sec:introduction}
+% Data stream processing (DSP) have become an important role in various fields, such as credit fraud detection~\cite{nguyen2005sense,phua2010comprehensive}, IoT~\cite{tonjes2014real} and stock analysis~\cite{abadi2005design}.
+% Due to its advantages of performance, scalability, and fault tolerance, 
+% many novel application scenarios are adopting DSP techniques.
+% Among those novel use cases, we witness that DSPs are often used in combination with data storage and analysis frameworks such as OLTP databases~\cite{Smaza}, to build software architectures that combine data storage, retrieval, and mining~\cite{Affetti:2017:FIS:3093742.3093929,TS}. 
+% However, such federated-design not only makes the development complex, but also introduces cross-system communication overhead. In some cases, it is even vulnerable to incorrect processing results~\cite{S-Store-demo}. 
+
+Data stream processing systems (DSPSs) are gaining their popularities in powering modern IoT (Internet-of-Things) and data streaming applications, 
+such as credit fraud detection,
+% ~\cite{nguyen2005sense,phua2010comprehensive}, 
+stock analysis,
+% ~\cite{abadi2005design}, 
+and edge device tracking.
+% ~\cite{tonjes2014real}. 
+Unlike conventional database management systems (DBMSs) that provide ACID guarantees for relational data storage, retrieval, and mining, modern DSPSs are featured in supporting continuous lower-latency analytics over real-time data streams. 
+Due to its unique characteristics, a large body of system research~\cite{seep,DBLP:conf/icde/WuT15,Elastic,Ghaderi:2015:SSS:2745844.2745882,flink,Storm,heron} has focused on designing and implementing scalable and fault-tolerant DSPSs on large-scale computing clusters. 
+
+Witnessing the emergence of modern commodity machines with massively parallel processors, researchers and practitioners nowadays can perform ultra-fast stream processing on a single multicore machine~\cite{profile,SABER,StreamBox}. 
+However, fully exploiting the computation power delivered by multicore machines can be challenging.
+While stateless streaming applications can allow disordered parallel execution thanks to the absence of consistent state management, modern DSPSs that target at supporting stateful applications usually have to process incoming events once a time, and parallelisms cannot be extracted unless the users have predefined the partitioning scheme of certain operator or a group of operators according to the application semantics.
+
+We spot that the key challenges of scaling the stateful stream computation is the processing of \tony{non-partitionable states},
+%shared states,
+where one or more streaming operators can visit the \emph{same} state within and across the computation flows triggered by 
+the incoming events~\cite{Transactions2018,stateful_flink}.
+%\yingjun{cite flink??'s paper/webpage}.
+Witnessing this problem, we consider that it is possible to extract more concurrency out of stateful stream processing 
+by enforcing transactional access to DSPSs' internal states.
+
+ % is the processing of concurrent accesses to shared state,  
+% More specifically, different stream events can trigger highly concurrent stateful computation 
+% by reading and updating the shared internal data in a transactional manner, following the orders of the timestamps attached to the incoming events. 
+
+To implement this idea, a straightforward mechanism is to adopt an off-the-shelf transactional database management system (DBMS) for concurrent state maintenance. 
+Unfortunately, this idea not only degrades the system performance but also violates the state consistency, for two reasons.
+First, importing a third-party DBMS for frequent data access can cause high inter-process communication overhead between two different systems (i.e., DBMS and DSPS); 
+second, conventional DBMSs' concurrency control protocol only guarantees that the execution order of concurrent transactions is conflict-equivalent to any certain serial schedule, which may not obey the event order implied by the attached timestamps~\cite{S-Store-demo}.
+
+%\yingjun{remove this section or illustrate the example using a figure. can move to section 3}
+%To illustrate the problem, let us consider a real-time fraud detection application, where multiple streaming operators continuously analysis payment usages by customers. 
+%We illustrate the usage of shared state in stream processing by an example. 
+%Let us consider a real-time credit card fraud detection scenario, where payment usage of customers, as input stream to the system, are analyzed. 
+%they need to correlated the latest events with
+% a shared table records the status of all customers, which is concurrently read and updated by different streaming operators.
+%Note that the analysis of a payment usage may result in changing the involved customers' credit rating in the shared table;
+%once the rating is less than a threshold, an alert message shall be generated by the application. 
+%If the system does \emph{not} preserve the processing in aligned with the payment usage order (i.e., streaming event sequence), either false alert may generate or the detection has to be non-trivially delayed.
+%Furthermore, the requirement of supporting hybrid analytics and transaction processing asks for aggressively parallel execution for higher throughput. However, it makes the ordering preserving even more difficult.
+
+Instead of adopting an off-the-shelf DBMSs, previous solutions proposed by the research community~\cite{S-Store,botan2012transactional,acep} adopt an integrated design, where 
+state maintenance is performed within the streaming computation logic.
+Unfortunately, this computation model can bring two problems.
+On the one hand, processing the state access operations once a time require adopting synchronization primitives, which
+can cause extremely high performance overhead under highly contended workloads;
+on the other hand, executing the access operations following the dependencies encoded in the (potentially complex) 
+streaming computation logic can cause extra long lock-holding time, consequently further degrading the performance.
+
+%This design maximizes the reuse of existing systems and optimizations in decades \yingjun{????}. 
+%For example, S-Store~\cite{S-Store} demonstrates the possibility of extending existing DBMS (H-Store~\cite{HStore}) to support stateful stream processing.
+% However, such processing model results in \yingjun{fix this: } heavily cross-dependency among execution threads that can severely limit the scalability on multicores. 
+% For example, previous solution~\cite{acep} relies on a synchronization primitive that needs to be accessed and updated by all involved execution threads, which turns out to be a single points of contention. 
+
+In this paper, we propose \system, a new DSPS that can support highly scalable stateful stream processing on multicores.
+\system's high performance is based on two key designs.
+% \tony{To address these issues, we propose \system, a new in-memory data stream processing system with built-in stateful management (incl. query and storage) capability. 
+% \system achieves high scalability and robustness based on two key designs. 
+First, \system detaches the state management from the complex stream computation logic 
+and batches the incoming internal state accesses.
+% and shared state management are separately handled in dual-tiers. 
+This allows \system to coordinate the state accesses in a lightweight manner
+without resorting to expensive synchronization primitives at runtime.
+% scale stateful stream processing on multicores by delaying the management process of the internal state.
+%carefully cooperating the execution of stream computation and state management process independently and concurrently. 
+Second, \system aggressively extracts parallelism opportunities 
+within each batch of state access operations, and work-stealing is further applied to improve processing efficiency under skewed workloads. 
+This effectively improves the computation efficiency and enables 
+\system's high scalability on multicores.
+% reduced the overhead of synchronization of each input event to enforce ordering.
+%based on the aggressively extracted concurrency from our dual-tier design, 
+%The key insight behind \system is that the synchronization overhead can be significantly reduced by amortizing the cost among a batch of requests. 
+%difficulty of guaranteeing a valid serialization order of potentially infinite streaming transaction requests can be reduced by organizing them into groups, delimited by periodic watermarks.
+% }
+
+%We propose \system, a novel in-memory data stream processing system with built-in stateful management (incl. query and storage) capability. 
+% 
+%Yet, it remains a question on how to scale stateful stream processing on shared-memory multicores, where the complexity of maintaining the additional order-constrained consistency may offset the gains from increased concurrency.
+
+%\system's design can potentially cause higher end-to-end stream processing 
+%latency due to its batching strategy. However, its efficient use
+%of multicores essentially reduces the time for processing event-triggered computation,
+%hence leading to minimal latency overhead.
+
+To confirm \system's effectiveness in supporting stateful streaming applications, we compared \system against four alternative streaming execution schemes on a multicore machine. 
+% how different designs perform on modern multicore machine, we implement five alternative algorithms including one without guaranteeing timestamp alignment, three prior proposed solutions and \algo. 
+%All five algorithms are implemented in a main memory DSP system, called \system. 
+%The experimental evaluations on both microbenchmark and real application on a high-performance 40-core machine demonstrate that \system provides the same guarantees as any state-of-the-art algorithms with much higher throughput, better scalability and similar or smaller end-to-end processing latency. 
+Our extensive experimental study with real-world applications show that \system achieves a 2x higher throughput on average over existing solutions with similar or even smaller end-to-end processing latency. 
+
+We organize the paper as follows: 
+Section~\ref{sec:background} reviews the conventional computation paradigm of DSPSs and the emerging stateful stream processing. 
+Section~\ref{sec:motivation} summarizes the design challenges of supporting stateful stream processing on multicores and describes five state management concurrency control schemes of our study. 
+Section~\ref{sec:arch} gives an overview of \system, followed by a detailed description in Section~\ref{sec:design}.
+%Additional implementation details are described in Section~\ref{sec:impl}.
+We report extensive experiment results in Section~\ref{sec:eva}, followed by a discussion of results in Section~\ref{sec:discuss}.
+Section~\ref{sec:related} reviews related works and Section~\ref{sec:conclu} concludes this paper.

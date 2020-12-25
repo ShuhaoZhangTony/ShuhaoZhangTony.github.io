@@ -1,0 +1,60 @@
+\begin{abstract}
+% Data stream processing (DSP) has attracted \yingjun{a great deal of attention} over the years due to its capability of 
+% \yingjun{analyzing real-time streaming data}. 
+% % Despite its successfulness, new application scenarios are driven the DSP system to further evolve.
+% Despite its popularity, emerging application scenarios nowadays are bringing new challenges to modern DSP systems.
+% Recently, we witness that in many application scenarios, the stream processing needs to access not only streaming data but also stored data to extract timely information. 
+% At the same time, useful information from streaming data also needs to be continuously and consistently integrated into stored data to serve in-flight and future stream processing.
+% To ensure the correctness of concurrent access to the shared data store during stream processing, transactional stream processing (TSP) that adds data management capability to stream processing are newly emerged. Particularly, TSP system organize the read/write operation to the shared store as transactions, and provides the similar ACID properties as in traditional OLTP database.
+
+% Scaling TSP is a difficult task, primarily due to the additional requirement of preserving \emph{timestamp ordering}. 
+% Specifically, each transaction is triggered by streaming events, and is assigned a timestamp same as their triggering events.
+% The system needs to always provide a schedule such that it is conflict-equivalent to a serial schedule, where all conflicting transactions are ordered by the event timestamp. 
+% Existing schemes either do it sequentially or rely on centralized locking;
+% both use coarse-grained synchronization and suffer severe performance degradation on multicore processors.
+% To tackle this issue, we propose TStream, a fast and scalable TSP system.
+% The key idea of TStream is to organize (potentially infinite) transactions into groups, delimited by periodic event-time checkpoints. 
+% Then, it utilizes a lazy execution strategy for processing transactions in each group. 
+% The experiment with real-applications show that TStream achieves a \cite{XXX}x speedup on average over the state-of-the-art TSP systems. 
+% The performance gain are coming from two folds. On one hand, TStream is not prone to excessive aborts in the presence of contention due to its pessimistic nature. 
+% On the other hand, TStream provides the same guarantees as existing TSP systems without unnecessary synchronization overhead or much scalability bottlenecks. 
+
+Data stream processing systems (DSPSs) have attracted a great deal of research attentions over the years, due to its popularities in powering IoT (Internet-of-Things) and data streaming applications. 
+To enable real-time analytics, DSPSs may need to maintain large internal states to manage updates from latest data events. 
+% Existing stateful DSPSs typically process incoming events once a time.
+%This mechanism performs computation in serial order with guaranteed internal state consistency.
+%However, provided with modern commodity servers with massively parallel processors, these DSPSs cannot fully utilize the computation resource. 
+Scaling these stateful DSPSs on multicore machines can be challenging.
+Without any prior knowledge about application-level access patterns, 
+existing systems have to process incoming events with limited concurrency, causing 
+severe inefficiency in utilizing computation resources.
+% primarily due to the requirement of preserving event order alignment. 
+% Previous approaches perform remarkably well under specific workloads or access patterns that they have been designed for. However, they often do not scale well when the workload is highly skewed. 
+% To tackle the challenge of skewed workloads, 
+In this paper, we propose \system, 
+a scalable DSPS that can extract high concurrency from stateful stream computation
+under various types of workloads.
+% a novel stateful DSPS that performs 
+% event-triggered state maintenance concurrently even under highly contended workload.
+\system detaches the state management from the streaming computation logic, 
+and performs its internal state maintenance in a transactional manner. 
+Instead of dynamically coordinating the state accesses with expensive synchronization primitives, 
+\system aggressively extracts parallelism opportunities by revealing the operation dependencies at runtime.
+%exploits any parallelization opportunities by revealing the operation dependencies at runtime.
+% processes the accesses in batches and exploits any parallelization opportunities by analyzing the read and write sets.
+The state consistency is guaranteed by ordering the access operations according to the timestamps attached
+to the incoming events.
+To confirm the effectiveness of our proposal, we 
+compared \system against four alternative designs on a 40-core machine.
+% judiciously exploits the parallelism from a batch of read and write sets 
+% with the operation orders strictly following the timestamp order attached to the incoming events.
+% To understand the limitations of existing approaches in modern hardware settings, we implement four alternative designs into \system. 
+%Our extensive experiment study on a 40-core machine show that \system provides the same consistency guarantees as any state-of-the-art solutions with much higher throughput, better scalability and similar or smaller end-to-end processing latency under medium to highly skewed workloads. 
+Our extensive experiment study 
+% on a 40-core machine 
+show that \system yields much higher throughput and scalability with limited latency penalty when processing different types of workloads.
+% provides the same consistency guarantees as any state-of-the-art solutions
+% with much higher throughput, better scalability and similar or smaller end-to-end processing latency under medium to highly skewed workloads.  
+%\yingjun{haven't done yet}
+
+\end{abstract}

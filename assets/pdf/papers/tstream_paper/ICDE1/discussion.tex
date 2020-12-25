@@ -1,0 +1,113 @@
+\section{Discussion}
+\label{sec:discuss}
+We now discuss results of the previous sections.
+{ First}, with a small number of cores, simple locking scheme like LAL performs well as it has less management overhead. With increasing number of cores, the synchronization overhead to enforce event ordering dominate the execution time in algorithms such as LAL and LWM that rely on centralized synchronization primitive. This indicates the useless of further reducing overhead of other components in those algorithms. 
+{ Second}, partition based approach performs well if out-of-core is perfectly partitioned. 
+%This is still true even under our ordering-preserving consistency requirement (e.g., PAT). 
+However, its performance drops quickly with increasing length and ratio of multi-partition transactions. 
+In real application scenario, out-of-core state may be difficult to be partitioned beforehand and multi-partition transaction is therefore difficult to avoid. 
+%Both issues limit the partition based approach. 
+{ Third}, \system performs significantly better than other schemes in most cases. However, there is still a large room to further improvement. One major overhead of \system is the time spend in managing operation chains. 
+To extract more concurrency, \system dispatch operations on different records into different operation chains. 
+Such fine-grained partition helps in reducing workload unbalancing by utilizing work-stealing. But it comes with high management overhead.
+%, especially for operation chains containing only a few operations. 
+This is also the reason why \system performs well, sometimes even better under highly contended workload, where management overhead of one operation is effectively amortized. 
+One potential solution to further improve \system is to have multiple records sharing the same operation chain during execution. However, deciding the sharing plan (i.e., how many records and which records should share the same operation chain) itself becomes a non-trivial problem when we consider the non-linear tradeoff between concurrency and management overhead.
+
+%\textbf{Use case 2: Ground Truth Keeping.}
+%\system can be used to consolidate the actions and views of multiple independent actors into a common source-of-truth state. 
+%Specifically, it takes the event streams and transactionally updates the tables according to the events.
+%The application logic in the transaction function applies the rules to determine how to update 
+%
+%The input stream describes measurements from a set of sensor devices. 
+%When an event comes in, the application calculates moving average of each device, and checks if the average value exceeded a threshold and hence detects a spike. 
+%When spike is detected for a device, report is generated and emitted as output stream.
+%
+%\begin{figure}
+%    \includegraphics[width=0.45\textwidth]{PK_topo.pdf}   
+%    \caption{Application topology of use case 2.}                   
+%    \label{fig:PK_topo}
+%\end{figure}
+%
+%In this use case, we show shared state management is an interesting alternative for solving the decade-old skew problem in DSP systems. 
+%In particular, it is possible to implement this use case without using shared-state, but using partitionable state. 
+%That is, we can let each moving average operator owns a disjoint subset of devices temperature statues.
+%Input stream can be hash-partitioned to each operator to preserve correctness. However, this implementation suffers from key skewness. We implement this approach under NOCC and PAT schemes.
+%Alternatively, we can simply declare device temperature status as a shared state, which can be concurrently accessed by all moving average operators. We implement this approach under LAL, LWM and \system scheme.
+%
+%
+%The results in Figure~\ref{fig:PK} shows that 
+%
+%\begin{figure}
+%    \includegraphics[width=0.45\textwidth]{PK.pdf}   
+%    \caption{Results for Ground Truth Keeping use case (theta=0.8).}                  
+%    \label{fig:PK}
+%\end{figure}
+
+%\section{Discussion}
+%\label{sec:discuss}
+%In this section, we discuss the results of the previous sections and propose solutions to further improve \system.
+%We have made the following observations.
+%%\begin{myenumerate}
+%
+%(1) Previous implementations are not free of scaling bottlenecks with a key reason being the requirement for tracking streaming ordering of each triggering event. The synchronization overhead to enforce event alignment dominate the execution time in algorithms (e.g., $LAL$ and $LWM$) that rely on a centralized locking scheme. This indicates the useless of further reducing overhead of other components. 
+%
+%(2) Partition based approach performs extremely well when single partition is accessed. However, its performance drops quickly with increasing length and ratio of multi-partition transactions. In real applications, such as streaming transaction across tables we tested, multi-partition transaction is often difficult to avoid.
+%
+%(3) Although \system performs significantly better than other schemes in most cases, there is still a large room to linear scale-up. 
+%One major overhead is the time in creating new operation chains; when there are many requests towards the same record, such overhead is amortized effectively. This is also the reason why \system performs well, sometimes even better under highly skewed workload. 
+%One potential solution to further improve \system would be to have multiple records sharing the same operation chain. However, deciding the sharing plan is a non-trivial problem itself.
+
+
+
+
+%\end{myenumerate}
+%
+%We leave the evaluation as future work.
+
+%\textbf{Speculative execution.}
+%We may predict the read value and speculatively proceed. 
+%In our previous example, $R_1$ can send a ``predicted'' read value to its downstream operator, which may be a computation operator and is waiting for input. 
+%The downstream operator can hence start the execution earlier, but it may involve a incorrect computation if a misspeculation is conducted. 
+%%We implement such speculative execution into a special version of \system, called \system(spec).
+%We adopt the \emph{guesses and apologies} programming paradigm~\cite{DBLP:conf/cidr/2009}, in which systems expose preliminary results of requests (guesses), but reconcile the exposed results if they are different from final results (apologies).
+%Specifically, we set predicted read value to be the most recent value that has already committed, this allows read operator to return immediately and forward the read value downstream. 
+%Upon finalizing transaction processing for receiving watermark, the operator needs to send out modifying signal if the prediction is incorrect, which may cause a wasted computation in downstream.
+%\emph{Eventual} consistency is naturally guaranteed under this scheme, but if the application requires \emph{always} consistency, the ultimate outputs exposed (emitted by sink operator) to user can not be immediately available as they are triggered by ``predicted'' read values that may have to be corrected later. Instead, they can be emitted only when watermark arrived.
+
+
+%\textbf{Inter-stage parallelism.}
+%Application may contain multiple stages. 
+%To guarantee global sequence, there should be only one period of watermark in the system, i.e., new watermark with larger timestamp are not allowed to enter the system if previous checkpoint is not completely removed (emitted by the end-point operators).
+%As a result, TP-Layer works at one stage at one time as the subsequent stages will only be able to receive watermark after it finishes processing the current stage.
+%Note that, such serial execution of different stages guarantees the global ordering consistency, i.e., transactions triggered by future event will not be processed until the earlier ones committed.
+%
+%%We have so far discussed optimization techniques to improve the execution efficiency of single stage.
+%In some applications, there is no need to guarantee a global sequence of transactions, i.e., operators from different stages may not be required to keep the same ordering consistency requirement as operators from the same stage. 
+%For example, operators from different stages may be guaranteed to access disjoint database records. 
+%In such case, watermark are allowed to enter the system even if the current watermark is not complete. 
+%Subsequently, the TP-Layer allows transactions from different stages to proceed at the same time. 
+%Since there is no guarantee of inter-stage consistency, the following behavior is then allowed. That is, future events may commit transactions at upstream operators, while existing events are still getting processed at downstream operators. 
+
+%\textbf{NUMA-awareness.}
+%%We reserve one socket to preparing data sources including shared store as well as data generator operators. 
+%%The remaining 7 CPU sockets are used to launch other operators. 
+%%To maximize NUMA locality, \system explicitly 
+%Following previous work~\cite{Porobic:2012:OHI:2350229.2350260}, we configure the data placement of the shared store in an island-aware manner.
+%Specifically, TP-Layer is divided into $n$ processing instances, each instance is responsible for a range of transactions. 
+%In all experiments, the total size of shared state is kept constant and is also range-partitioned across all instances, and we use the same total number TP-Threads for processing.
+%
+%\textbf{System durability.}
+%Fault tolerance in distributed systems has been extensively studied~\cite{}. 
+%Inspired by recent work from Fernandez et al.~\cite{seep}, \system achieves fault tolerance by exposing internal operator states (i.e., creating operator snapshot). 
+%Specifically, each operator periodically store its state into reliable sources (e.g., disks). 
+%The storing can be triggered by watermark, which is the same that we use for transaction processing.
+%As the operator snapshot is created asynchronously, there is no stall of the overall processing resulting in better performance.
+%Figure~\ref{fig:snapshot} illustrates the high level idea of such asynchronize snapshot mechanism.
+%
+%\begin{figure}
+%\centering
+%    \includegraphics*[width=0.5\textwidth]{faulttolerance.pdf}   
+%    \caption{Asynchronize snapshot fault tolerance.}                   
+%    \label{fig:snapshot}
+%\end{figure} 

@@ -1,0 +1,82 @@
+\section{Background}
+\label{sec:background}
+In this section, we first review the computation paradigms in existing DSPSs,
+and then discuss potential problems in modern stateful stream processing.
+% paradigms with examples of shared-state management.  
+
+\subsection{Data Stream Processing}
+% We describe the execution model of data stream processing (DSP) with a general definition~\cite{Ghaderi:2015:SSS:2745844.2745882}. 
+A streaming application is represented by a \emph{directed acyclic graph} (DAG), where nodes in the graph represent operators and edges represent the data flow between the connected operators.
+In general, there are two types of operators:
+1) \emph{data source} operators generating (or receiving from the external environment) events to feed into the system, and 2) \emph{data processor} operators encapsulating specific processing logics such as filtering, transforming or user-defined function.
+Each operator performs three tasks continuously as a \emph{fetch-process-emit cycle}: 1) receiving input events; 2) performing computation (typically according to user defined function); and 3) potentially emitting output events to downstream operators. 
+Such a pipelined processing design enables DSPSs to support very low latency processing, which is one of the key requirements in many real-world latency-sensitive streaming applications.
+ % that cannot be well supported in batch-processing systems.
+To sustain high performance with the increase of data ingestion rate, modern DSPSs such as Heron~\cite{heron}, Storm~\cite{Storm} and Flink~\cite{flink} can support execution parallelism to accelerate stream processing. 
+Specifically, the actual execution of an operator may be carried out by one or more physical threads, which are also referred to as the corresponding operator's physical executors~\cite{profile}. 
+%In this way, the input stream of an operator is (continuously) partitioned into different executors.
+%We call the number of executors for a certain operator as \emph{parallelism level}, which can be configured by the application developers or the system administrators. 
+Despite of its success in supporting stateless streaming applications, the existing DSPSs' execution schemes can hardly extract any parallelism from stateful stream computations, unless certain 
+user-defined partitioning scheme is provided.
+% , as we shall see later.
+
+\subsection{Stateful Stream Processing}
+
+Modern streaming applications generally require the underlying DSPS to maintain large internal state so as to support complex real-time analytics. 
+% To understand the potential problems in stateful stream processing, 
+We classify 
+the internal states into two types, according to the access methods\footnote{Our descriptions follow Flink's documentation~\cite{stateful_flink}, and shall be applicable to any other DSPSs.}:
+
+ 
+% \begin{enumerate}[leftmargin=*]
+\begin{enumerate}
+% \item \emph{Local state} is the simplest form of operator state that represents the current state of a specific operator instance in a parallel streaming operator. 
+% Local states stored at different operators do not interact with each other -- that is, the state can be accessed and modified only by that operator itself.
+\item \emph{Partitionable state} 
+is a type of operator state that can be partitioned into multiple sub-states based on the key fields of the input streaming events. A sub-state is associated to a subset of the key space and may needs to
+be accessed if the corresponding streaming events come in.
+% provides a representation for operator states that are tied to key-based partitions of the operator input. 
+% An independent state is maintained for each partition and operator states with different keys do not interact. State partitioning is done by some user defined keys which are extracted from each input. 
+% Inputs with the same key share the state.
+As an example, the internal state maintained for the well-known
+\emph{WordCount} application belongs to this type.
+To enable parallel execution, a DSPS can generate multiple physical executors for 
+an operator with partitionable state
+% that supports a streaming application containing partitionable 
+% states can easily generate multiple physical executors to perform parallel execution 
+based on the 
+user-provided key partitioning scheme. 
+\item \emph{Out-of-core state (or non-partitionable state)}
+%\footnote{Also called ``out-of-core state'' in Flink.} 
+represents a type of internal state that can be accessed by one or more streaming operators. 
+Compared to partitionable state, out-of-core state is more general, as it enables any possible 
+complex analytics such as bulk load and range queries within the streaming application.
+Unfortunately, in contrast to the partitionable state, out-of-core state cannot be well partitioned by any key fields 
+in the input event, and uncoordinated accesses to this state can cause computation inconsistencies, 
+further leading to incorrect streaming results. 
+% Shared state can be the major performance bottleneck when scaling up the DSPS.
+% it does not get partitioned by any key in the input event, and hence all inputs potentially share the state.
+\end{enumerate}
+
+% <<<<<<< HEAD
+Given the existing parallel execution schemes, 
+a DSPS that supports streaming applications containing only partitionable states can be easily scaled up on multicore machines.
+% as the users can provide specific partitioning strategy to enable parallel execution of the streaming operators.
+However, the existence of a single out-of-core state can eliminate any benefits brought from 
+multicore processing, consequently becoming the major performance bottleneck in stream processing.
+In this paper, we attempt to design a new stateful DSPS that can fundamentally address this problem.
+% \tony{Both {local state} and {partitionable state} are well studied, and our system support both of them in the way similar to existing DSPSs.
+% However, {shared state} remains an open question, which is the focus of this paper.}
+
+% There are several important reasons for efficiently supporting shared state in DSPSs. 
+% First, it significantly increases expressivity, generality and applicability. For example, application developers do not have to worry about how the workload shall be partitioned in order to utilize partitionable state. 
+% Second, it is often desirable to allow both store and query of the application state by external systems (e.g., user may want to modify the state during operation). 
+% It is much easier to achieve this by utilizing shared state, as we can implement the application state as shared state and expose it to external systems, who can concurrently read and modify the state.
+% =======
+% \tony{Both {local state} and {partitioned state} are well studied, and our system support both of them side the stream computation logic, similar to existing DSPSs.
+% However, efficient {shared state} management remains an open question, which is the focus of this paper.}
+% There are several important reasons for efficiently supporting shared state in DSPSs. 
+% First, it significantly increases expressivity, generality and applicability. For example, application developers do not have to worry about how the workload shall be partitioned in order to utilize partitioned state. 
+% Second, it is often desirable to allow both store and query of the application state by external systems (e.g., user may want to modify the state during operation). 
+% It is much easier to achieve this by utilizing shared state, as we can implement the application state as shared state and expose it to external systems, who can concurrently read and modify the state.
+% >>>>>>> eedb7d2e164aa698655d526c3d5297dc2646e2ae

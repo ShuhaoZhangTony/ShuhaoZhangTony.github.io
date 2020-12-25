@@ -1,0 +1,22 @@
+%\subsection{Implementation Details}
+%\label{sec:impl}
+%\system is developed based on the code-base of Storm (version 1.1.1) and inherits the basic architectures of pipelined and parallel processing threading model~\cite{profile}.
+%We use \tony{Calvalia in-memory OLTP database~\cite{Wu2016}} as the backbone of the TP-Layer, which is closely integrated and communicate with SP-Layer in shared memory address space. Our implementation of lock table adopts a per-tuple fashion to avoid centralized contention, where each transaction only latches the tuples that it needs. 
+%To avoid reinvented the wheel, we also utilize several high-performance libraries in varies parts of \system. 
+%For example, hash map is implemented by \emph{ConcurrentHashMap}~\cite{cliffc}, and operation chain is implemented by \emph{ConcurrentSkipListSet}~\cite{skiplist}. Both are highly optimized to increase the operation chains construction efficiency and concurrency.
+%When the range of records are unknown, we use \emph{RangeMap}~\cite{guava} from \emph{Google core libraries for Java} to implement the range map. Otherwise, records are simply partitioned across cores, where each core is responsible for submitting operation chains of a subset of records.
+%We adopt \emph{newWorkStealingPool} from Java 8~\footnote{\url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html}} to implement the core engine of the TP-Layer that utilizes work-stealing to achieve load balancing.
+%For NUMA-awareness, we configure the data placement of the internal state in an island-aware manner following previous work~\cite{Porobic:2012:OHI:2350229.2350260}. 
+%Specifically, we first partition the workload evenly to each NUMA node, so that the workload assigned to each node is balanced.
+%%allocate each working thread over all cores.
+%%divided shared state into disjoint subsets with approximately same size. Then, each working thread is uniformly allocated over multiple sockets.
+%Then, the TP-Layer is divided into several groups, where each group is responsible for workloads of part of the CPU sockets (i.e., island). 
+%We evaluate the effect of such grouping in our experiments.
+
+%\textbf{System durability.}
+%Fault tolerance in distributed systems has been extensively studied~\cite{}. 
+%Inspired by recent work from Fernandez et al.~\cite{seep}, \system achieves fault tolerance by exposing internal operator states (i.e., creating operator snapshot). Figure~\ref{fig:snapshot} illustrates the high level idea of such asynchronize snapshot mechanism.
+%Specifically, each operator periodically store its state into reliable sources (e.g., disks). 
+%The storing can be triggered by watermark, which is the same that we use for transaction processing.
+%As the operator snapshot is created asynchronously, there is no stall of the overall processing resulting in better performance.
+%Durability can be achieved in \system through checkpoints.

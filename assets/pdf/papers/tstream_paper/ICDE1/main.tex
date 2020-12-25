@@ -1,0 +1,108 @@
+%\documentclass[sigconf,10pt]{acmart}
+%\documentclass{vldb}
+\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+\usepackage{graphicx}
+\usepackage{wrapfig}
+%\usepackage{balance}
+
+\usepackage{booktabs} % For formal tables
+\usepackage{multirow}
+\usepackage{color}
+
+\graphicspath{{./figure/}}
+
+\usepackage{subfig}
+\usepackage{hyperref} %so that we can use \url{URL}
+\usepackage[]{algorithm2e}
+\usepackage{etoolbox}
+\usepackage{adjustbox}
+
+\newcommand{\var}[1]{\text{\texttt{#1}}}
+\newcommand{\func}[1]{\text{\textsl{#1}}}
+
+\newenvironment{myitemize}
+{ \begin{itemize}
+	
+		\setlength{\itemsep}{0pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}    }
+	{ 	 \end{itemize}                    }
+
+\newenvironment{myenumerate}
+{ \begin{enumerate}
+		\vspace{-1ex}
+		\setlength{\itemsep}{0pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}    }
+	{ \end{enumerate}                  }
+
+\usepackage{hyphenat}
+\hyphenpenalty=10000
+\tolerance=1000
+\sloppy
+
+\newcommand{\Csharp}{%
+	{\settoheight{\dimen0}{C}\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\#}}}}
+\newcommand{\tony}[1]{{\textcolor{black}{ #1}}}
+\newcommand{\saven}[1]{{\textcolor{blue}{ #1}}}
+\newcommand{\daniel}[1]{{\textcolor{black}{ #1}}}
+\newcommand{\yingjun}[1]{{\textcolor{black}{ #1}}}
+\newcommand{\system}{T-Stream\xspace}
+%\newcommand{\algo}{PSCC\xspace}
+%\newcommand{\algofull}{polylithic synchronous concurrency control (PSCC)\xspace}
+%\setcopyright{rightsretained}
+%\acmConference[SIGMOD'19]{ACM Conference}{June 2019}{Amsterdam, The Netherlands}
+%\acmYear{2019}
+%\copyrightyear{2019}
+
+%\usepackage[margin=0.77in]{geometry}
+
+\newcommand{\compact}{\vspace{-5pt}}
+%control margin.
+\setlength{\belowcaptionskip}{-18pt}
+
+%\input{abstract}
+\begin{document}
+\title{Towards Scalable Stateful Stream Processing \\ on Multicores}
+\author{\IEEEauthorblockN{Shuhao Zhang$^{1}$, Yingjun Wu$^2$, Feng Zhang$^3$, Bingsheng He$^1$
+	\IEEEauthorblockA{$^{1}$National University of Singapore, $^{2}$IBM Almaden Research Center, $^3$Renmin University of China}
+}}
+
+\maketitle
+
+\input{abstract}
+\compact
+\input{introduction}
+\compact
+\input{background}
+\compact
+\input{motivation}
+\compact
+\input{system}
+\compact
+\input{detail}
+\compact
+%\input{implementation}
+%\input{benchmark}
+\input{evaluation}
+\compact
+\input{discussion}
+\compact
+\input{related}
+\compact
+\input{conclusion}
+\compact
+\vspace{-1pt}
+\bibliographystyle{abbrv}
+\small
+\bibliography{mybib}
+% \bibliographystyle{IEEEtran}
+% {\scriptsize
+% \bibliography{mybib}
+% }
+
+%\appendix
+
+%\balance
+\end{document}

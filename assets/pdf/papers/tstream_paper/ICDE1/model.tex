@@ -1,0 +1,18 @@
+\section{Computational Model}
+In this section, we discuss the computational model for transactional streaming processing.
+
+Modern DSP systems organizes the stream computation as a graph of continuously operators~\cite{profile}.
+Despite that some of them now support ``stateful'' streaming computation~\cite{Storm,flink}, the state of each operator is local, that is, the state can be accessed and modified only by that operator. 
+This approach avoids state access conflicts and enables a high degree of parallelism. 
+However, it comes at a cost of restricted expressiveness. Applications that need to maintain a shared state are difficult to implement, and one may rely on adding third-party components (e.g., an OLTP database), which not only makes the development complex, but also introduces cross-system communication overhead~\cite{Samza}.
+
+TStream integrates the stream processing capabilities of modern DSPs with the data management and query capabilities of transactional databases.
+The goal is to elaborate large volumes of streaming data on the fly, while consistently updating the shared stores that are visible and query-able by all running entities (e.g., operators) concurrently. 
+In general, TStream inherit the pipelined and parallel processing model of DSPs, and we enrich it with a built-in shared store, e.g., multiple tables, that can be queried concurrently. 
+
+We refer stream input as an ``event'' to differentiate with record tuple retrieved from the shared store.
+We use $e$ with subscript to denote a stream event, where the subscript indicates the timestamp of the event. 
+We denote an application as a graph $G$, where the vertexes (denoted as $O$) represent streaming operators, and edges indicate communication flow among operators. 
+
+\textbf{Conflict-Serializability with event Ordering}
+
