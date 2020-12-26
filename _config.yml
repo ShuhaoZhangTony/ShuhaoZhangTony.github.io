@@ -95,7 +95,7 @@ gems:
 scholar:
   last_name: Zhang
   first_name: Shuhao
-  style: _bibliography/acm-sig-proceedings.csl
+#  style: _bibliography/acm-sig-proceedings.csl
   locale: en
 
   sort_by: year
