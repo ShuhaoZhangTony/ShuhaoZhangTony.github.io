@@ -14,9 +14,11 @@ invisiable {
 .venue {
 	color:blue;
 	display:inline;
+    float:left;
 }
 
 .venue_rank {
 	color:red;
 	display:inline;
+    float:left;
 }
