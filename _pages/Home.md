@@ -1,7 +1,7 @@
 ---
 layout: main
 permalink: /
-title: I'm a Database & Parallel Computing System Researcher
+title: I'm a Computer System Researcher
 description: 
 notitle: true
 ---
