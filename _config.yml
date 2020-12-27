@@ -40,14 +40,14 @@ contact_note: >
 navigation:
     - title: Home
       link: /
-    - title: Jobs
-      link: /Jobs/
     - title: Publications
       link: /Publications/
+    - title: Projects
+      link: /Projects/      
     - title: Service
       link: /Service/
-    - title: Projects
-      link: /Projects/
+    - title: Jobs
+      link: /Jobs/
  #   - title: CV
  #     link: /cv/cv.pdf
 
