@@ -19,7 +19,16 @@ notitle: true
 	<li> IEEE International Conference on Cloud Computing and Intelligence Systems (CCIS), 2019, PC </li>
 </ul>
 
-### Mentoring
+### Course
+
+- IMSEM: Hot Topics in Information Management, 2020 Spring (TU Berlin) -- Instructor
+	- Organising research seminar, guide students to read, write, and present recent research papers.
+- DBT: Database Technology, 2020 Winter (TU Berlin) -- Instructor
+	- Teaching fundamentals of database technology for relational database systems.
+- DBT-PRA: Database Technology Class - Practice Part, 2020 Winter (TU Berlin) -- Instructor
+	- Instructing students to implement components of a relational database system and get hands-on experience with a parallel data processing platform.  
+ 
+### Mentoring Students
 
 <p>I am currently working with some fantastic students:</p>
 
