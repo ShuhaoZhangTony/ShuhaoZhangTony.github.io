@@ -36,3 +36,7 @@ notitle: true
 	<li>Hamid, Aqif (TU Berlin, MSC), Advising Master Thesis</li>
 	<li>Mao, Yancan (NUS, Ph.D), Paper Collaborator </li>
 </ul>
+
+### Reading Lists
+
+I maintain a [reading list](https://shuhaozhangtony.github.io/StreamProcessing_ReadingList/) regarding stream processing, welcome to contribute.
