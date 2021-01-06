@@ -7,7 +7,7 @@ years: [2021, 2020, 2019, 2017, 2016, 2015, 2014, 2013]
 notitle: true
 ---
 My publications span multiple catalogs including *Database*, *AI*, *Operating System*, and *Distributed Computing*.
-We target at top (i.e., A/A+) conferences/journals. The full conference/journal ranking list can be found at the [CORE List](https://www.core.edu.au/conference-portal), [NUS taochen List](http://www.cs.jhu.edu/~taochen/SoC_Conference_Ranking.html) or  [CCF](https://www.ccf.org.cn/Academic_Evaluation/CN/).
+We target at the top (i.e., A/A*) conferences/journals. The full conference/journal ranking list can be found at the [CORE List](https://www.core.edu.au/conference-portal), [NUS taochen List](http://www.cs.jhu.edu/~taochen/SoC_Conference_Ranking.html) or  [CCF](https://www.ccf.org.cn/Academic_Evaluation/CN/).
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -39,28 +39,28 @@ We target at top (i.e., A/A+) conferences/journals. The full conference/journal 
     <td class="tg-pjk6">SIGMOD</td>
     <td class="tg-pjk6"><span style="font-weight:400">International Conference on Management of Data</span></td>
     <td class="tg-pjk6">Database</td>
-    <td class="tg-pjk6">A+</td>
+    <td class="tg-pjk6">A*</td>
   </tr>
   <tr>
     <td class="tg-r6jj">Conference</td>
     <td class="tg-r6jj"><span style="font-weight:400;font-style:normal">PVLDB/VLDB</span></td>
     <td class="tg-r6jj"><span style="font-weight:400;font-style:normal">International Conference on Very Large Data Bases</span></td>
     <td class="tg-r6jj">Database</td>
-    <td class="tg-r6jj">A+</td>
+    <td class="tg-r6jj">A*</td>
   </tr>
   <tr>
     <td class="tg-pjk6">Conference</td>
     <td class="tg-pjk6"><span style="font-weight:400;font-style:normal">IEEE ICDE</span></td>
     <td class="tg-pjk6"><span style="font-weight:400;font-style:normal">IEEE International Conference on Data Engineering</span></td>
     <td class="tg-pjk6">Database</td>
-    <td class="tg-pjk6">A+</td>
+    <td class="tg-pjk6">A*</td>
   </tr>
   <tr>
     <td class="tg-r6jj">Conference</td>
     <td class="tg-r6jj"><span style="font-weight:400">IJCAI</span></td>
     <td class="tg-r6jj">International Joint Conference on Artificial Intelligence</td>
     <td class="tg-r6jj">AI</td>
-    <td class="tg-r6jj">A+</td>
+    <td class="tg-r6jj">A*</td>
   </tr>
   <tr>
     <td class="tg-pjk6">Conference</td>
@@ -93,7 +93,7 @@ We target at top (i.e., A/A+) conferences/journals. The full conference/journal 
 </tbody>
 </table>
 
-- <strong>A+</strong> : flagship conference/journal, a leading venue in a discipline area
+- <strong>A*</strong> : flagship conference/journal, a leading venue in a discipline area
 - <strong>A</strong>  : excellent conference/journal, and highly respected in a discipline area
 - <strong>B</strong>  : good conference/journal, and well regarded in a discipline area
 - <strong>Others</strong> : generally not encouraged unless for special reason, e.g., short communication survey at SIGMOD Record.
