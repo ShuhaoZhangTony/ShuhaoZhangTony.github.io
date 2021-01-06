@@ -6,8 +6,9 @@ description: For full list, please refere to <a href="https://scholar.google.com
 years: [2021, 2020, 2019, 2017, 2016, 2015, 2014, 2013]
 notitle: true
 ---
+My publications span multiple catalogs including *Database*, *AI*, *Operating System*, and *Distributed Computing*.
+We target at top (i.e., A/A+) conferences/journals. The full conference/journal ranking list can be found at the [CORE List](https://www.core.edu.au/conference-portal), [NUS taochen List](http://www.cs.jhu.edu/~taochen/SoC_Conference_Ranking.html) or  [CCF](https://www.ccf.org.cn/Academic_Evaluation/CN/).
 
-We target at only A/A+ conferences/journals. The full ranking list can be obtain [here](https://www.core.edu.au/conference-portal).
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -99,6 +100,7 @@ We target at only A/A+ conferences/journals. The full ranking list can be obtain
 - <strong>B</strong>  : good conference/journal, and well regarded in a discipline area
 - <strong>Others</strong> : generally not encouraged unless for special reason, e.g., short communication survey at SIGMOD Record.
 
+---
 {% for y in page.years %}
   <h4>{{y}}</h4>
   {% bibliography -f papers -q @*[year={{y}}]* %}
