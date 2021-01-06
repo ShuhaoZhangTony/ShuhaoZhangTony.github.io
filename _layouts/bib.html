@@ -64,8 +64,8 @@
 		  {% endif %}
 		  {% if entry.pdf %}
 		    [<a href="{{ entry.pdf | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>]
-              {% if entry.type %}
-		      <em>({{entry.type}})</em>
+              {% if entry.tag %}
+		      <em>({{entry.tag}})</em>
 		      {% endif %}  
 		  {% endif %}
 		  {% if entry.supp %}
