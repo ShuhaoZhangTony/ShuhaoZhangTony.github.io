@@ -39,28 +39,28 @@ We target at the top (i.e., A/A*) conferences/journals. The full conference/jour
     <td class="tg-pjk6">SIGMOD</td>
     <td class="tg-pjk6"><span style="font-weight:400">International Conference on Management of Data</span></td>
     <td class="tg-pjk6">Database</td>
-    <td class="tg-pjk6">A*</td>
+    <td class="tg-pjk6">A+</td>
   </tr>
   <tr>
     <td class="tg-r6jj">Conference</td>
     <td class="tg-r6jj"><span style="font-weight:400;font-style:normal">PVLDB/VLDB</span></td>
     <td class="tg-r6jj"><span style="font-weight:400;font-style:normal">International Conference on Very Large Data Bases</span></td>
     <td class="tg-r6jj">Database</td>
-    <td class="tg-r6jj">A*</td>
+    <td class="tg-r6jj">A+</td>
   </tr>
   <tr>
     <td class="tg-pjk6">Conference</td>
     <td class="tg-pjk6"><span style="font-weight:400;font-style:normal">IEEE ICDE</span></td>
     <td class="tg-pjk6"><span style="font-weight:400;font-style:normal">IEEE International Conference on Data Engineering</span></td>
     <td class="tg-pjk6">Database</td>
-    <td class="tg-pjk6">A*</td>
+    <td class="tg-pjk6">A+</td>
   </tr>
   <tr>
     <td class="tg-r6jj">Conference</td>
     <td class="tg-r6jj"><span style="font-weight:400">IJCAI</span></td>
     <td class="tg-r6jj">International Joint Conference on Artificial Intelligence</td>
     <td class="tg-r6jj">AI</td>
-    <td class="tg-r6jj">A*</td>
+    <td class="tg-r6jj">A+</td>
   </tr>
   <tr>
     <td class="tg-pjk6">Conference</td>
