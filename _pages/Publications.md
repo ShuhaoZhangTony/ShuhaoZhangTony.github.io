@@ -9,7 +9,17 @@ notitle: true
 My publications span multiple catalogs including *Database*, *AI*, *Operating System*, and *Distributed Computing*.
 We target at the top (i.e., A/A*) conferences/journals. The full conference/journal ranking list can be found at the [CORE List](https://www.core.edu.au/conference-portal), [NUS taochen List](http://www.cs.jhu.edu/~taochen/SoC_Conference_Ranking.html) or  [CCF](https://www.ccf.org.cn/Academic_Evaluation/CN/).
 
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
 <style type="text/css">
+.th {border: 1px solid black;
+  border-collapse: collapse;}
+.td {border: 1px solid black;
+  border-collapse: collapse;}
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   overflow:hidden;padding:10px 5px;word-break:normal;}
@@ -39,28 +49,28 @@ We target at the top (i.e., A/A*) conferences/journals. The full conference/jour
     <td class="tg-pjk6">SIGMOD</td>
     <td class="tg-pjk6"><span style="font-weight:400">International Conference on Management of Data</span></td>
     <td class="tg-pjk6">Database</td>
-    <td class="tg-pjk6">A+</td>
+    <td class="tg-pjk6">A*</td>
   </tr>
   <tr>
     <td class="tg-r6jj">Conference</td>
     <td class="tg-r6jj"><span style="font-weight:400;font-style:normal">PVLDB/VLDB</span></td>
     <td class="tg-r6jj"><span style="font-weight:400;font-style:normal">International Conference on Very Large Data Bases</span></td>
     <td class="tg-r6jj">Database</td>
-    <td class="tg-r6jj">A+</td>
+    <td class="tg-r6jj">A*</td>
   </tr>
   <tr>
     <td class="tg-pjk6">Conference</td>
     <td class="tg-pjk6"><span style="font-weight:400;font-style:normal">IEEE ICDE</span></td>
     <td class="tg-pjk6"><span style="font-weight:400;font-style:normal">IEEE International Conference on Data Engineering</span></td>
     <td class="tg-pjk6">Database</td>
-    <td class="tg-pjk6">A+</td>
+    <td class="tg-pjk6">A*</td>
   </tr>
   <tr>
     <td class="tg-r6jj">Conference</td>
     <td class="tg-r6jj"><span style="font-weight:400">IJCAI</span></td>
     <td class="tg-r6jj">International Joint Conference on Artificial Intelligence</td>
     <td class="tg-r6jj">AI</td>
-    <td class="tg-r6jj">A+</td>
+    <td class="tg-r6jj">A*</td>
   </tr>
   <tr>
     <td class="tg-pjk6">Conference</td>
