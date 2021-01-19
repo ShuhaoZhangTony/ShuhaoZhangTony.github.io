@@ -22,6 +22,8 @@ notitle: true
 
 ### Course
 
+- 50.003 Elements of Software Construction (SUTD) -- Instructor
+	- This course is an introduction to the fundamental principles and techniques of software construction that have greatest impact on practice. 
 - IMSEM: Hot Topics in Information Management, 2020 Spring (TU Berlin) -- Instructor
 	- Organising research seminar, guide students to read, write, and present recent research papers.
 - DBT: Database Technology, 2020 Winter (TU Berlin) -- Instructor
