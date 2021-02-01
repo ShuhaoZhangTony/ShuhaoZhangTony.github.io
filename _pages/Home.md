@@ -10,7 +10,7 @@ notitle: true
     <img src="{{ site.baseurl }}/assets/img/me3.jpg" alt="Photo of me" class="img-responsive">
   </div>
   <div class="col-xs-8 jumbotron">
-    <h2>I am an <b>Assistant Professor</b> at <a href="https://istd.sutd.edu.sg/people/faculty/shuhao-zhang">the ISTD pillar of SUTD</a>. 
+    <h2>I am an <b>Assistant Professor</b> (tenure-track) at <a href="https://istd.sutd.edu.sg/people/faculty/shuhao-zhang">the ISTD pillar of SUTD</a>. 
     </h2>
   </div>
   
