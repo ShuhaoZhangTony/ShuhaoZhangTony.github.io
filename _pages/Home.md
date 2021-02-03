@@ -24,3 +24,6 @@ My current research interest include big data management systems (with special i
 <hr style="width:100%">
 :boom: I'm actively looking for talented and highly motivated Ph.D. students to work on large scale <a href="/Projects/"><em>stream processing</em></a>. If you are interested, please find information about the <a href="https://www.sutd.edu.sg/Admissions/Graduate/PhD-Programmes/SUTD-PhD-Programme/Application">SUTD PhD Program</a> and send an email to me with a short description of your  <a href="/Jobs/">interested research topics/proposals</a>.
 
+:boom: I welcome visiting students, if you are interested to work on real-world research problem, contact me ;)
+
+
