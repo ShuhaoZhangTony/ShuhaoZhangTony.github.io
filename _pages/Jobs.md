@@ -38,7 +38,7 @@ notitle: true
 	<li> Prequisites: strong programming skills in C/C++/Java/Python
 	</li>
 </ul>
-<p>If you are interested, please, provide me (shuhao.zhang@tu-berlin.de) with some information about you, your interests, your programming skills, and your CV.</p>
+<p>If you are interested, please, provide me with some information about you, your interests, your programming skills, and your CV.</p>
 
 <hr />
 
