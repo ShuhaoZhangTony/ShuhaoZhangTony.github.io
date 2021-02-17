@@ -10,11 +10,11 @@ notitle: true
     <img src="{{ site.baseurl }}/assets/img/me3.jpg" alt="Photo of me" class="img-responsive">
   </div>
   <div class="col-xs-8 jumbotron">
-    <h2>I am an <b>Assistant Professor</b> (tenure-track) at <a href="https://istd.sutd.edu.sg/people/faculty/shuhao-zhang">the Singapore University of Technology and Design (SUTD)</a>. 
-    </h2>
+    <h3>I am an Assistant Professor (tenure-track) at <a href="https://istd.sutd.edu.sg/people/faculty/shuhao-zhang">the Singapore University of Technology and Design (SUTD)</a>. 
+    </h3>
   </div>
   
-Prior to joining SUTD, I was a <em>Postdoc Researcher</em> at <a href="https://www.dima.tu-berlin.de/menue/staff/">DIMA Technische Universität Berlin</a> working with <a href="https://www.dima.tu-berlin.de/menue/staff/volker_markl/">Prof.Volker Markl</a> (ACM Fellow). I obtained the Ph.D. degree from the school of computing at <a href="https://www.nus.edu.sg/">National University of Singapore</a> in 2019 (supervised by <a href="https://www.comp.nus.edu.sg/~hebs/">Prof.Bingsheng He</a>) and the Bachelor degree with first-class honours from the school of computer engineering at <a href="https://www.ntu.edu.sg/">Nanyang Technological University, Singapore</a> in 2014.
+Prior to joining SUTD, I was a Postdoc Researcherat <a href="https://www.dima.tu-berlin.de/menue/staff/">DIMA Technische Universität Berlin</a> working with <a href="https://www.dima.tu-berlin.de/menue/staff/volker_markl/">Prof.Volker Markl</a> (ACM Fellow). I obtained the Ph.D. degree from the school of computing at <a href="https://www.nus.edu.sg/">National University of Singapore</a> in 2019 (supervised by <a href="https://www.comp.nus.edu.sg/~hebs/">Prof.Bingsheng He</a>) and the Bachelor degree with first-class honours from the school of computer engineering at <a href="https://www.ntu.edu.sg/">Nanyang Technological University, Singapore</a> in 2014.
 My current research interest include big data management systems (with special interests in stream processing and timeseries management), distributed and parallel computing and emerging ML/AI applications. 
 <!-- He had served as a PC member in a list of <a href="Service/">academic conferences</a>. -->
 
@@ -23,6 +23,6 @@ My current research interest include big data management systems (with special i
 <hr style="width:100%">
 :boom: I'm actively looking for talented and highly motivated Ph.D. students to work on large scale <a href="/Projects/"><em>stream processing</em></a>. If you are interested, please find information about the <a href="https://www.sutd.edu.sg/Admissions/Graduate/PhD-Programmes/SUTD-PhD-Programme/Application">SUTD PhD Program</a> and send an email to me with a short description of your  <a href="/Jobs/">interested research topics/proposals</a>.
 
-:boom: Research Assistant positions are available. I also welcome visiting students. If you are interested to work on real-world research problem, contact me :)
-
+:boom: <b>Research Assistant</b> positions are available. I also welcome <b>visiting students</b>. If you are interested to work on real-world research problem, contact me :)
+ 
 
