@@ -7,7 +7,7 @@ years: [2021, 2020, 2019, 2017, 2016, 2015, 2014, 2013]
 notitle: true
 ---
 My publications span multiple catalogs including *Database*, *AI*, *Operating System*, and *Distributed Computing*.
-We target at the top (i.e., A/A*) conferences/journals. The full conference/journal ranking list can be found at the [CORE List](https://www.core.edu.au/conference-portal), [NUS taochen List](http://www.cs.jhu.edu/~taochen/SoC_Conference_Ranking.html) or  [CCF](https://www.ccf.org.cn/Academic_Evaluation/CN/).
+We target at the **top** (i.e., A/A*) conferences/journals. The full conference/journal ranking list can be found at the [CORE List](https://www.core.edu.au/conference-portal), [NUS taochen List](http://www.cs.jhu.edu/~taochen/SoC_Conference_Ranking.html) or  [CCF](https://www.ccf.org.cn/Academic_Evaluation/CN/).
 
 <style>
 table, th, td {
