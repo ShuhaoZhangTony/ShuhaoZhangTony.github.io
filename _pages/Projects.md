@@ -2,41 +2,43 @@
 layout: main
 title: Projects
 permalink: /Projects/
-description: Each project will be allocated 2-3 PhD students and 1-2 postdocs. More projects to be announced.
+description: Each project will be allocated 2-3 PhD students and 1-2 postdocs. 
 notitle: true
 ---
 
-<!--
-<div class="img_row">
-	<img class="col zero resize" src="{{ site.baseurl }}/assets/img/logo_full.png" alt=""/>
-	<div class="col two caption_float">
-  	Each project will be allocated 2-3 PhD students and 1-2 postdocs. More projects to be announced.
-	</div>
-	<div class="one caption">
-	BIDS Group. 
-	</div>
-</div>
--->
-
-
 <ol>	
-	    <li> <b>[TStream]</b>: we will build a novel hardware-conscious full-fledged transactional stream processing system. <br />
+	<li> <b>[AlianceDB]</b>: we will build novel relational stream data management system on modern hardware architectures.
+		<ul>
+     		     <li> Required Skills: well-understanding of database systems and algorithms, good programming skills. </li>
+     		     <li> Related Work: "Parallelizing Intra-Window Join on Multicores: An Experimental Study, SIGMOD 2021"</li>
+     		     <li> Project Link:"[https://github.com/ShuhaoZhangTony/AllianceDB](https://github.com/ShuhaoZhangTony/AllianceDB)"</li>
+     		     <li> Key Fundings:"partially supported by  a SUTD Startup Grant  (100K SGD)"</li>
+     		     <li> Team Members: Shuhao Zhang, Xianzhi Zeng (RA/PhD incoming)</li>
+     		    <!-- <li> External Advisors: Bingsheng He (NUS), Volker Markl (TU Berlin)</li>-->
+		</ul>
+	</li>		    
+	    <li> <b>[Sesame]</b>: we will build a novel continuous AI system to support emerging complex applications such as real time fraud detection with reinforcement learning on cloud edge. <br />
+	    	<ul>
+<!--		     <li> Those applications are hard, if not impossible, to be supported by conventional stream processing engines or ML/database systems. </li>-->
+     		     <li> Required Skills: well-understanding of machine learning/data mining/graph algorithms/techniques, skillful in system development. </li>
+     		     <li> Related Work: "SAMOA: Scalable Advanced Massive Online Analysis, JMLR 2015", "Real-time Event Detection on Social Data Streams, KDD 2019", "Sub-millisecond Stateful Stream Querying over Fast-evolving Linked Data, SOSP 2017" </li>
+     		     <li> Project Link:"(to be announced)"</li> 
+     		     <li> Key Fundings:"partially supported by a SUTD AI Program (150K SGD)"</li>
+     		     <!--<li> Team Members: Shuhao Zhang, Huilin Wu (MSc@TU Berlin)</li>-->
+     		     <!--<li> External Advisors: Juan Soto (TU Berlin), Volker Markl (TU Berlin)</li>-->
+		</ul>
+	    </li>
+	    <li> <b>[TStream]</b>: we will build a novel hardware-conscious full-fledged transactional stream processing (TSP) system. <br />
 		    <ul>
 		     <li> We will revisit every corner of the design of modern TSP system with novel techniques including AI, Modern Hardware (e.g., GPGPU, FPGA, etc.).  </li>
 		     <li> Required Skills: well-understanding of transactional stream processing, skillful in system development, at least skillfull in one hardware architecture (multicore CPU, GPU, FPGA etc). </li>
      		     <li> Related Work: "BriskStream: Scaling Data Stream Processing on Shared-Memory Multicore Architectures, SIGMOD 2019", "Towards Concurrent Stateful Stream Processing on Multicore Processors, ICDE 2020". </li>
+     		     <li> Project Link (tentative):"[https://github.com/Xtra-Computing/briskstream](https://github.com/Xtra-Computing/briskstream)"</li>
+     		     <!--<li> Key Fundings:"to be announced"</li>-->
+     		     <!--<li> Team Members: Shuhao Zhang, Aqif Hamid (MSc@TU Berlin)</li>-->
+     		    <!-- <li> External Advisors: Juan Soto (TU Berlin), Volker Markl (TU Berlin)</li>-->
 		   </ul>
 	    </li>
-	    <li> <b>[Sesame]</b>: we will build a novel data stream management system to support emerging complex applications such as real time fraud detection with reinforcement learning. <br />
-	    	<ul>
-		     <li> Those applications are hard, if not impossible, to be supported by conventional stream processing engines or ML/database systems. </li>
-     		     <li> Required Skills: well-understanding of machine learning/data mining/graph algorithms/techniques, skillful in system development. </li>
-     		     <li> Related Work: "SAMOA: Scalable Advanced Massive Online Analysis, JMLR 2015", "Real-time Event Detection on Social Data Streams, KDD 2019", "Sub-millisecond Stateful Stream Querying over Fast-evolving Linked Data, SOSP 2017" </li>
-		</ul>
-	    </li>
-	<li> More projects to be announced.
-	</li>
-	Additional keywords: <i> Modern Hardware, Timeseries, Internet of Things, Security </i>
 </ol>
 
 <!--
