@@ -14,7 +14,7 @@ notitle: true
     </h3>
   </div>
   
-My current research interest include big data stream processing on emerging hardware, and emerging ML/AI applications (e.g., data stream mining, continuous AI, and federated learning). 
+I'm a **System** Researcher aiming at solid system research. My current research interest include big data stream processing system on emerging hardware, and system for emerging ML/AI applications (e.g., data stream mining, continuous AI, and federated learning). 
 <!-- He had served as a PC member in a list of <a href="Service/">academic conferences</a>. -->
 
 Prior to joining SUTD, I was a Postdoc Researcherat <a href="https://www.dima.tu-berlin.de/menue/staff/">DIMA Technische Universität Berlin</a> working with <a href="https://www.dima.tu-berlin.de/menue/staff/volker_markl/">Prof.Volker Markl</a> (ACM Fellow, *father* of Apache Flink). I obtained the Ph.D. degree from the school of computing at <a href="https://www.nus.edu.sg/">National University of Singapore</a> in 2019 (supervised by <a href="https://www.comp.nus.edu.sg/~hebs/">Prof.Bingsheng He</a>) and the Bachelor degree with first-class honours from the school of computer engineering at <a href="https://www.ntu.edu.sg/">Nanyang Technological University, Singapore</a> (SM3 Scholars) in 2014.
