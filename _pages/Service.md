@@ -30,7 +30,8 @@ notitle: true
 	- Teaching fundamentals of database technology for relational database systems.
 - DBT-PRA: Database Technology Class - Practice Part, 2020 Winter (TU Berlin) -- Instructor
 	- Instructing students to implement components of a relational database system and get hands-on experience with a parallel data processing platform.  
- 
+	
+<!-- 
 ### Mentoring Students
 
 <p>I am currently working with some fantastic students:</p>
@@ -39,7 +40,7 @@ notitle: true
 	<li>Hamid, Aqif (TU Berlin, MSC), Advising Master Thesis</li>
 	<li>Mao, Yancan (NUS, Ph.D), Paper Collaborator </li>
 </ul>
-
+-->
 ### Reading Lists
 
 I maintain a [reading list](https://shuhaozhangtony.github.io/StreamProcessing_ReadingList/) regarding stream processing, welcome to contribute.
