@@ -34,7 +34,7 @@ notitle: true
 		     <li> Required Skills: well-understanding of transactional stream processing, skillful in system development, at least skillfull in one hardware architecture (multicore CPU, GPU, FPGA etc). </li>
      		     <li> Related Work: "BriskStream: Scaling Data Stream Processing on Shared-Memory Multicore Architectures, SIGMOD 2019", "Towards Concurrent Stateful Stream Processing on Multicore Processors, ICDE 2020". </li>
      		     <li> Project Link (tentative):"<a href=
-     		     https://github.com/Xtra-Computing/briskstream]>https://github.com/Xtra-Computing/briskstream</a>"</li>
+     		     https://github.com/Xtra-Computing/briskstream>https://github.com/Xtra-Computing/briskstream</a>"</li>
      		     <!--<li> Key Fundings:"to be announced"</li>-->
      		     <!--<li> Team Members: Shuhao Zhang, Aqif Hamid (MSc@TU Berlin)</li>-->
      		    <!-- <li> External Advisors: Juan Soto (TU Berlin), Volker Markl (TU Berlin)</li>-->
