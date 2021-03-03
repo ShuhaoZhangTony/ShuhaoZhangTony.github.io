@@ -11,7 +11,7 @@ notitle: true
 		<ul>
      		     <li> Required Skills: well-understanding of database systems and algorithms, good programming skills. </li>
      		     <li> Related Work: "Parallelizing Intra-Window Join on Multicores: An Experimental Study, SIGMOD 2021"</li>
-     		     <li> Project Link:"<a href="https://github.com/ShuhaoZhangTony/AllianceDB">https://github.com/ShuhaoZhangTony/AllianceDB</a>"</li>
+     		     <li> Project Link: <a href="https://github.com/ShuhaoZhangTony/AllianceDB">https://github.com/ShuhaoZhangTony/AllianceDB</a></li>
      		     <li> Key Fundings:"partially supported by  a SUTD Startup Grant  (100K SGD)"</li>
      		     <li> Team Members: Shuhao Zhang, Xianzhi Zeng (RA/PhD incoming)</li>
      		    <!-- <li> External Advisors: Bingsheng He (NUS), Volker Markl (TU Berlin)</li>-->
@@ -22,7 +22,7 @@ notitle: true
 <!--		     <li> Those applications are hard, if not impossible, to be supported by conventional stream processing engines or ML/database systems. </li>-->
      		     <li> Required Skills: well-understanding of machine learning/data mining/graph algorithms/techniques, skillful in system development. </li>
      		     <li> Related Work: "SAMOA: Scalable Advanced Massive Online Analysis, JMLR 2015", "Real-time Event Detection on Social Data Streams, KDD 2019", "Sub-millisecond Stateful Stream Querying over Fast-evolving Linked Data, SOSP 2017" </li>
-     		     <li> Project Link:"(to be announced)"</li> 
+     		     <li> Project Link: (to be announced)</li> 
      		     <li> Key Fundings:"partially supported by a SUTD AI Program (150K SGD)"</li>
      		     <!--<li> Team Members: Shuhao Zhang, Huilin Wu (MSc@TU Berlin)</li>-->
      		     <!--<li> External Advisors: Juan Soto (TU Berlin), Volker Markl (TU Berlin)</li>-->
@@ -33,8 +33,8 @@ notitle: true
 		     <li> We will revisit every corner of the design of modern TSP system with novel techniques including AI, Modern Hardware (e.g., GPGPU, FPGA, etc.).  </li>
 		     <li> Required Skills: well-understanding of transactional stream processing, skillful in system development, at least skillfull in one hardware architecture (multicore CPU, GPU, FPGA etc). </li>
      		     <li> Related Work: "BriskStream: Scaling Data Stream Processing on Shared-Memory Multicore Architectures, SIGMOD 2019", "Towards Concurrent Stateful Stream Processing on Multicore Processors, ICDE 2020". </li>
-     		     <li> Project Link (tentative):"<a href=
-     		     https://github.com/Xtra-Computing/briskstream>https://github.com/Xtra-Computing/briskstream</a>"</li>
+     		     <li> Project Link (tentative): <a href=
+     		     "https://github.com/Xtra-Computing/briskstream">https://github.com/Xtra-Computing/briskstream</a></li>
      		     <!--<li> Key Fundings:"to be announced"</li>-->
      		     <!--<li> Team Members: Shuhao Zhang, Aqif Hamid (MSc@TU Berlin)</li>-->
      		    <!-- <li> External Advisors: Juan Soto (TU Berlin), Volker Markl (TU Berlin)</li>-->
