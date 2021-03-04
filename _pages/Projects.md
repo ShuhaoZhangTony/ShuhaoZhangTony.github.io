@@ -5,7 +5,7 @@ permalink: /Projects/
 description: Each project will be allocated 2-3 PhD students and 1-2 postdocs. 
 notitle: true
 ---
-You are welcomed to visit our official project website: <a href="https://people.sutd.edu.sg/~zhangsh/">https://people.sutd.edu.sg/~zhangsh/</a> for detailed information and recent updates of our research projects.
+For detailed information and recent updates of our research projects, you are welcomed to visit our official project website: <a href="https://people.sutd.edu.sg/~zhangsh/">https://people.sutd.edu.sg/zhangsh/</a>.
 
 I lead the following research projects. 
 <ol>	
