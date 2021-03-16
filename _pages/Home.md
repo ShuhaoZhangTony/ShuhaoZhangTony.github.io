@@ -41,7 +41,11 @@ I work on computer systems.
 
 <ul>
 	<li> 
-        Stream Query Optimization on NUMA, Multicores [[ICDE'17](https://shuhaozhangtony.github.io/assets/pdf/papers/profile.pdf), [SIGMOD'19](https://shuhaozhangtony.github.io/assets/pdf/papers/briskstream.pdf), [SIGMOD'21](https://shuhaozhangtony.github.io/assets/pdf/papers/StreamJoin_Preprint.pdf)] 
+        Stream Query Optimization on NUMA, Multicores [
+        <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/profile.pdf">ICDE'17</a>, 
+        <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/briskstream.pdf">SIGMOD'19</a>, 
+        <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/StreamJoin_Preprint.pdf">SIGMOD'21</a>
+        ] 
     </li>
 	<li> 
         Stream Query Optimization on Integrated CPU-GPU Architectures [[USENIX ATC'20](), [TPDS'21]()] 
