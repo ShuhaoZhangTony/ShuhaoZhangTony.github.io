@@ -61,9 +61,9 @@ Interactive Trajectory Exploration [[BIGMM'19](https://shuhaozhangtony.github.io
 <li> <b> MapReduce/Database Systems + Emerging Hardware </b> </li>
 <ul>
 
-<li> MapReduce on CPUs/FPGAs/GPUs [[SC'16](https://shuhaozhangtony.github.io/assets/pdf/papers/Tang-2016-Elastic-multi-resource-fairness-bal.pdf), [TPDS'16](https://shuhaozhangtony.github.io/assets/pdf/papers/Wang-2016-Melia-a-mapreduce-framework-on-open.pdf), [TPDS'17](https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2016-Understanding-co-running-behaviors-.pdf)]
+<li> MapReduce on CPUs/FPGAs/GPUs [[SC'16](https://shuhaozhangtony.github.io/assets/pdf/papers/Tang-2016-Elastic-multi-resource-fairness-bal.pdf), [TPDS'16](https://shuhaozhangtony.github.io/assets/pdf/papers/Wang-2016-Melia-a-mapreduce-framework-on-open.pdf), [TPDS'17](https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2016-Understanding-co-running-behaviors-.pdf)]</li>
 
-<li> DB on CPU/GPU architectures [[VLDB'13](https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2013-Omnidb.pdf), [VLDB'14](https://shuhaozhangtony.github.io/assets/pdf/papers/He-2014-In-cache-query-co-processing-on-cou.pdf)]
+<li> DB on CPU/GPU architectures [[VLDB'13](https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2013-Omnidb.pdf), [VLDB'14](https://shuhaozhangtony.github.io/assets/pdf/papers/He-2014-In-cache-query-co-processing-on-cou.pdf)]</li>
 
 </ul> 
 
