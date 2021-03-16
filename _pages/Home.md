@@ -32,7 +32,7 @@ I work on computer systems.
 <li> <b>Transactional Stream Management Systems </b> </li> 
 <ul>
 <li> 
-    Parallelising Streaming Transaction Execution [[ICDE'20](https://shuhaozhangtony.github.io/assets/pdf/papers/tstream.pdf)]
+    Parallelising Streaming Transaction Execution [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/tstream.pdf">ICDE'20</a>]
 </li>
 </ul>
 
@@ -41,17 +41,19 @@ I work on computer systems.
 
 <ul>
 	<li> 
-        Stream Query Optimization on NUMA, Multicores [
-        <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/profile.pdf">ICDE'17</a>, 
+        Stream Query Optimization on NUMA, Multicores 
+        [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/profile.pdf">ICDE'17</a>, 
         <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/briskstream.pdf">SIGMOD'19</a>, 
-        <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/StreamJoin_Preprint.pdf">SIGMOD'21</a>
-        ] 
+        <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/StreamJoin_Preprint.pdf">SIGMOD'21</a>] 
     </li>
 	<li> 
-        Stream Query Optimization on Integrated CPU-GPU Architectures [[USENIX ATC'20](), [TPDS'21]()] 
+        Stream Query Optimization on Integrated CPU-GPU Architectures 
+        [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/atc20-zhang-feng.pdf">USENIX ATC'20</a>, 
+        <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/">TPDS'21</a>] 
     </li>
 	<li> 
-        Complex Event Processing Optimisations [[ICDE'17](https://shuhaozhangtony.github.io/assets/pdf/papers/MOTTO.pdf)]
+        Complex Event Processing Optimisations 
+        [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/MOTTO.pdf">ICDE'17</a>]
     </li>	
 </ul>
 
@@ -60,11 +62,13 @@ I work on computer systems.
 <ul>
 
 <li> 
-    Parking Behaviour Prediction [[IJCAI'20](https://shuhaozhangtony.github.io/assets/pdf/papers/predictionIJCAI.pdf)]
+    Parking Behaviour Prediction 
+    [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/predictionIJCAI.pdf">IJCAI'20</a>]
 </li>
 
 <li>
-    Interactive Trajectory Exploration [[BIGMM'19](https://shuhaozhangtony.github.io/assets/pdf/papers/Ang-2019-Trav-an-interactive-exploration-sys.pdf)]
+    Interactive Trajectory Exploration 
+    [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/Ang-2019-Trav-an-interactive-exploration-sys.pdf">BIGMM'19</a>]
 </li>
 </ul>
 
@@ -72,11 +76,16 @@ I work on computer systems.
 <ul>
 
 <li>
-    MapReduce on CPUs/FPGAs/GPUs [[SC'16](https://shuhaozhangtony.github.io/assets/pdf/papers/Tang-2016-Elastic-multi-resource-fairness-bal.pdf), [TPDS'16](https://shuhaozhangtony.github.io/assets/pdf/papers/Wang-2016-Melia-a-mapreduce-framework-on-open.pdf), [TPDS'17](https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2016-Understanding-co-running-behaviors-.pdf)]
+    MapReduce on CPUs/FPGAs/GPUs 
+    [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/Tang-2016-Elastic-multi-resource-fairness-bal.pdf">SC'16</a>, 
+    <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/Wang-2016-Melia-a-mapreduce-framework-on-open.pdf">TPDS'16</a>, 
+    <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2016-Understanding-co-running-behaviors-.pdf">TPDS'17</a>]
 </li>
 
 <li> 
-    DB on CPU/GPU architectures [[VLDB'13](https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2013-Omnidb.pdf), [VLDB'14](https://shuhaozhangtony.github.io/assets/pdf/papers/He-2014-In-cache-query-co-processing-on-cou.pdf)]
+    DB on CPU/GPU architectures 
+    [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2013-Omnidb.pdf">VLDB'13</a>, 
+    <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/He-2014-In-cache-query-co-processing-on-cou.pdf">VLDB'14</a>]
 </li>
 
 </ul> 
