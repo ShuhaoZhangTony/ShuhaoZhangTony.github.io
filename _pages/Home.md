@@ -23,7 +23,7 @@ I grew up in Sichuan and Tianjin, China, had spent the last 10 years in Singapor
 
 <hr style="width:100%">
 
-<h2>Research</h2>
+<h2> Research </h2>
 
 I work on computer systems. 
 
@@ -31,8 +31,8 @@ I work on computer systems.
 
 <li> <b>Transactional Stream Management Systems </b> </li> 
 <ul>
-<li> Parallelising Streaming Transaction Execution [[ICDE'20](https://shuhaozhangtony.github.io/assets/pdf/papers/tstream.pdf)]
-
+<li> 
+    Parallelising Streaming Transaction Execution [[ICDE'20](https://shuhaozhangtony.github.io/assets/pdf/papers/tstream.pdf)]
 </li>
 </ul>
 
@@ -40,9 +40,15 @@ I work on computer systems.
 <li> <b> Low-Latency Systems for Data Analytics </b> </li>
 
 <ul>
-	<li> Stream Query Optimization on NUMA, Multicores [[ICDE'17](https://shuhaozhangtony.github.io/assets/pdf/papers/profile.pdf), [SIGMOD'19](https://shuhaozhangtony.github.io/assets/pdf/papers/briskstream.pdf), [SIGMOD'21](https://shuhaozhangtony.github.io/assets/pdf/papers/StreamJoin_Preprint.pdf)] </li>
-	<li> Stream Query Optimization on Integrated CPU-GPU Architectures [[USENIX ATC'20](), [TPDS'21]()] </li>
-	<li> Complex Event Processing Optimisations [[ICDE'17](https://shuhaozhangtony.github.io/assets/pdf/papers/MOTTO.pdf)]	
+	<li> 
+        Stream Query Optimization on NUMA, Multicores [[ICDE'17](https://shuhaozhangtony.github.io/assets/pdf/papers/profile.pdf), [SIGMOD'19](https://shuhaozhangtony.github.io/assets/pdf/papers/briskstream.pdf), [SIGMOD'21](https://shuhaozhangtony.github.io/assets/pdf/papers/StreamJoin_Preprint.pdf)] 
+    </li>
+	<li> 
+        Stream Query Optimization on Integrated CPU-GPU Architectures [[USENIX ATC'20](), [TPDS'21]()] 
+    </li>
+	<li> 
+        Complex Event Processing Optimisations [[ICDE'17](https://shuhaozhangtony.github.io/assets/pdf/papers/MOTTO.pdf)]
+    </li>	
 </ul>
 
 
@@ -50,32 +56,33 @@ I work on computer systems.
 <ul>
 
 <li> 
-Parking Behaviour Prediction [[IJCAI'20](https://shuhaozhangtony.github.io/assets/pdf/papers/predictionIJCAI.pdf)]
+    Parking Behaviour Prediction [[IJCAI'20](https://shuhaozhangtony.github.io/assets/pdf/papers/predictionIJCAI.pdf)]
 </li>
 
 <li>
-Interactive Trajectory Exploration [[BIGMM'19](https://shuhaozhangtony.github.io/assets/pdf/papers/Ang-2019-Trav-an-interactive-exploration-sys.pdf)]
+    Interactive Trajectory Exploration [[BIGMM'19](https://shuhaozhangtony.github.io/assets/pdf/papers/Ang-2019-Trav-an-interactive-exploration-sys.pdf)]
 </li>
 </ul>
 
 <li> <b> MapReduce/Database Systems + Emerging Hardware </b> </li>
 <ul>
 
-<li> MapReduce on CPUs/FPGAs/GPUs [[SC'16](https://shuhaozhangtony.github.io/assets/pdf/papers/Tang-2016-Elastic-multi-resource-fairness-bal.pdf), [TPDS'16](https://shuhaozhangtony.github.io/assets/pdf/papers/Wang-2016-Melia-a-mapreduce-framework-on-open.pdf), [TPDS'17](https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2016-Understanding-co-running-behaviors-.pdf)]</li>
+<li>
+    MapReduce on CPUs/FPGAs/GPUs [[SC'16](https://shuhaozhangtony.github.io/assets/pdf/papers/Tang-2016-Elastic-multi-resource-fairness-bal.pdf), [TPDS'16](https://shuhaozhangtony.github.io/assets/pdf/papers/Wang-2016-Melia-a-mapreduce-framework-on-open.pdf), [TPDS'17](https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2016-Understanding-co-running-behaviors-.pdf)]
+</li>
 
-<li> DB on CPU/GPU architectures [[VLDB'13](https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2013-Omnidb.pdf), [VLDB'14](https://shuhaozhangtony.github.io/assets/pdf/papers/He-2014-In-cache-query-co-processing-on-cou.pdf)]</li>
+<li> 
+    DB on CPU/GPU architectures [[VLDB'13](https://shuhaozhangtony.github.io/assets/pdf/papers/Zhang-2013-Omnidb.pdf), [VLDB'14](https://shuhaozhangtony.github.io/assets/pdf/papers/He-2014-In-cache-query-co-processing-on-cou.pdf)]
+</li>
 
 </ul> 
-
 
 </ul>
 
 <hr style="width:100%">
 
-<h2>Announcements</h2>
+<h2> Announcements </h2>
 
 :boom: I'm actively looking for talented and highly motivated Ph.D. students. If you are interested, please find information about the <a href="https://www.sutd.edu.sg/Admissions/Graduate/PhD-Programmes/SUTD-PhD-Programme/Application">SUTD PhD Program</a> and send an email to me with a short description of your  <a href="/Jobs/">interested research topics/proposals</a>.
 
 :boom: <b><a href="https://careers.sutd.edu.sg/re/en/job/494655/research-assistant">Research Assistant</a></b> positions are available (SRG ID: SRT3IS21164). I welcome <b>visiting students</b> and <b>CSC</b> students. If you are interested to work on real-world research problem on big data processing, contact me :)
- 
-
