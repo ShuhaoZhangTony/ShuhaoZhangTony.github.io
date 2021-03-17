@@ -32,10 +32,9 @@ I work on computer systems.
 <li> <b>Transactional Stream Management Systems </b> </li> 
 <ul>
 <li> 
-    Parallelising Streaming Transaction Execution [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/tstream.pdf">ICDE'20</a>]
+    Parallelising Streaming Transactions on Multicores [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/tstream.pdf">ICDE'20</a>]
 </li>
 </ul>
-
 
 <li> <b> Low-Latency Systems for Data Analytics </b> </li>
 
@@ -44,7 +43,7 @@ I work on computer systems.
         Stream Query Optimization on NUMA, Multicores 
         [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/profile.pdf">ICDE'17</a>, 
         <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/briskstream.pdf">SIGMOD'19</a>, 
-        <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/StreamJoin_Preprint.pdf">SIGMOD'21</a>] 
+        <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/rdm044-zhangA.pdf">SIGMOD'21</a>] 
     </li>
 	<li> 
         Stream Query Optimization on Integrated CPU-GPU Architectures 

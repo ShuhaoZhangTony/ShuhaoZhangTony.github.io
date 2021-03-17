@@ -8,17 +8,87 @@ notitle: true
 
 ### Program Committees
 
-<ul>
-	<li> International Conference on Parallel Processing (ICPP), 2021, PC </li>
-	<li> International Workshop on Autonomic Solutions for Parallel and Distributed Data Stream Processing (Auto-DaSP), 2021, PC </li>	
-	<li> International Symposium on Cluster, Cloud and Internet Computing (CCGrid), 2021, PC </li>
-	<li> International Conference for High Performance Computing, Networking, Storage, and Analysis (SC), 2021 panels committee </li>
-	<li> IEEE International Smart Cities Conference (IS2C) 2020, PC </li>
-	<li> International Conference on Distributed Computing Systems (ICDCS), 2020, PC </li>
-	<li> IEEE INTERNATIONAL CONFERENCE ON HIGH PERFORMANCE COMPUTING, DATA, &amp; ANALYTICS (HiPC), 2020, PC </li>
-	<li> ACM International Conference on Information and Knowledge Management (CIKM), 2019, PC </li>
-	<li> IEEE International Conference on Cloud Computing and Intelligence Systems (CCIS), 2019, PC </li>
-</ul>
+<style type="text/css">
+.tg  {border:none;border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
+.tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:0px;color:#002b36;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#657b83;border-color:#93a1a1;border-style:solid;border-width:0px;color:#fdf6e3;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-2bhk{background-color:#eee8d5;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-ezbu{background-color:#eee8d5;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-alz1{background-color:#eee8d5;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-i6s1{background-color:#eee8d5;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-baqh">Year</th>
+    <th class="tg-c3ow">Short Name</th>
+    <th class="tg-c3ow">Full Event Name</th>
+    <th class="tg-c3ow">Role</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-alz1">2021</td>
+    <td class="tg-2bhk">ICPP</td>
+    <td class="tg-2bhk"><span style="font-weight:400;font-style:normal">International Conference on Parallel Processing</span></td>
+    <td class="tg-ezbu">Regular PC Member</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">2021</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">Auto-DaSP</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">International Workshop on Autonomic Solutions for Parallel and Distributed Data Stream Processing</span></td>
+    <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">Regular</span> PC Member</td>
+  </tr>
+  <tr>
+    <td class="tg-alz1"><span style="font-weight:400;font-style:normal">2021</span></td>
+    <td class="tg-2bhk"><span style="font-weight:400;font-style:normal">CCGrid</span></td>
+    <td class="tg-2bhk"><span style="font-weight:400;font-style:normal">International Symposium on Cluster, Cloud and Internet Computing</span></td>
+    <td class="tg-ezbu"><span style="font-weight:400;font-style:normal">Regular PC Member</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">2021</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">SC</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">International Conference for High Performance Computing, Networking, Storage, and Analysis</span></td>
+    <td class="tg-baqh"><span style="font-weight:400;font-style:normal">Panels Committee Member</span></td>
+  </tr>
+  <tr>
+    <td class="tg-alz1"><span style="font-weight:400;font-style:normal">2020</span></td>
+    <td class="tg-alz1"><span style="font-weight:400;font-style:normal">IS2C</span></td>
+    <td class="tg-alz1"><span style="font-weight:400;font-style:normal">IEEE International Smart Cities Conference</span></td>
+    <td class="tg-i6s1"><span style="font-weight:400;font-style:normal">Regular PC Member</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">2020</span></td>
+    <td class="tg-0lax">ICDCS</td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">International Conference on Distributed Computing Systems</span></td>
+    <td class="tg-baqh"><span style="font-weight:400;font-style:normal">Regular PC Member</span></td>
+  </tr>
+  <tr>
+    <td class="tg-alz1"><span style="font-weight:400;font-style:normal">2020</span></td>
+    <td class="tg-alz1"><span style="font-weight:400;font-style:normal">HiPC</span></td>
+    <td class="tg-alz1">IEEE International Conference on High Performance Computing, Data, and Analytics</td>
+    <td class="tg-i6s1"><span style="font-weight:400;font-style:normal">Regular PC Member</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">2019</span></td>
+    <td class="tg-0lax">CIKM</td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">ACM International Conference on Information and Knowledge Management</span></td>
+    <td class="tg-baqh"><span style="font-weight:400;font-style:normal">Regular PC Member</span></td>
+  </tr>
+  <tr>
+    <td class="tg-alz1"><span style="font-weight:400;font-style:normal">2019</span></td>
+    <td class="tg-alz1">CCIS</td>
+    <td class="tg-alz1"><span style="font-weight:400;font-style:normal">IEEE International Conference on Cloud Computing and Intelligence Systems</span></td>
+    <td class="tg-i6s1"><span style="font-weight:400;font-style:normal">Regular PC Member</span></td>
+  </tr>
+</tbody>
+</table>
 
 ### Course
 
