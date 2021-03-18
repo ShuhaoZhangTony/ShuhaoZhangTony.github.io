@@ -62,7 +62,7 @@ I work on computer systems.
 
 <li> 
     Parking Behaviour Prediction 
-    [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/predictionIJCAI.pdf">IJCAI'20</a>]
+    [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/predictionIJCAI.pdf">IJCAI'20</a>, <a href="">TKDE'21</a>]
 </li>
 
 <li>
@@ -97,4 +97,4 @@ I work on computer systems.
 
 :boom: I'm actively looking for talented and highly motivated Ph.D. students. If you are interested, please find information about the <a href="https://www.sutd.edu.sg/Admissions/Graduate/PhD-Programmes/SUTD-PhD-Programme/Application">SUTD PhD Program</a> and send an email to me with a short description of your  <a href="/Jobs/">interested research topics/proposals</a>.
 
-:boom: <b><a href="https://careers.sutd.edu.sg/re/en/job/494655/research-assistant">Research Assistant</a></b> positions are available (SRG ID: SRT3IS21164). I welcome <b>visiting students</b> and <b>CSC</b> students. If you are interested to work on real-world research problem on big data processing, contact me :)
+:boom: <b> Summer internships </b> and one year <b><a href="https://careers.sutd.edu.sg/re/en/job/494655/research-assistant">Research Assistant</a></b> positions are available (SRG ID: SRT3IS21164). I welcome <b>visiting students</b> and <b>CSC</b> students. If you are interested to work on real-world research problem on big data processing, contact me :)
