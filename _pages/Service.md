@@ -39,12 +39,12 @@ notitle: true
     <td class="tg-2bhk"><span style="font-weight:400;font-style:normal">International Conference on Parallel Processing</span></td>
     <td class="tg-ezbu">Regular PC Member</td>
   </tr>
-  <tr>
+  <!--<tr>
     <td class="tg-0lax"><span style="font-weight:400;font-style:normal">2021</span></td>
     <td class="tg-0pky"><span style="font-weight:400;font-style:normal">Auto-DaSP</span></td>
     <td class="tg-0pky"><span style="font-weight:400;font-style:normal">International Workshop on Autonomic Solutions for Parallel and Distributed Data Stream Processing</span></td>
     <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">Regular</span> PC Member</td>
-  </tr>
+  </tr>-->
   <tr>
     <td class="tg-alz1"><span style="font-weight:400;font-style:normal">2021</span></td>
     <td class="tg-2bhk"><span style="font-weight:400;font-style:normal">CCGrid</span></td>
@@ -57,14 +57,14 @@ notitle: true
     <td class="tg-0lax"><span style="font-weight:400;font-style:normal">International Conference for High Performance Computing, Networking, Storage, and Analysis</span></td>
     <td class="tg-baqh"><span style="font-weight:400;font-style:normal">Panels Committee Member</span></td>
   </tr>
-  <tr>
+ <!-- <tr>
     <td class="tg-alz1"><span style="font-weight:400;font-style:normal">2020</span></td>
     <td class="tg-alz1"><span style="font-weight:400;font-style:normal">IS2C</span></td>
     <td class="tg-alz1"><span style="font-weight:400;font-style:normal">IEEE International Smart Cities Conference</span></td>
     <td class="tg-i6s1"><span style="font-weight:400;font-style:normal">Regular PC Member</span></td>
-  </tr>
+  </tr>-->
   <tr>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">2020</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">2020, 2021</span></td>
     <td class="tg-0lax">ICDCS</td>
     <td class="tg-0lax"><span style="font-weight:400;font-style:normal">International Conference on Distributed Computing Systems</span></td>
     <td class="tg-baqh"><span style="font-weight:400;font-style:normal">Regular PC Member</span></td>
