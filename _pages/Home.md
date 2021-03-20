@@ -48,7 +48,7 @@ I work on computer systems.
 	<li> 
         Stream Query Optimization on Integrated CPU-GPU Architectures 
         [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/atc20-zhang-feng.pdf">USENIX ATC'20</a>, 
-        <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/FineStreamTKDE.pdf">TPDS'21</a>] 
+        <a href="https://shuhaozhangtony.github.io/assets/pdf/papers/FineStreamTPDS.pdf">TPDS'21</a>] 
     </li>
 	<li> 
         Complex Event Processing Optimisations 
