@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 name: Shuhao Zhang
-email: shuhao.zhang@tu-berlin.de
+email: tonyzhang19900609@gmail.com
 description: > # this means to ignore newlines until "url:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
@@ -42,12 +42,12 @@ navigation:
       link: /
     - title: Publications
       link: /Publications/
-    - title: Projects
-      link: /Projects/      
+#    - title: Projects
+#      link: /Projects/      
     - title: Service
       link: /Service/
-    - title: Jobs
-      link: /Jobs/
+#    - title: Jobs
+#      link: /Jobs/
  #   - title: CV
  #     link: /cv/cv.pdf
 
@@ -68,9 +68,9 @@ enable_katex:       true
 #      layout: post
 #    output: true
 #    permalink: /news/:path/
-projects:
-    output: true
-    permalink: /Projects/:path/
+#projects:
+#    output: true
+#    permalink: /Projects/:path/
 
 news_limit: 3
 
