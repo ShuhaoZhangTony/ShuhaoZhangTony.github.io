@@ -14,14 +14,15 @@ notitle: true
     </h3>
   </div>
   
-My current research interest include big data stream processing system on emerging hardware, and system for emerging ML/AI applications (e.g., data stream mining, continuous AI, and federated learning). See <a href="/Projects/"><em>Projects</em></a> for detailed descriptions.
+My current research interest include big data stream processing system on emerging hardware, and system for emerging ML/AI applications (e.g., data stream mining, continuous AI, and federated learning). 
+<!--See <a href="/Projects/"><em>Projects</em></a> for detailed descriptions.-->
 <!-- He had served as a PC member in a list of <a href="Service/">academic conferences</a>. -->
 
 <!--I was a Postdoc Researcher at <a href="https://www.dima.tu-berlin.de/menue/staff/">DIMA Technische Universität Berlin</a> working with <a href="https://www.dima.tu-berlin.de/menue/staff/volker_markl/">Prof.Volker Markl</a> (ACM Fellow, *father* of Apache Flink). I obtained the Ph.D. degree from the school of computing at <a href="https://www.nus.edu.sg/">National University of Singapore</a> in 2019 (supervised by <a href="https://www.comp.nus.edu.sg/~hebs/">Prof.Bingsheng He</a>) and the Bachelor degree with first-class honours from the school of computer engineering at <a href="https://www.ntu.edu.sg/">Nanyang Technological University, Singapore</a> (SM3 Scholars) in 2014.-->
 
 <!--I grew up in Sichuan and Tianjin, China, had spent the last 10 years in Singapore.-->
 
-<hr style="width:100%">
+<!--<hr style="width:100%">-->
 
 <!--<h2> Research </h2>-->
 
@@ -55,7 +56,6 @@ My current research interest include big data stream processing system on emergi
         [<a href="https://shuhaozhangtony.github.io/assets/pdf/papers/MOTTO.pdf">ICDE'17</a>]
     </li>	
 </ul>
-
 
 <li>  <b> Systems + ML/DM  </b> </li>
 <ul>
@@ -91,4 +91,4 @@ My current research interest include big data stream processing system on emergi
 
 </ul>
 
-<hr style="width:100%">
+<!--<hr style="width:100%">-->
