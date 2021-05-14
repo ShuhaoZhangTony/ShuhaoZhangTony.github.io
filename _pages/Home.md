@@ -22,9 +22,9 @@ My current research interest include big data stream processing system on emergi
 
 <!--I grew up in Sichuan and Tianjin, China, had spent the last 10 years in Singapore.-->
 
-<!--<hr style="width:100%">-->
+<hr style="width:100%">
 
-<!--<h2> Research </h2>-->
+<h2> Recent Work </h2>
 
 <!--I work on computer systems. -->
 
