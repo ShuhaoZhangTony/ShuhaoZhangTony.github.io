@@ -46,6 +46,8 @@ navigation:
 #      link: /Projects/      
     - title: Service
       link: /Service/
+    - title: Supervision
+      link: /Supervision/      
 #    - title: Jobs
 #      link: /Jobs/
  #   - title: CV
