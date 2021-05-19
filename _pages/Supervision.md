@@ -25,7 +25,6 @@ notitle: true
 	<li>Cai, Xuemeng (Undergraduate Student @ SUTD, Singapore), Supervising on <i>  Relational Stream Processing Algorithms </i> </li>
 </ul>
 
+### For Prospective Students
 
-### Reading Lists
-
-I maintain a [reading list](https://shuhaozhangtony.github.io/StreamProcessing_ReadingList/) regarding stream processing, welcome to contribute.
+Due to the very much unfair graduate student scholarship allocation system at ISTD SUTD, I have temporarily stopped looking for phd students. However, if you are keen to work with me, you may still approach me for a discussion for other scholarship opportunities.
