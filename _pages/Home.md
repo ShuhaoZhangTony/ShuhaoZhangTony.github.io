@@ -14,7 +14,7 @@ notitle: true
     </h3>
   </div>
   
-My current research interest include big data stream processing system on emerging hardware, and system for emerging ML/AI applications (e.g., data stream mining, continuous AI, and federated learning). 
+I'm now Assistant Professor at Singapore University of Technology and Design (SUTD). My current research interest include big data stream processing system on emerging hardware, and system for emerging ML/AI applications (e.g., data stream mining, continuous AI, and federated learning). 
 <!--See <a href="/Projects/"><em>Projects</em></a> for detailed descriptions.-->
 <!-- He had served as a PC member in a list of <a href="Service/">academic conferences</a>. -->
 
@@ -91,4 +91,11 @@ My current research interest include big data stream processing system on emergi
 
 </ul>
 
-<!--<hr style="width:100%">-->
+<hr style="width:100%">
+
+<h2> Prospective Students/Collaborators </h2>
+
+I'm looking for students/collaborators to work on the following research prototypes: 
+<a href="https://github.com/ShuhaoZhangTony/AllianceDB">AlianceDB (Very Efficient Stream Processing Operations on Modern Hardware)</a>, <a href="https://github.com/Xtra-Computing/briskstream">TStream (State-of-the-art Transactional Stream Processing System on Multicore CPUs)</a>. The general research topics include ``<query parser and compiler>``, ``<system runtime optimisation>``. 
+
+You may propose related topics but they should be related to the topic of <a href="https://medium.com/stream-processing/what-is-stream-processing-1eadfca11b97"> stream processing </a>. My apologise that I may not response to requests if the proposals are out of my interests.
