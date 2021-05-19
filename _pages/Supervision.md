@@ -6,7 +6,7 @@ description:
 notitle: true
 ---
 
- <p>I am currently working with some fantastic students:</p>
+## I am currently working with some fantastic students:
 
 ### Graduate Students
 
@@ -27,4 +27,4 @@ notitle: true
 
 ### For Prospective Students
 
-Due to the very much unfair graduate student scholarship allocation system at ISTD SUTD, I have temporarily stopped looking for phd students. However, if you are keen to work with me, you may still approach me for a discussion for other scholarship opportunities.
+Due to the very much ridiculous graduate scholarship allocation system at ISTD SUTD, I have temporarily stopped looking for phd students. However, if you are keen to work with me, you may still approach me for a discussion for other scholarship opportunities.
