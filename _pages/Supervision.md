@@ -24,7 +24,3 @@ notitle: true
 	<li>Wang, Chenyu (Undergraduate Student @ SUTD, Singapore), Supervising on <i>  Relational Stream Processing Algorithms </i> </li>
 	<li>Cai, Xuemeng (Undergraduate Student @ SUTD, Singapore), Supervising on <i>  Relational Stream Processing Algorithms </i> </li>
 </ul>
-
-### For Prospective Students
-
-Due to the very much ridiculous graduate scholarship allocation system at ISTD SUTD, I have temporarily stopped looking for phd students. However, if you are keen to work with me, you may still approach me for a discussion for other scholarship opportunities.
