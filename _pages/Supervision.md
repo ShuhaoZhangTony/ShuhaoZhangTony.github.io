@@ -11,7 +11,7 @@ notitle: true
 ### Graduate Students
 
 <ul>
-	<li>Hamid, Aqif (Master Student @ TU Berlin, Germany), Advising Master Thesis on <i> Stream Processing System</I></li> with Steffen Zeuch and Volker Markl
+	<li>Hamid, Aqif (Master Student @ TU Berlin, Germany), Advising Master Thesis on <i> Stream Processing System</I> with Steffen Zeuch and Volker Markl </li> 
 	<li>Wu, Huilin (Master Student @ TU Berlin, Germany), Advising Master Thesis on <i> Online Machine Learning</i> with Juan Soto and Volker Markl</li>
 <!--	<li>Wu, Zhenyu (Incoming Visiting Student From University of Edinburgh), Supervising on <i>  Stream Data Mining </i> </li>-->
 </ul>
