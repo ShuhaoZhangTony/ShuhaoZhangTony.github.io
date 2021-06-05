@@ -39,12 +39,12 @@ notitle: true
     <td class="tg-2bhk"><span style="font-weight:400;font-style:normal">International Conference on Parallel Processing</span></td>
     <td class="tg-ezbu">Regular PC Member</td>
   </tr>
-  <!--<tr>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">2021</span></td>
-    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">Auto-DaSP</span></td>
-    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">International Workshop on Autonomic Solutions for Parallel and Distributed Data Stream Processing</span></td>
-    <td class="tg-c3ow"><span style="font-weight:400;font-style:normal">Regular</span> PC Member</td>
-  </tr>-->
+  <tr>
+    <td class="tg-alz1">2021</td>
+    <td class="tg-2bhk">Apsys</td>
+    <td class="tg-2bhk"><span style="font-weight:400;font-style:normal">ACM Asia-Pacific Workshop on Systems</span></td>
+    <td class="tg-ezbu">Regular PC Member</td>
+  </tr>
   <tr>
     <td class="tg-alz1"><span style="font-weight:400;font-style:normal">2021</span></td>
     <td class="tg-2bhk"><span style="font-weight:400;font-style:normal">CCGrid</span></td>
@@ -70,7 +70,7 @@ notitle: true
     <td class="tg-baqh"><span style="font-weight:400;font-style:normal">Regular PC Member</span></td>
   </tr>
   <tr>
-    <td class="tg-alz1"><span style="font-weight:400;font-style:normal">2020</span></td>
+    <td class="tg-alz1"><span style="font-weight:400;font-style:normal">2020, 2021</span></td>
     <td class="tg-alz1"><span style="font-weight:400;font-style:normal">HiPC</span></td>
     <td class="tg-alz1">IEEE International Conference on High Performance Computing, Data, and Analytics</td>
     <td class="tg-i6s1"><span style="font-weight:400;font-style:normal">Regular PC Member</span></td>
@@ -111,6 +111,3 @@ notitle: true
 	<li>Mao, Yancan (NUS, Ph.D), Paper Collaborator </li>
 </ul>
 -->
-### Reading Lists
-
-I maintain a [reading list](https://shuhaozhangtony.github.io/StreamProcessing_ReadingList/) regarding stream processing, welcome to contribute.
