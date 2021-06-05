@@ -1,12 +1,14 @@
 ---
 layout: main
-permalink: /Resources/
 title: Resources
+permalink: /Resources/
 description: Computational Resources
 notitle: true
 ---
 
-### Computational Resources
+### Computational Resources for Stream Processing at the Edge of Cloud
+
+More Edge Devices are incoming.
 
  <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
