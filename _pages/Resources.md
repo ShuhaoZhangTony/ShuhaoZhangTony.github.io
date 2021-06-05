@@ -1,7 +1,7 @@
 ---
 layout: main
-permalink: /Resource/
-title: Resource
+permalink: /Resources/
+title: Resources
 description: Computational Resources
 notitle: true
 ---
