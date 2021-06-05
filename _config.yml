@@ -48,8 +48,8 @@ navigation:
       link: /Service/
     - title: Supervision
       link: /Supervision/      
-#    - title: Jobs
-#      link: /Jobs/
+    - title: Resources
+      link: /Resources/
  #   - title: CV
  #     link: /cv/cv.pdf
 
