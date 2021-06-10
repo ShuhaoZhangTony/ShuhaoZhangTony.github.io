@@ -20,7 +20,7 @@ notitle: true
 
 <ul>
 	<li>Wang, Xin (Research Assistant @ Sichuan University, China), Co-supervising on <i>  Stream Data Mining </i> with Li Lu</li>
-<!--	<li>Zeng, Xianzhi (Incoming Research Assistant From University of Electronic Science and Technology of China, China), Co-supervising on <i>  Edge Stream Computing </i> </li>-->
+ 	<li>Zeng, Xianzhi (Incoming Research Assistant From University of Electronic Science and Technology of China, China), Working on <i> Energy-Efficient Stream Computing </i> </li>
 	<li>Wang, Chenyu (Undergraduate Student @ SUTD, Singapore), Supervising on <i>  Relational Stream Processing Algorithms </i> </li>
 	<li>Cai, Xuemeng (Undergraduate Student @ SUTD, Singapore), Supervising on <i>  Relational Stream Processing Algorithms </i> </li>
 </ul>
