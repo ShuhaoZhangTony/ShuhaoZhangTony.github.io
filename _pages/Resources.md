@@ -8,9 +8,10 @@ notitle: true
 
 ### Computational Resources for Stream Processing at the Edge of Cloud
 
-More Edge Devices are incoming.
-
 <hr style="width:100%">
+
+
+More computing devices are incoming.
 
  <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -60,5 +61,88 @@ More Edge Devices are incoming.
     <td class="tg-73oq"><span style="font-weight:400;font-style:normal">128GB</span></td>
     <td class="tg-73oq"><span style="font-weight:400;font-style:normal">4T</span></td>
   </tr>
+   <tr>
+    <td class="tg-73oq">TBC (HP DL380 Gen9 4LFF CTO Server)</td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">2 * 18 * Intel(R) Xeon(R) CPU E5-2699 v3 @ 2.3GHz</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC </span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+  </tr> 
+    <tr>
+    <td class="tg-73oq">TBC (HP DL380 Gen9 4LFF CTO Server)</td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">2 * 18 * Intel(R) Xeon(R) CPU E5-2699 v3 @ 2.3GHz</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC </span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+  </tr> 
+    <tr>
+    <td class="tg-73oq">TBC (HP DL380 Gen9 4LFF CTO Server)</td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">2 * 18 * Intel(R) Xeon(R) CPU E5-2699 v3 @ 2.3GHz</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC </span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+  </tr>   
+  
+   <tr>
+    <td class="tg-73oq">TBC (PowerEdge R730 Rack Server)</td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">2 * 18 * Intel(R) Xeon(R) CPU E5-2600 v4 @ 2.4GHz</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC </span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+  </tr> 
+    <tr>
+    <td class="tg-73oq">TBC (PowerEdge R730 Rack Server)</td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">2 * 18 * Intel(R) Xeon(R) CPU E5-2600 v4 @ 2.4GHz</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC </span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+  </tr> 
+    <tr>
+    <td class="tg-73oq">TBC (PowerEdge R730 Rack Server)</td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">2 * 18 * Intel(R) Xeon(R) CPU E5-2600 v4@ 2.4GHz</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC </span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+  </tr>  
+   <tr>
+    <td class="tg-73oq">TBC (PowerEdge R730 Rack Server)</td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">2 * 18 * Intel(R) Xeon(R) CPU E5-2600 v4 @ 2.4GHz</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC </span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+  </tr> 
+    <tr>
+    <td class="tg-73oq">TBC (PowerEdge R730 Rack Server)</td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">2 * 18 * Intel(R) Xeon(R) CPU E5-2600 v4 @ 2.4GHz</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC </span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+  </tr> 
+    <tr>
+    <td class="tg-73oq">TBC (PowerEdge R730 Rack Server)</td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">2 * 18 * Intel(R) Xeon(R) CPU E5-2600 v4 @ 2.4GHz</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC </span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+  </tr>    
+    <tr>
+    <td class="tg-73oq">TBC (PowerEdge R730 Rack Server)</td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">2 * 18 * Intel(R) Xeon(R) CPU E5-2600 v4 @ 2.4GHz</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC </span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+  </tr> 
+    <tr>
+    <td class="tg-73oq">TBC (PowerEdge R730 Rack Server)</td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">2 * 18 * Intel(R) Xeon(R) CPU E5-2600 v4 @ 2.4GHz</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC </span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+    <td class="tg-73oq"><span style="font-weight:400;font-style:normal">TBC</span></td>
+  </tr>  
 </tbody>
 </table>
+
+Other resources:
+
+HPE 5700 32XGT 8XG 2QSFP+ Switch;
+HPE Store Easy 1650;
