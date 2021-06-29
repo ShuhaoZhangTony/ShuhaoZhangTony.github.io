@@ -95,10 +95,10 @@ I'm now Assistant Professor at Singapore University of Technology and Design (SU
 
 <h2> Prospective Students/Collaborators </h2>
 
-I lead the <I>intellistream</I> team. Our vision is to enable fast streaming processes at every aspect of big data analytics: mining, learning, inferring, storing, querying and so on.
+I lead the <I>intellistream</I> team. Our vision is to enable fast streaming processes at every aspect of big data analytics: mining, learning, inferring, storing, querying and so on. Research Fellow/Research Assistant/Interns positions available. Please send me your research proposal for a discussion.
 
 I'm looking for students/collaborators to work on the following research prototypes: 
-<a href="https://github.com/ShuhaoZhangTony/AllianceDB">AlianceDB (Very Efficient Stream Processing Operations on Modern Hardware)</a>, <a href="https://github.com/Xtra-Computing/briskstream">TStream (State-of-the-art Transactional Stream Processing System on Multicore CPUs)</a>. The general research topics include ``<query parser and compiler>``, ``<system runtime optimisation>``. 
+<a href="https://github.com/ShuhaoZhangTony/AllianceDB">AlianceDB (Very Efficient Stream Processing Operations on Modern Hardware)</a>, <a href="https://github.com/Xtra-Computing/briskstream">TStream (State-of-the-art Transactional Stream Processing System on Multicore CPUs)</a>. The general research topics include `query parser and compiler`, `hardware-conscious system optimisation`, and , `parallel and distributed online machine learning/stream data mining`. 
 
 You may propose related topics but they should be related to the topic of <a href="https://medium.com/stream-processing/what-is-stream-processing-1eadfca11b97"> stream processing </a>. My apologise that I may not response to requests if the proposals are out of my interests.
 
