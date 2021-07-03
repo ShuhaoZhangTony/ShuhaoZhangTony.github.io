@@ -15,6 +15,8 @@ notitle: true
   </div>
   
 I'm now Assistant Professor at Singapore University of Technology and Design (SUTD). My current research interest include big data stream processing system on emerging hardware, and system for emerging ML/AI applications (e.g., data stream mining, continuous AI, and federated learning). 
+
+<b>Research Fellow/Research Assistant/Interns positions available. Please send me your CV for a discussion.</b>
 <!--See <a href="/Projects/"><em>Projects</em></a> for detailed descriptions.-->
 <!-- He had served as a PC member in a list of <a href="Service/">academic conferences</a>. -->
 
@@ -95,7 +97,7 @@ I'm now Assistant Professor at Singapore University of Technology and Design (SU
 
 <h2> Prospective Students/Collaborators </h2>
 
-I lead the <I>intellistream</I> team. Our vision is to enable fast streaming processes at every aspect of big data analytics: mining, learning, inferring, storing, querying and so on. Research Fellow/Research Assistant/Interns positions available. Please send me your research proposal for a discussion.
+I lead the <i>intellistream</i> team. Our vision is to enable fast streaming processes at every aspect of big data analytics: mining, learning, inferring, storing, querying and so on. We are hiring for Research Fellow/Research Assistant/Interns/Visiting Students.
 
 I'm looking for students/collaborators to work on the following research prototypes: 
 <a href="https://github.com/ShuhaoZhangTony/AllianceDB">AlianceDB (Very Efficient Stream Processing Operations on Modern Hardware)</a>, <a href="https://github.com/Xtra-Computing/briskstream">TStream (State-of-the-art Transactional Stream Processing System on Multicore CPUs)</a>. The general research topics include `query parser and compiler`, `hardware-conscious system optimisation`, and , `parallel and distributed online machine learning/stream data mining`. 
