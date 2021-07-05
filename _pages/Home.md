@@ -97,7 +97,7 @@ I'm now Assistant Professor at Singapore University of Technology and Design (SU
 
 <h2> Prospective Students/Collaborators </h2>
 
-I lead the <i>intellistream</i> team. Our vision is to enable fast streaming processes at every aspect of big data analytics: mining, learning, inferring, storing, querying and so on. We are hiring for Research Fellow/Research Assistant/Interns/Visiting Students.
+I lead the <i>intellistream</i> team. Our vision is to enable fast streaming processes at every aspect of big data analytics: mining, learning, inferring, storing, querying and so on. We are hiring for Research Fellow/Research Assistant/Interns/Visiting Students. Feel free to join our [slack channel](https://join.slack.com/t/intellistream/shared_invite/zt-s6q56z12-8RmIZjkrb6y59x71ojA4dg) for a discussion.
 
 I'm looking for students/collaborators to work on the following research prototypes: 
 <a href="https://github.com/ShuhaoZhangTony/AllianceDB">AlianceDB (Very Efficient Stream Processing Operations on Modern Hardware)</a>, <a href="https://github.com/Xtra-Computing/briskstream">TStream (State-of-the-art Transactional Stream Processing System on Multicore CPUs)</a>. The general research topics include `query parser and compiler`, `hardware-conscious system optimisation`, and , `parallel and distributed online machine learning/stream data mining`. 
